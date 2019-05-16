@@ -1,0 +1,54 @@
+// 
+// Favorites for WordPress
+// https://favoriteposts.com/
+// 
+// @this /sass/bits/_favorite.scss
+// 
+
+
+.simplefavorite-button {
+    @include condensed-700;  
+    margin: 6px;  // keep focus outline in view
+    padding: 0.3em 0.5em;
+
+	// Font Awesome icon
+	.svg-inline--fa {
+        margin-right: 4px;
+    }  
+
+    &::before {
+        @extend %fa-before; 
+        content: '\f02e';
+    }
+
+}
+
+
+.simplefavorite-button:not(.active) {
+    &::before {
+        @extend %fa-free-far;
+    }
+    
+}
+
+.simplefavorite-button.active {
+    &::before {
+        @extend %fa-free-fas;
+    }  
+}
+
+
+
+// 
+// Testing
+// 
+
+@include test-mode {
+    body.proto {
+
+        .simplefavorite-button {
+            background: $mc__gray-200;
+        }   
+
+    }
+}

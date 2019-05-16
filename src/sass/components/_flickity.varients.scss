@@ -1,0 +1,53 @@
+// 
+// Gallery Thumbs (nav)
+// 
+
+.slider--thumbs {
+    height: 120px;
+    background: #ECEFF1;
+    // margin-bottom: 32px;
+    padding: 8px;
+
+    .slider__cell {
+        padding: 16px;
+        height: 100%;        
+    }
+    figcaption {
+        display: none;
+    }
+    .is-nav-selected {
+        border: 4px dashed $color__focus;
+        padding: 4px;
+    }
+} // 
+
+// 
+// Gallery Imagees
+// 
+
+.slider--images {
+    height: 405px;
+    background: $mc__gray-900;
+    margin-bottom: 48px;
+    .slider__cell {
+        height: 100%;
+        padding: 0 1.424rem;
+    }
+} 
+
+// 
+// Post Slicer
+// 
+
+.slider--post {
+    margin: 48px 0;
+    .slider__cell {
+        padding: 10px;   
+        min-height: 100%;
+        display: grid;
+        width: 505px;
+    }
+    .card {
+        margin: 0;
+    }
+}

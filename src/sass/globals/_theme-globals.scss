@@ -1,0 +1,73 @@
+//
+// @file /sass/globals/_theme-globals.scss
+//
+
+// Include (true) or exclude (false) example code wrapped in:
+// `@include test-mode {}`
+
+$test-mode: true;
+
+
+// This global is the size of 1rem.
+// The only place this $global is used directly is on 'html' (root). 
+// Everywhere else uses '@include font-size();' in place of `font-size`.
+// Changing this $global cascades to all fonts defined with this @mixin.
+
+$font-size: 24px;
+
+
+// This theme uses system font stacks.
+// The only place these globals are used directly are in @mixins
+// @see /docs/quic-grab_fonts.scss
+
+$font-family__sans: 'Roboto', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Segoe UI', sans-serif,  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__serif: 'Georgia', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__mono: 'Menolo', 'Consolas', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__condensed: 'Roboto Condensed', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Segoe UI', sans-serif,  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+
+
+
+
+
+
+//
+// Colors
+// These theme has access to the full Google Material Color palette
+//
+
+$color__black: $mc__gray-900;
+$color__black-a: $mc__gray-700;
+
+$color__white: #fff;
+$color__white-a: $mc__gray-100;
+
+$color__primary: $mc__lime-a700;
+$color__primary-a: $mc__green-a700;
+
+$color__alt: $mc__amber-a700;
+$color__alt-a: $mc__dp-orange-a200;
+
+
+// <body> tag
+
+$color__body-font: $mc__gray-600;
+$color__body-bg: #fff;
+$color__content-bg: #fff;
+
+
+
+
+//
+// Border Radius
+//
+
+$border-radius: 4px;
+$border-radius__button: 0;
+$border-radius__icon: 100%;
+$border-radius__input: 4px;
+$border-radius__card: 10px;
+

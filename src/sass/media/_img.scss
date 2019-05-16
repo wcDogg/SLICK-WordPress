@@ -1,0 +1,28 @@
+//
+// @this /sass/media/_img.scss
+// 
+
+ 
+img {
+	display: block;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 1;	
+	vertical-align: middle;
+}
+
+svg, .icon {
+	height: 100%;
+	width: 100%;
+	fill: currentColor;
+}
+
+
+// The wrapper <span>
+.icon-wrap {
+    display: inline-block;
+    vertical-align: middle;
+}
+

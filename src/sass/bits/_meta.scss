@@ -1,0 +1,32 @@
+// 
+// @this /sass/bits/_meta.scss
+// 
+
+
+// 
+// Meta Classes
+// 
+
+.meta {}
+.meta .svg-inline--fa {}
+
+.meta--more {}
+
+
+// 
+// Meta Styles
+// 
+
+.meta {
+    @include condensed-400;
+    @include font-size(0.79); 
+}
+
+a.meta,
+.meta a {
+    text-decoration: none;
+}
+
+.meta--more .svg-inline--fa {
+    margin-left: 4px;
+}

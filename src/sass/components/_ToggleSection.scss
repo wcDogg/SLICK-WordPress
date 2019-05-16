@@ -1,0 +1,119 @@
+// 
+// Toggle Section - For filters and such
+// 
+// @this /sass/components/_ToggleSection.scss
+// @requries /sass/layouts/__pages.scss
+// @requires /js/ToggleSection.js
+// 
+
+
+// 
+// Toggle Section Classes
+// 
+
+.toggle {
+    .toggle__link {}
+    .toggle__content {}
+    .toggle__link-close {}
+}
+
+
+// 
+// JS Attributes
+// 
+
+.toggle[data-toggle-section] {}
+.toggle__link[aria-expanded] {}
+.toggle__content[aria-hidden] {}
+
+// Closed
+.toggle[data-toggle-section=false] {}
+.toggle__link[aria-expanded=false] {}
+.toggle__content[aria-hidden=true] {}
+
+// Opened
+.toggle[data-toggle-section=true] {}
+.toggle__link[aria-expanded=true] {}
+.toggle__content[aria-hidden=false] {}
+
+
+// 
+// Animate.css
+// 
+
+[data-toggle-section] {
+
+    [aria-hidden] {
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+        // breaks FA SVG
+        // -webkit-animation-fill-mode: both;
+        // animation-fill-mode: both;  
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;             
+        transform-origin: top;   
+    }
+
+    [aria-hidden='true'] {
+		-webkit-animation-name: scaleOutUp;
+        animation-name: scaleOutUp;   
+    }   
+
+    [aria-hidden='false'] {
+        -webkit-animation-name: scaleInDown;
+        animation-name: scaleInDown;
+    }
+
+} 
+
+
+// 
+// Show-Hide the optional second toggle link
+// 
+
+[data-toggle-section="false"] {
+    .toggle__link-close {
+        display: none;
+    }
+}
+
+[data-toggle-section="true"] {
+    .toggle__link-close {
+        display: block;
+    }
+}
+
+// 
+// Break .toggle__content out of container
+// 
+
+.toggle__content {
+    // max-width: 100vw;
+    // width: 100vw;
+    // margin: 0 calc(-50vw + 50vw);  
+}
+
+
+
+
+// 
+// Style
+// 
+
+.toggle {
+
+    margin: 1rem 0;
+
+    .toggle__link {
+        display: block;
+    }
+
+    .toggle__link,
+    .toggle__link-close {
+        text-align: center;
+        .svg-inline--fa {margin-right: 4px;}        
+    }
+
+    .toggle__content {}
+
+} // 

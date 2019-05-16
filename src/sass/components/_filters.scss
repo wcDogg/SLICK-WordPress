@@ -1,0 +1,118 @@
+// 
+// Filters - Used on Archive pages
+// 
+// @this /sass/components/_filters.scss
+// @requires /js/filters.js
+//
+// This component requires Javascript.
+// For both space and accessibility, 
+// the no-JS fallback hides filters completely.  
+// 
+
+
+// 
+// #filters - The outter section toggle
+// Note plural `#filters` vs singular `.filter`
+// Note the div is hidden by default
+// 
+
+// The outter <div>
+#filters {
+    display: none;
+    #filters-open {display: none;}
+    #filters-content {display: none;}
+    #filters-close {display: none;}
+}
+
+//  Base JS
+#filters-open[aria-expanded] {}
+#filters-content[aria-hidden] {}
+#filters-close[aria-expanded] {}
+
+// Closed
+#filters-open[aria-expanded="fales"] {}
+#filters-content[aria-hidden="true"] {}
+#filters-close[aria-expanded="fales"] {}
+
+// Opened
+#filters-open[aria-expanded="true"] {}
+#filters-content[aria-hidden="false"] {}
+#filters-close[aria-expanded="true"] {}
+
+
+
+// 
+// Single `.filter` toggles
+// 
+
+.filter {    
+    .filter__toggle {}
+    .filter__content {display: none;}
+}
+
+// Base JS
+.filter__toggle[aria-expanded] {}
+.filter__content[aria-hidden] {}
+
+// Closed
+.filter__toggle[aria-expanded=false] {}
+.filter__content[aria-hidden=true] {}
+
+// Opened
+.filter__toggle[aria-expanded=true] {}
+.filter__content[aria-hidden=false] {}
+
+
+// 
+// Animate.css
+// 
+
+#filters, .filter {
+
+    [aria-hidden] {
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+        :not(.svg-inline--fa) {
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;              
+        }
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;             
+        transform-origin: top;   
+    }
+
+    [aria-hidden='true'] {
+		-webkit-animation-name: scaleOutUp;
+        animation-name: scaleOutUp;   
+    }   
+
+    [aria-hidden='false'] {
+        -webkit-animation-name: scaleInDown;
+        animation-name: scaleInDown;
+    }
+
+} 
+
+
+// 
+// Style
+// 
+
+
+#filters, .filter {
+    margin: 1rem 0;  
+}
+
+// Toggles
+#filters-open, 
+#filters-close,
+.filter__toggle {
+    display: block;
+    text-align: center;
+    .svg-inline--fa {margin-right: 4px;}
+}
+
+
+
+
+

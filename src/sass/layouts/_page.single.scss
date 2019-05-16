@@ -1,0 +1,41 @@
+// 
+// Single (Blog) Content Type
+// 
+// @this /sass/layouts/_post.scss
+// @riequires/sass/layouts/_page.post.scss
+// 
+
+
+// 
+// Single Classes
+// 
+
+body.single {}
+
+// .section Classes
+.single {
+    .page__header {}
+    .page__content {}
+    .page__table {}
+    .page__accordion {}
+    .archive__section--amazon {}
+    .page__footer {}
+    .page__research {}
+    .archive__section--posts {}
+    .page__comments {}
+}
+
+// Header Chunks 
+.single {
+    .page__meta {}
+    .page__title-wrap {}  
+    .page__img {}
+    .page__share {}
+    .page__summary {}
+}
+
+
+// 
+// Single Customizations
+// 
+

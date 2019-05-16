@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Proto: Inputs</title>
+</head>
+
+<body class="proto">
+
+
+    <h2>Text Inputs with SVG Background Images</h2>
+    <div class="grid-inputs">
+        <div>
+            <label for="test-email">Email</label>
+            <input id="test-email" name="test_email" type="email" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="test-contact-name">Name (text)</label>
+            <input id="test-contact-name" name="contact_name" type="c-name" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="test-password">Password</label>
+            <input id="test-password" name="test_password" type="password" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="test-contact-phone">Phone (text)</label>
+            <input id="test-contact-phone" name="test_phone" type="c-phone" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="test-search">Search</label>
+            <input id="test-search" name="test_search" type="search" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="test-tel">Tel</label>
+            <input id="test-tel" name="test_tel" type="tel" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="test-url">URL</label>
+            <input id="test-url" name="test_url" type="url" autocomplete="on">
+        </div>
+    </div><!-- .grid-inputs -->
+
+    <h2>Inputs with Spinners + Pickers</h2>
+    <div class="grid-inputs">
+        <div>
+            <label for="test-date">Date</label>
+            <input id="test-date" name="test_date" type="date">
+        </div>
+
+        <div>
+            <label for="test-month">Month</label>
+            <input id="test-month" name="test_month" type="month" placeholder="2018-11">
+        </div>
+
+        <div>
+            <label for="test-week">Week</label>
+            <input id="test-week" name="test_week" type="week">
+        </div>
+
+        <div>
+            <label for="test-time">Time</label>
+            <input id="test-time" name="test_time" type="time">
+        </div>
+
+        <div>
+            <label for="test-number">Number</label>
+            <input id="test-number" name="test_number" type="number">
+        </div>
+
+        <div>
+            <label for="test-select">Select</label>
+            <select id="test-select">
+                <option value="">Select</option>
+                <option value="jQuery">jQuery</option>
+                <option value="jQuery Mobile">jQuery Mobile</option>
+                <option value="jQuery UI">jQuery UI</option>
+                <option value="jQuery Migrate">jQuery Migrate</option>
+                <option value="jQuery Theme Roller">jQuery Theme Roller</option>
+            </select>
+        </div>
+    </div><!-- .grid-inputs -->
+
+    <h2>Color, Range + File</h2>
+    <div class="grid-inputs">
+        <div>
+            <label for="test-color">Color</label>
+            <input id="test-color" name="test_color" type="color">
+        </div>
+
+        <div>
+            <label for="test-range">Range</label>
+            <input id="test-range" name="test_range" type="range">
+        </div>
+
+        <div>
+            <label for="test-file">File</label>
+            <input id="test-file" name="test_file" type="file">
+        </div>
+    </div><!-- .grid-inputs -->
+
+    <h2>Checkbox + Radio using Icons</h2>
+    <div class="grid-inputs">
+        <div>
+            <fieldset>
+                <legend>Radio</legend>
+                <div>
+                    <input type="radio" id="foo" name="test-radio" value="foo" />
+                    <label class="ui-label-inline" for="foo">Foo</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="bar" name="test-radio" value="bar" />
+                    <label class="ui-label-inline" for="bar">Bar</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="foobar" name="test-radio" value="foobar" />
+                    <label class="ui-label-inline" for="foobar">Foobar</label>
+                </div>
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Checkbox</legend>
+                <div>
+                    <input type="checkbox" id="foo-2" name="test-checkbox" value="foo" />
+                    <label for="foo-2">Foo</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="bar-2" name="test-checkbox" value="bar" />
+                    <label for="bar-2">Bar</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="foobar-2" name="test-checkbox" value="foobar" />
+                    <label for="foobar-2">Foobar</label>
+                </div>
+            </fieldset>
+        </div>
+    </div><!-- .grid-inputs -->
+
+    <h2>Text Area</h2>
+    <div class="">
+        <div>
+            <label for="test-textarea">Textarea</label>
+            <!-- textarea open and close tags must be on same line -->
+            <textarea id="test-textarea" name="test_textarea"></textarea>
+        </div>
+    </div> <!-- .grid-inputs -->
+
+
+</body>
+
+</html>

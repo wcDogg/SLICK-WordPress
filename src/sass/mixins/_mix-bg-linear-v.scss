@@ -1,0 +1,11 @@
+//
+// @file /sass/mixins/_mix-bg-linear-v.scss
+//
+
+@mixin bg-linear-v($top: #424242, $bottom: #000000) {
+	background: linear-gradient(
+		to bottom, $top, $bottom)
+		$bottom; 
+}
+
+

@@ -1,0 +1,265 @@
+//
+// Vanilla Sccard-Pin Cards
+//
+// @this /sass/components/_card.scss
+// @requires /sass/layouts/_pages.scss
+// @uses /js/SccardPin.js
+// @uses /sass/globals/_animate.scss
+//
+
+
+// 
+// Card Archive .section
+// 
+
+// .section
+.archive__section {
+	.section__inner {}
+	.section__title {}
+	.section__description {}
+	.section__grid {}
+}
+		
+// Varients
+.archive__section--lubes {}
+.archive__section--offers {}
+.archive__section--posts {}
+.archive__section--pages {}
+.archive__section--loves {}
+.archive__section--amazon {}
+
+
+// Override default .section grid
+// Results in full-width column with 1rem padding
+.archive__section {
+	grid-template-columns: 0px 1fr 0px;
+	.section__inner {max-width: 100%;}
+}
+
+// Grid
+.archive__section .section__grid {
+    display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+
+} // 
+
+
+// 
+// Card Page .section
+// 
+
+// .section
+.page__related {
+	.section__inner {}
+	.section__title {}
+	.section__description {}
+	.section__grid {}
+}
+
+// Varients
+.page__related--lubes {}
+.page__related--offers {}
+.page__related--posts {}
+.page__related--pages {}
+.page__related--loves {}
+.page__related--amazon {}
+
+
+// Grid
+.page__related .section__grid {
+    display: grid;
+	grid-gap: 1rem;
+} // 
+
+
+// 
+// Single Cards
+// 
+
+.card {}
+
+.card__img {}
+	img {}
+
+.card__header {}
+	.card__meta {}
+	.card__title-wrap {}
+		.card__title {}
+		.card__subtitle {}
+
+.card__main {}
+	.card__buy {}
+	.card__visit {}
+	.card__attributes {}
+	.card__content {}
+
+.card__footer {}
+	.card__more {} // more
+	.card__brands {} // brands
+	.card__categories {}
+
+// Card Varients
+.card--offer {}
+.card--lube {}
+.card--post {}
+.card--page {}
+.card--loves {}
+.card--amazon {}
+
+
+
+// 
+// Single Card Grids
+// 
+
+.card  {
+	// min-width: 440px;
+	// max-width: 640px;
+    display: grid;
+	grid-column-gap: 0.5rem;	
+	grid-template-columns: 128px 1fr;	
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: 
+		'c-img c-head'
+		'c-img c-main'
+		'c-img c-foot'
+	;
+
+	.card__img    {grid-area: c-img; align-self: stretch;}
+	.card__header {grid-area: c-head;}
+	.card__main   {grid-area: c-main;}
+	.card__footer {grid-area: c-foot; align-self: end;}
+
+	&.card--offer {display: block}
+
+} // 
+
+.card--loves .card__main {
+	align-self: end;
+}
+
+
+// 
+// Single Card Chunks
+// 
+
+.card {
+    padding: 0.5rem;
+    color: #ffffff;
+    background: rgba(0,0,0, 0.8);
+    border: 1px dotted $mc__gray-800;
+}
+
+.card__img { 
+    display: grid; // required for object-fit
+}
+
+.card__img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__title {
+    margin: 0;
+    padding: 0;
+    @include font-size(1.424);
+    color: #ffffff;
+}
+
+.card__subtitle {
+    margin: 0;
+    padding: 0;
+    @include condensed-400;
+    @include font-size(1.125);
+    color: #ffffff;
+}
+
+.card__buy {
+    margin: 1rem 0 0.7rem 0;
+}
+
+.card__visit {
+    margin: 1rem 0 0.7rem 0;
+}
+
+.card__attributes {
+	@include font-size(0.79);
+}
+
+.card__footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card__brands {
+    a {
+        margin-right: 0.25rem;
+    }
+}
+
+
+//
+// SccardPin.js
+// 
+
+// Defualt fade in-out
+.card[data-sccard-pin] {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+
+	// All cards fade out
+	&[data-sccard-pin="false"] {
+		-webkit-animation-name: fadeOut;
+		animation-name: fadeOut;
+	}
+
+}
+
+// Default fade in
+// Simpler rule without needing another class in markup?
+.card:not(.card--from-left):not(.card--from-right):not(.card--lightspeed-in) {	
+	&[data-sccard-pin="true"] {
+		-webkit-animation-name: fadeIn;
+		animation-name: fadeIn;
+	}
+}
+
+// Slide in from left	
+.card--from-left {
+	&[data-sccard-pin="true"] {
+		-webkit-animation-name: fadeInLeft;
+		animation-name: fadeInLeft;		
+	}
+	// &[data-sccard-pin="false"] {}
+}
+
+// Slide in from right
+.card--from-right {
+	&[data-sccard-pin="true"] {
+		-webkit-animation-name: fadeInRight;
+		animation-name: fadeInRight;
+	}
+	// &[data-sccard-pin="false"] {}
+}
+
+// Ligbtspeed in
+.card--lightspeed-in {
+	&[data-sccard-pin="true"] {
+	-webkit-animation-name: lightSpeedIn;
+	animation-name: lightSpeedIn;
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+	}
+	// &[data-sccard-pin="false"] {}
+}
+
+

@@ -1,0 +1,38 @@
+//
+// @finle /sass/mixins/_mix-bg-slash-v.scss
+//
+
+
+// 90 + 28
+@mixin bg-slash-r($top:#000000, $bottom: $mc__gray-900) {
+	// background: linear-gradient(
+	// 	to bottom right,
+	// 	$top 40%, 
+	// 	rgba(0,0,0,0) 40%,)
+	// 	$bottom
+	// ; 
+
+	background: linear-gradient(
+		170deg, 
+		$top 48%, 
+		rgba(0,0,0,0) 48%,)
+		$bottom
+	; 
+} // 
+
+// 90 - 28
+@mixin bg-slash-l($top:#000000, $bottom:$mc__gray-900) {
+	// background: linear-gradient(
+	// 	to top right,
+	// 	$top 40%, 
+	// 	rgba(0,0,0,0) 40%,)
+	// 	$bottom
+	// ; 
+
+	background: linear-gradient(
+		10deg, 
+		$top 48%, 
+		rgba(0,0,0,0) 48%,)
+		$bottom
+	; 
+} //

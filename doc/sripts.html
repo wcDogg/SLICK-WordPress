@@ -1,0 +1,68 @@
+
+<!-- Global -->
+<script type="text/javascript" src="./vendors/smooth-scroll.polyfills.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/skip-link-focus-fix.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/StickyHeader.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/ToTop.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    // Smmoth Scroll
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 300
+    });
+    // ToTop
+    ToTop.init();
+    // Sticky-Scrolly Header
+    StickyHeader.init('site-header', 'site-main'); 
+</script>
+
+<!-- Aria Modal -->
+<script type="text/javascript" src="./js/AriaModalPrep.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/AriaUtils.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/AriaModal.js" type="text/javascript"></script>
+
+
+
+<!-- Flickity -->
+<script type="text/javascript" src="./vendors/flickity.pkgd.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="./vendors/flickity.fullheight.js" type="text/javascript"></script>
+<script type="text/javascript" src="./vendors/flickity.fullscreen.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    // Flickity
+    var imageSlider = document.querySelector('.gallery__images');
+    var flkty = new Flickity(imageSlider, {
+        // options
+        wrapAround: true,
+        setGallerySize: false,
+        fullscreen: true,
+        lazyLoad: true,
+        lazyLoad: 1,
+        imagesLoaded: true,
+    });
+    var thumbSlider = document.querySelector('.gallery__thumbs');
+    var flkty = new Flickity(thumbSlider, {
+        // options
+        asNavFor: '.gallery__images',
+        wrapAround: true,
+        pageDots: false,
+        setGallerySize: false,
+    });
+</script>
+
+
+
+<!-- LinkTocify -->
+<script type="text/javascript" src="./js/LinkTocify.js" type="text/javascript"></script>
+
+<script type="text/javascript"></script>
+
+<!-- Scroll-Pin -->
+<script type="text/javascript" src="./js/ScrollPin.js" type="text/javascript"></script>
+
+<script type="text/javascript"></script>
+
+<!-- Toggle Content-->
+<script type="text/javascript" src="./js/ToggleContent.js" type="text/javascript"></script>
+
+<script type="text/javascript"></script>

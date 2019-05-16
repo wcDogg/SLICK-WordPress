@@ -1,0 +1,49 @@
+// 
+// Offer Custom Post Type
+//
+// @this /sass/layouts/_page.offer.scss
+// @requires /sass/layouts/_page.scss
+// 
+
+
+// 
+// Offer Classes
+// 
+
+body.offer {}
+
+// .section Classes
+.offer {
+    .page__header {}
+    .offer__products {}
+    .page__related--offers {}   
+}
+
+// Header Chunks
+.offer .page__header {
+    .page__meta {}
+    .page__title-wrap {}  
+    .page__brands {}
+    .section__buy {}
+    .page__share {}
+    .page__summary {}  
+}
+
+
+
+// 
+// Offer Customizations
+// 
+
+.offer {
+
+    .page__header .section__buy {padding: 1rem 0;}
+
+    .offer__products .section__content {
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));        
+    }
+
+}// 
+

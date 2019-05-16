@@ -1,0 +1,207 @@
+// 
+// @this /sass/components/_gist.syntax.scss
+// 
+// @doc /doc/theme.code.md
+// @script /vendors/highlight.js
+// @related /sass/componenets/_gist.scss
+//
+
+
+.hljs-tag, 
+.hjs-meta {
+  color: #24292e;
+}
+
+// comment, punctuation.definition.comment, string.comment
+.hljs-comment,
+.pl-c {
+    color: #6a737d;
+}
+
+// unsure
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+// attribute
+.hljs-attribute,
+// number
+.hljs-number,
+// constant, entity.name.constant, variable.other.constant, variable.language,
+// support, meta.property-name, support.constant, support.variable, 
+// meta.module-reference, markup.raw, meta.diff.header, meta.output
+.pl-c1 ,
+// string variable 
+.pl-s .pl-v {
+    color: #005cc5;
+}
+
+// unsure
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+// entity
+.hljs-attr,
+.pl-e ,
+// entity.name
+.hljs-title,
+.pl-en  {
+    color: #6f42c1;
+}
+
+// variable.parameter.function, storage.modifier.package, 
+// storage.modifier.import, storage.type.java, variable.other
+.pl-smi ,
+// string source
+.pl-s .pl-s1  {
+    color: #24292e;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+// entity.name.tag, markup.quote
+.pl-ent  {
+    color: #22863a;
+}
+
+.hljs-type
+.hljs-keyword,
+// keyword, storage, storage.type
+.pl-k  {
+    color: #d73a49;
+}
+
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote,
+.hljs-string,
+// string
+.pl-s,
+// punctuation.definition.string, source.regexp, string.regexp.character-class
+.pl-pds,
+// string punctuation.section.embedded source
+.pl-s .pl-pse .pl-s1 ,
+// string.regexp
+.pl-sr ,
+// string.regexp constant.character.escape
+.pl-sr .pl-cce ,
+// string.regexp source.ruby.embedded
+.pl-sr .pl-sre ,
+// string.regexp string.regexp.arbitrary-repitition
+.pl-sr .pl-sra  {
+    color: #032f62;
+}
+
+// variable
+.hljs-variable,
+.pl-v,
+// sublimelinter.mark.warning 
+.pl-smw {
+    color: #e36209;
+}
+
+// invalid.broken, invalid.deprecated, invalid.unimplemented, message.error
+// brackethighlighter.unmatched, sublimelinter.mark.error
+.pl-bu  {
+    color: #b31d28;
+}
+
+// invalid.illegal 
+.pl-ii {
+    color: #fafbfc;
+    background-color: #b31d28;
+}
+
+// carriage-return 
+.pl-c2 {
+    color: #fafbfc;
+    background-color: #d73a49;
+}
+
+// carriage-return
+.pl-c2::before  {
+    content: "^M";
+}
+
+// string.regexp constant.character.escape
+.pl-sr .pl-cce  {
+    font-weight: bold;
+    color: #22863a;
+}
+
+// markup.list 
+.pl-ml  {
+    color: #735c0f;
+}
+
+// markup.heading
+.pl-mh ,
+// markup.heading entity.name
+.pl-mh .pl-en ,
+// meta.separator
+.pl-ms  {
+    font-weight: bold;
+    color: #005cc5;
+}
+
+// markup.italic 
+.pl-mi {
+    font-style: italic;
+    color: #24292e;
+}
+
+// markup.bold 
+.pl-mb {
+    font-weight: bold;
+    color: #24292e;
+}
+
+// markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted
+.pl-md  {
+    color: #b31d28;
+    background-color: #ffeef0;
+}
+
+// markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted
+.pl-mi1 {
+    color: #22863a;
+    background-color: #f0fff4;
+}
+
+// markup.changed, punctuation.definition.changed 
+.pl-mc{
+    color: #e36209;
+    background-color: #ffebda;
+}
+
+// markup.ignored, markup.untracked
+.pl-mi2  {
+    color: #f6f8fa;
+    background-color: #005cc5;
+}
+
+// meta.diff.range 
+.pl-mdr {
+    font-weight: bold;
+    color: #6f42c1;
+}
+
+// brackethighlighter.tag, brackethighlighter.curly, brackethighlighter.round, 
+// brackethighlighter.square, brackethighlighter.angle, brackethighlighter.quote 
+.pl-ba {
+    color: #586069;
+}
+
+// sublimelinter.gutter-mark 
+.pl-sg {
+    color:  #959da5;
+}
+
+// constant.other.reference.link, string.other.link
+.pl-corl  {
+    text-decoration: underline;
+    color: #032f62;
+}
+

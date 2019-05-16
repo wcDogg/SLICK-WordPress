@@ -1,0 +1,72 @@
+// 
+// Lubricant Review Custom Post Type
+// 
+// @this /sass/layouts/_page.lube.scss
+// @requires /sass/layouts/_page.scss
+//
+
+
+// 
+// Lube Classes
+// 
+
+body.lube {}
+
+// .section Classes
+.lube {
+    .page__header
+    .page__recommended {}
+    .page__gallery {}
+    .page__materials {}
+    .page__ingredients {}
+    .page__consistency {}
+    .page__taste {}
+    .page__packaging {}
+    .page__samples {}
+    .page__related--lubes {}
+    .page__comments {}    
+}
+
+// Header Chunks
+.lube .page__header {
+    .page__meta {}
+    .page__title-wrap {}  
+    .page__img {}
+    .page__share {}
+    .page__summary {}
+    .section__buy {}  
+}
+
+
+
+
+// 
+// Lube Customizations
+// 
+
+.page__recommended {
+    .section__attributes {
+        min-width: 100%;
+        display: grid;   
+        grid-column-gap: 1rem;
+    }
+    @media screen and (min-width: 720px)  {
+        .section__attributes {
+            grid-template-columns: 1fr 1fr ;
+        }     
+    }
+}
+
+.page__materials {
+    .section__attributes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 200px);
+        grid-column-gap: 1rem;
+    }
+}
+
+.review__gif {
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+}

@@ -1,0 +1,69 @@
+//
+// @this /sass/components/_branding.scss
+//
+
+.branding {
+
+	line-height: 1.266;	
+	
+	&__name {
+		@include serif-700;
+		@include font-size(1.125);		
+	}
+
+	&__slogan {
+		@include sans-400i;
+		@include font-size(0.79);
+	}
+
+	&__logo {}
+	&__icon {}	
+
+}
+
+.branding--full {
+
+	display: grid;
+	justify-content: start;
+	grid-template-areas:
+	"logo name"
+	"logo slogan";	
+
+	.branding__name {
+		grid-area: name;
+		align-self: end;
+	}
+
+	.branding__slogan {
+		grid-area: slogan;
+		align-self: start;
+	}	
+
+	.branding__logo {
+		grid-area: logo;
+		align-self: center;
+		@include font-size(2.565); // when fa icon
+	}
+
+	.branding__icon {padding: 0.25em;;}
+
+} // --full
+
+
+.branding--compact {
+	display: flex;
+	align-items: center;
+
+	.branding__logo {
+		order: 1;
+		@include font-size(1.424); // when fa icon
+		// max-height: 1.242rem; // when img
+		// margin-right: 0.25rem;
+	}
+
+	.branding__name {
+		order: 2;
+	}
+
+} // --compact
+

@@ -1,0 +1,40 @@
+// 
+// Search and Search Results pages
+// 
+// @this /sass/layouts/_page.search.scss
+// @requirs /sass/layouts/_page.scss
+// @requires /sass/layouts/_page.archive.scss
+// @requires /sass/components/_card.scss
+// 
+
+// 
+// Redirect .section Classes
+// 
+
+body.redirect {}
+
+.redirect {
+    .page__header {}
+    .archive__section--lubes {}
+    .archive__section--posts {}    
+    .archive__section--offers {}
+}
+
+
+// 
+// Redirect Customizations
+// 
+
+.redirect { 
+    .page__title {
+        text-align: center;
+    }
+    .page__subtitle {
+        text-align: center;
+    }
+    // no results
+    .page__summary {
+        .big {text-align: center;}    
+    }
+}
+
