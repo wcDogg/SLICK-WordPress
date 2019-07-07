@@ -15,14 +15,24 @@
 
     "build-task:destroy-dist": "del-cli slick",
     "build-task:make-dist": "make-dir slick",
-    "build-task:copy-php": "cpy \"**/*.*\" \"../../slick\" --cwd=src/templates",
+
+    "build-task:copy-templates": "cpy \"**/*.*\" \"../../slick\" --cwd=src/templates",
     "build-task:copy-assets": "cpy \"**/*.*\" \"../../slick/assets\" --cwd=src/assets --parents",
-    "build-task:copy-includes": "cpy \"**/*.*\" \"../../slick/includes\" --cwd=src/includes --parents",
+    "build-task:copy-acf": "cpy \"**/*.*\" \"../../slick/acf-json\" --cwd=src/acf-json", 
+    "build-task:copy-includes": "cpy \"**/*.*\" \"../../slick/inc\" --cwd=src/inc", 
+    "build-task:copy-languages": "cpy \"**/*.*\" \"../../slick/languages\" --cwd=src/languages",       
+    "build-task:copy-parts": "cpy \"**/*.*\" \"../../slick/parts\" --cwd=src/parts --parents",
+
     "build-task:style": "node-sass --output-style compressed src/sass/style.scss slick/style.css",
     "build-task:styleAuto": "postcss slick/style.css -u autoprefixer -r",
+
+    "build-task:rtl": "node-sass --output-style compressed src/sass/rtl.scss slick/rtl.css",
+    "build-task:rtlAuto": "postcss slick/rtl.css -u autoprefixer -r",
+
     "build-task:sass": "node-sass --output-style compressed src/sass/*/ -o slick/css/*",
     "build-task:sassAuto": "postcss slick/css -u autoprefixer -r",
-    "build-task:babel": "babel src -d slick",
+
+    "build-task:babel": "babel src/js -d slick/js",
     "build": "npm-run-all -s -c build-task:*"
   },
   "repository": {

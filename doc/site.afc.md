@@ -1,6 +1,9 @@
 # Advanced Custom Fields
 
-## Common
+Hide fields in admin screens:
+https://support.advancedcustomfields.com/forums/topic/hiding-a-field-on-the-admin-screen/
+
+## Common ACF
 
     page_subtitle
     page_summary 
@@ -10,228 +13,164 @@
     related_post
     related_page
 
-## Taxonomies
+## Taxonomy ACF
 
     tax_subtitle
     tax_image
     tax_icon
 
+# Highlight
+
+/highlight/
+    all-around-best     All-Around Best
+    subscribe-win       Subscribe & Win
+    key-natural         Natural & Organic
+    key-low-osmo        Low Osmolality
+
+# Formulas
+
+/formulas/
+    water               Water Based
+    silicone            Silicone Based
+    silicone-hybrid     Silicone Hybrid
+    mineral-oil         Mineral Oil Based
+    plant-oil           Plant Oil Based
+    aloe                Aloe Vera Based
+
+## Ingredients 
+
+ACF
+    ingredients_text
+    ingredients_free
+    ingredients_aloe_warn
+    ingredients_list
+        ingredient_single
+
+/ingredients/
+    agave               Agave
+    aloe                Aloe Vera 
+    botanicals          Botanicals
+    carrageenan         Carageenan
+    flavor              Flavor (Aroma)
+    gluconolactone      Gluconolactone 
+    glycerin            Glycerin
+    mineral-oil         Mineral Oil
+    peg                 PEG & Other Glycols
+    plant-cellulose     Plant Cellulose
+    plant-gums          Plant Gums
+    plant-oils          Plant Oils
+    propanediol         Propanediol
+    pg                  Propylene Glycol
+    silicone            Slicone
+    water               Water
+    xylitol             Xylitol
+
+# Recommended For
+
+/recommended-for/
+    vaginal-sex                 Vaginal Sex 
+    daily-personal-moisture     Daily Personal Moisture
+    use-with-condoms            Condoms
+    sex-toys                    Sex Toys
+    masturbation                Masturbation 
+    oral-sex                    Oral Sex
+    anal-sex                    Anal Sex
+    shower                      Shower & Hot Tub
+    ttc                         Trying to Concieve (TTC)    
+
 
 ## Material Safety
 
-    safe_silicone       Safe for Silicone
-    safe_latex          Safe for Latex
-    safe_polyurethane   Safe for Polyurethane
-    safe_polyisoprene   Safe for Polyisoprene
-    safe_nitrile        Safe for Nitrile
-    safe_lambskin       Safe for Lambskin
-    safe_text           Safety Text
+    warn_aloe_polyurethane
+    warn_silicone_silicone
+    warn_plant_oil_latex
+    wart_mineral_oil_latex   
 
-    safe_icon_true
-    safe_icon_false
-    safe_icon_undetermined
+    safe_text
 
+    /safe-for/
+        silicone
+        latex
+        polyurethane
+        polyisoprene
+        nitrile
+        lambskin
 
-## Cleanup
+## Cleanup ACF
 
     cleanup
-        Plain water
-        Light soap
-        Soap
+        1 : Washes off with plain water. Won't stain most fabrics.
+        2 : Washes off with light soap and water. May stain some fabrics.
+        3 : Washes off with soap and water. Spot treat fabrics before washing.
 
-        Washes off with plain water. Unlikely to stain fabrics.
-        Washes off with light soap & water. May stain some fabrics.
-        Washes off with soap & water. Spot-treat fabrics before washing.        
+## Consistency
 
-    cleanup_icon  
-    cleanup_warn_icon  
+ACF
+    consistency_reactivate
+    consistency_media
+    consistency_text
 
-    cleanup_warn - not a field - tie to Base Formula taxonomy
-    
-        Aloe-based lubricants do dry, but can become slippery again with water. Be sure to wash hands and clean spills. 
+/consistency/
+    liquid  
+    gel        
+    cream       
+    oil    
 
-        Mineral oil never completely dries and can remain slippery for a long time. Be sure to wash hands and clean spills.  
+## Lasting Power
 
-        Plant oils never completely dry and can remain slippery for a long time. Be sure to wash hands and clean spills.  
+/lasting-power/
+    lower-lasting 
+    moderate-lasting
+    high-lasting 
+    extra-high-lasting    
 
-        Silicone never completely dries and remains slippery for a long time. Be sure to wash and clean spills.   
 
-        Water-based lubricants do dry, but can become slippery again with water. Be sure to wash hands and clean spills. 
+ ## Dries ACF               
+
+    dry_feel    
+        1 : Leaves a soft, smooth feel.
+        2 : Leaves a slick feel.
+        3 : Leaves a tacky feel.
+        4 : Leaves a tight feel.      
+    dry_look    
+        1 : Dries matte.
+        2 : Dries to a sheen.
+        3 : Dries glossy.              
 
 
-## Dries                
-
-    dry_look    Dries matte.
-                Dries to a sheen.
-                Dries glossy.
-
-    dry_feel    Leaves a soft, smooth feel.
-                Leaves a slick feel.
-                Leves a tacky feel.
-                Leaves a tight feel.         
-
-## Taste
+## Taste & Small ACF
 
     taste
-        No taste
-        Light taste
-        Strong taste
-
     taste_attributes
-        Chemically
-        Sweet
-        Bitter
-        Fruity
-
     taste_numb
-        No tongue numbing
-        Light tongue numbing
-        Strong tongue numbing
-
     taste_feel
-        No gross mouth-feel
-        Unpleasant mouth-feel
-
     smell
-        No smell
-        Light smell
-        Strong smell
-
     smell_attributes
-        Chemically
-        Sweet
-        Flowery
-        Fruity
-
     taste_text
 
 
-## Packaging
-
-    fda_status
-        Approved
-        Not approved
-        Pending approval
-    fda_link
-
-    shelf_life
-    shelf_life_opened
-        Single Use
-        3 months
-        6 months
-        9 months
-        12 months
-        15 months
-        18 months
-        21 months
-        24 months
-        27 months
-        30 months
-        33 months
-        36 months
-
-    ph_status
-        Known
-        Unknown
-    ph_value
-
-    osmolality_status
-        Known
-        Unknown
-    osmolality_value   
-    osmolality_unit
-        mOsm/kg H2O
-        mOsm/L H2O
-
-    packaging_text
-
-## Consistency & Lasting Power
-
-    reactivate
-        Add water to reactivate
-        Add lube to reactivate
-    reactivate_icon
-    consistency_gif
-    consistency_text
-
-
-## Gallery 
-
-    related_gallery
-    <?php photo_gallery(26) ?>
-
-## Samples
-    samples_from
-        None
-        Brand
-        Manufacturer
-        CheapLubes
-        Amazon
-        Other
-    samples_other
-
-    LUBE has passed our initial screening based on ingredients, manufacturer info, and customer reviews. We have not obtained samples yet.  
-
-    Many thanks to the people at BRAND for supplying the products used in this review - we appreciante your support! 
-
-    The products used in this review were purchased by SLICK.SEXY from BRAND/MANUFACTURER. 
-    The products used in this review were purchased by SLICK.SEXY from CheapLubes. 
-    The products used in this review were purchased by SLICK.SEXY from AMAZON. 
-
-
-
-
-## Buy Buttons
+## Buy Buttons ACF
 
     buy_amazon_icon
     buy_amazon_text
     buy_amazon_url
 
-    <?php if( get_field('buy_amazon_url') ): ?>
-        <a class="buy buy--amazon" title="Buy on Amazon" href="<?php the_field('buy_amazon_url'); ?>"><?php the_field('buy_amazon_icon'); the_field('buy_amazon_text'); ?></a>
-    <?php endif; ?>
-
     buy_cheap_icon
     buy_cheap_text
     buy_cheap_url
-
-    <?php if( get_field('buy_cheap_url') ): ?>
-        <a class="buy buy--cheap" title="Buy from CheapLubes.com" href="<?php the_field('buy_cheap_url'); ?>"><?php the_field('buy_cheap_icon'); the_field('buy_cheap_text'); ?></a>
-    <?php endif; ?>
-
 
     buy_manufacturer_icon
     buy_manufacturer_text
     buy_manufacturer_url
 
-    <?php if( get_field('buy_manufacturer_url') ): ?>
-        <a class="buy buy--manufacturer" title="Buy from the manufacturer" href="<?php the_field('buy_manufacturer_url'); ?>"><?php the_field('buy_manufacturer_icon'); the_field('buy_manufacturer_text'); ?></a>
-    <?php endif; ?>
-
     buy_offer_icon
     buy_offer_text
     buy_offer_url
 
-    <?php if( get_field('buy_offer_url') ): ?>
-        <a class="buy buy--offer" title="Get this offer" href="<?php the_field('buy_offer_url'); ?>"><?php the_field('buy_offer_icon'); the_field('buy_offer_text'); ?></a>
-    <?php endif; ?>
-
-
-## Ingredients
-
-ingredient_text
-ingredient_glycerin_free
-ingredient_glycol_free
-ingredient_paraben_free
-ingredient_list
-    ingredient_single
-
 
 ## Price
 
-    price_msrp
     price_real
-    price_icon
 
     $0.00-$0.49
     $0.50-$0.99
@@ -254,21 +193,118 @@ ingredient_list
     $9.00-$9.49
     $9.50-$9.99
 
+## Packaging
+
+    fda_status
+        1 : Approved
+        2 : Not approved
+        3 : Pending approval
+    fda_url
+
+    shelf_life
+    shelf_life_opened
+        Single Use
+        3 months
+        6 months
+        9 months
+        12 months
+        15 months
+        18 months
+        21 months
+        24 months
+        27 months
+        30 months
+        33 months
+        36 months
+
+    ph_status
+        1 : Known
+        2 : Unknown
+        3 : Not applicable
+        4 : Not applicable for silicone lubricants
+    ph_value
+
+    osmolality_status
+        1 : Known
+        2 : Unknown
+        4 : Not applicable for silicone lubricants
+    osmolality_value   
+    osmolality_unit
+        1 : mOsm/kg H2O
+        2 : mOsm/L H2O
+
+    packaging_text
 
 
-## Offers
 
-page_subtitle
-page_summary
+## Samples ACF
 
-offer_start
-offer_end
-offer_related
+    samples_from
+        1 : None - Initial review
+        2 : Donated by brand
+        3 : Purchased from manufacturer
+        4 : Purchased from CheapLubes
+        5 : Purchased from Amazon
+        6 : Other 
+    sample_other
 
-offer_site_name
-offer_site_url
+
+## Offers ACF
+
+    offer_start
+    offer_end
+    offer_related
+
+    offer_site_name
+    offer_site_url
 
 
-## Documentation
+# Brands 
 
-https://www.advancedcustomfields.com/resources/querying-relationship-fields/
+/lubricnet-brands/
+/brands/
+    aloe-cadabra        Aloe Cadabra
+    astroglide          Astroglide
+    aqua-lube           Aqua Lube
+    blossom-organics    Blossom Organics
+    boy-butter          Boy Butter
+    coconu              Coconu
+    divine-9            Divine 9
+    dreambrands         DreamBrands
+    earthly-body        Earthly Body
+    elbow-grease        Elbow Grease
+    first-response      First Response
+    genneve             Genneve
+    good-clean-love     Good Clean Love
+    gun-oil             Gun Oil
+    intimate-earth      Intimate Earth
+    jimmyjane           Jimmyjane
+    maple-holistics     Maple Holistics
+    organic-glide       Organic Glide
+    passion             Passion
+    pink                Pink
+    pjur                Pjur
+    please              Please
+    sasmar              Sasmar
+    sensuva             Sensuva
+    simply-slick        Simply Slick
+    sir-richards        Sir Richard's
+    sliquid             Sliquid
+    spunk               Spunk
+    swiss-navy          Swiss Navy
+    system-jo           System Jo
+    wet                 Wet
+
+## Brands ACF
+    company
+    company_address
+    company_url
+
+    buy_amazon_url
+    buy_cheap_url
+    buy_manufacturer_url
+
+    brand_fb_url
+    brand_twitter_url
+    brand_yt_url
+    brand_linkedin_url

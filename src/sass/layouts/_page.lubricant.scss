@@ -1,0 +1,142 @@
+// 
+// Lubricant Review Custom Post Type
+// 
+// @this /sass/layouts/_page.lube.scss
+// @requires /sass/layouts/_page.scss
+//
+
+
+// 
+// Lube Classes
+// 
+
+body.single-lubricant {}
+article.type-lubricant {}
+article.lubricant {}
+
+
+.section--highlights {
+    .section__inner {}
+        .section__title {}
+        .section__content {}
+            .section__attributes.section__grid {}
+                .attribute--formula {}
+                .attribute--consistency {}
+                .attribute--lasting {}
+                .attribute--highlight {}
+                .attribute--recommended {}
+        .section__content {} // page summary
+        .section__buy {}
+}
+
+.section--offer {
+    .section__inner {}
+        .section__title {}
+        .section__subtitle {}
+        .section__content {}
+        .section__buy {}
+}
+
+.section--gallery {
+    .section__inner {}
+        .envira-gallery-wrap {}
+        .section__buy {}
+}
+
+.section--materials {
+    .section__inner {}
+        .section__title {}
+        .section__content {}
+            .section__attributes.section__grid {}
+                .attribute {}
+            .meta--warning {}
+        .section__content {} // Text
+        .section__buy {}
+}
+
+.section--ingredients {
+    .section__inner {}
+        .section__title {}
+        .section__content {}
+            .section__attributes.section__grid {}
+                .attribute--highlight {}
+                .attribute--ingredient {}
+            .section__meta {}
+                .meta--free {}
+        .section__content {} // ingredient repeater
+        .section__content {} // ingredient text 
+}
+
+.section--consistency {
+    .section__inner {}
+        .section__title {}
+        .section__content {}
+            .section__attributes {} // no grid
+                .attribute--consistency {}
+                .attribute--lasting {}
+            .meta--reactivate {}
+            .meta--dries {}
+        .section__video {} // MP4
+        .section__gif {} // GIF
+        .section__content {}
+        .section__buy {}
+}
+
+.section--taste {
+    .section__inner {}
+        .section__title {}
+        .section__content {}
+            .attribute--taste {}
+            .attribute--smell {}
+        .section__content {}
+        .section__buy {}
+}
+
+.section--packaging {
+    .section__inner {}
+        .section__title {}
+        .section__content {}
+            .attribute--shelf {}
+            .attribute--shelf {}
+            .attribute--ph {}
+            .attribute--osmo {}
+            .attribute--fda {}
+            .section__italic {}
+        .section__content {}
+        .section__buy {}
+}
+
+.section--samples {
+    .section__inner {}
+        .section__title {}
+        .section__content {}
+        .section__content {} // disclaimer
+        .section__buy {}
+}
+
+
+
+// 
+// Section Grids
+// 
+
+.section--highlights {
+    .section__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
+    }
+}
+
+.section--materials {
+    .section__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
+    }
+}
+
+.section--ingredient {
+    .section__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
+    }
+}

@@ -1,0 +1,51 @@
+//
+//  Block Classes
+//
+div.block {
+    img.block__image {}
+    a.block__title {}
+        h1 {}
+        h2 {}
+}
+
+div.block--brand {
+    a.brand__link {}
+        img {}
+} 
+
+.block--brand {}
+.block--recommended {}
+.block--formula {}
+.block--highlight {}
+
+
+//
+// Blocks Base
+//
+.block {
+    display: grid;
+    border: $border__content;
+
+    &__image {
+        grid-column: 1/4; 
+        grid-row: 1/4;
+        width: 100%;
+        object-fit: cover;        
+    }
+
+    &__title {
+        grid-column: 2/3;        
+        grid-row: 2/3;
+        z-index: 1;   
+        padding: 0.5rem;
+        text-align: center;
+        background: $bg__content;        
+    }
+
+    h1, h2 {
+        margin: 0;
+        padding: 0;        
+    }
+
+} //
+

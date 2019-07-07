@@ -1,0 +1,140 @@
+// 
+// @this /sass/components/_nav-mobile.scss
+// @requires /js/AriaModal.js + related
+// @related /sass/components/_StickyHeader.scss
+// 
+
+// 
+//  Modal Classes
+// 
+
+div[data-modal-component] {
+    button[data-modal-open] {}
+    div[data-modal-overlay] {}
+        div[data-modal] {}
+            button[data-modal-xButton] {}
+            div[data-modal-content] {}
+}
+
+
+
+
+ // 
+ // Modal Layout
+ // 
+
+// Component wrapper <div>
+#mobile[data-modal-component] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+// Open <button>
+#mobile [data-modal-open] {
+    display: flex;
+    margin: 0; 
+    padding: 0.15em;    
+    @include font-size(1.802);
+    background: none;
+    border: none;
+    [data-modal-open-icon-wrap],
+    [data-modal-open-icon] {
+        height: 1em;
+        width: 1em;  
+    }
+} 
+
+
+// Overlay <div>
+#mobile [data-modal-overlay] {
+    padding: 0;
+    background: rgba(0,0,0,0.95)
+}
+
+// Modal <div>  - wraps button & content
+#mobile [data-modal] {
+    position: relative;
+    margin: auto;
+    // padding: 2rem;     
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    &:not([data-modal-active]) {
+        -webkit-animation-name: fadeOutRight;
+        animation-name: fadeOutRight;
+    }
+    &[data-modal-active] {
+        -webkit-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+    }
+}
+
+
+// Menus layout
+#mobile [data-modal-content] {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+
+// Defualt close X <button>
+#mobile [data-modal-xButton] {
+    display: flex;
+    position: absolute;
+    z-index: 200;
+    top: 0.6rem;
+    right: 0.6rem;
+    margin: 0; 
+    padding: 0.15em;   
+    border-radius: 100%;
+    border: 2px solid;   
+    @include font-size(1.424);   
+    color: #000000;
+    background: #FFFFFF;
+
+    [data-modal-x-wrap],
+    [data-modal-x-icon] {
+        height: 1em;
+        width: 1em;   
+    }    
+
+    &:hover, &:active, &:focus {
+        background: #000000;
+        color: #FFFFFF;        
+    }
+}
+
+// 
+// Individual Menus
+// 
+
+#mobile [data-modal-content] {
+    nav h2 { margin-bottom: 0.62rem; }
+
+    #nav-header-01 {
+        h2  { border-bottom: 1px dotted $color__cyan; }
+        a:hover, a:active, a:focus { color: $color__cyan; }
+    }
+    #nav-header-02 {
+        h2 { border-bottom: 1px dotted $color__yellow; }
+        a:hover, a:active, a:focus { color: $color__yellow; }
+    }
+    #nav-header-03 {
+        h2 { border-bottom: 1px dotted $color__pink; }
+        a:hover, a:active, a:focus { color: $color__pink; }
+    }
+    #nav-header-04 {
+        h2 { border-bottom: 1px dotted $color__green; }
+        a:hover, a:active, a:focus { color: $color__green; }
+    }
+} // 

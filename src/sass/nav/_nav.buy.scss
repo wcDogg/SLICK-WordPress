@@ -1,0 +1,94 @@
+// 
+// <nav> Base
+// 
+
+.follow,
+.buy {		
+	display: flex;
+	justify-content: center;
+
+	a {
+		display: block;
+		@include font-size(1.8);
+		// margin: 6px;
+		height: 1.25em;
+		width: 1.25em;
+		line-height: 1.25;	
+		margin: 4px;	
+		text-align: center;		
+	}
+	// Font Awesome Pro icon
+	.svg-inline--fa {
+		height: 1em;
+		width: 1em;
+		padding: 0.2em;
+	}
+
+} //  
+
+
+// 
+// Icon Link Colors & Transitions
+// 
+
+.link--follow,
+.link--amazon,
+.link--manufacturer,
+.link--cheap {
+	position: relative;
+	z-index: 1;
+	transition: color 200ms linear;	
+	background: transparent; 
+	border-radius: 100%;	
+	border: 2px solid;
+
+    &:hover, &:active, &:focus {
+        color: #000000;
+    }
+
+	&::after {
+		content: '';
+        position: absolute;
+		z-index: -1;        
+		top: 0;
+		right: 0;
+		width: 100%;
+        height: 100%;
+        transform: scale(0);
+        transform-origin: center;
+		transition: transform 200ms linear;
+		border-radius: 100%;
+		// border: 2px solid;
+    }
+    
+    &:hover::after,
+    &:active::after,
+    &:focus::after {
+        transform: scale(1);
+        transform-origin: center;    
+    }
+}
+
+.link--follow {
+    color: #ffffff;	
+    border-color: #ffffff;
+	&::after {background: #ffffff;}	
+}
+
+.link--amazon {
+    color: $color__amazon;	
+    border-color: $color__amazon;
+	&::after {background: $color__amazon;}	
+}
+
+.link--manufacturer {
+    color: $color__manufacturer;	
+    border-color: $color__manufacturer;
+	&::after {background: $color__manufacturer;}	
+}
+
+.link--cheap {
+    color: $color__cheap;	
+    border-color: $color__cheap;
+	&::after {background: $color__cheap;}	
+}

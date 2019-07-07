@@ -13,6 +13,20 @@ html {
 	-webkit-text-size-adjust: 100%; 
 	word-break: break-word; 
 
+	// Font Rendering
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	// added by theme + jQuery
+	&.ios {}
+	&.mobile {}
+	&.ie {}
+	&.chrome {}
+	&.firefox {}
+	&.safari {}
+	&.opera {}
+
 	// TODO: Load `smooth-scroll.js` for non -webkit
 	// Then conditionally use this property for -webkit 
 	// (FF, Chrome, Opera)
@@ -47,7 +61,8 @@ body {
 	@include sans-400;
 	@include font-size;		
 	line-height: 1.602;	
-
+	color: #ffffff;
+	background: red;
 }
 
 body {

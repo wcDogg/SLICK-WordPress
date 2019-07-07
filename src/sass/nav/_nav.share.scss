@@ -1,0 +1,23 @@
+// 
+// Add To Any
+// https://wordpress.org/plugins/add-to-any/
+// 
+// @this /sass/bits/_share.scss
+// 
+
+.addtoany_list {
+	display: inline-flex !important;
+	padding: 0;
+    a {
+		padding: 0.5em;
+	}
+}
+	
+.a2a_kit a {
+    line-height: 1 !important;
+}
+
+.addtoany_list a:not(.addtoany_special_service)>span {
+	border-radius: 100% !important;
+	padding: 0.2em;
+}

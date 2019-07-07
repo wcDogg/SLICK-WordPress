@@ -2,25 +2,54 @@
 // @file /sass/color/_gloable-project.scss
 //
 
+
+
+$color__black: #212121;
+$color__black-a: #616161;
+
+$color__white: #ffffff;
+$color__white-a: #F5F5F5;
+
+$color__primary: #AEEA00;
+$color__primary-a: #00C853;
+
+$color__alt: #FFAB00;
+$color__alt-a: #FF6E40;
+
+// Links
+$color__link: #448AFF; // rgb(68, 138, 255)
 $color__link-h: #6200EA;
-$color__link: #2979FF;
 $color__focus: #2979FF;
 
-// Product Attributes
+// Attributes
 $color__true: #64DD17;
 $color__false: #D50000;
 $color__maybe: #FFAB00;
 
-
 // Buy Buttons
 $color__manufacturer: #AA00FF;
 $color__manufacturer-h: #6200EA;
-$color__cheap: #2979FF;
-$color__cheap-h: #6200EA;
+$color__cheap: #00E5FF;
+$color__cheap-h: #00B8D4;
 $color__offer: #64DD17;
 $color__offer-h: #00C853;
 $color__amazon: #FF9900;
 $color__amazon-h: #FF6F00;
+
+
+// Rainbow
+
+$color__yellow: #FFAB00;
+$color__orange: #FF3D00;
+$color__pink: #ff4081;
+$color__red: #D50000;
+$color__purple: #6200EA;
+$color__blue: #2979FF;
+$color__cyan: #00E5FF;
+$color__teal: #1DE9B6;
+$color__green: #64DD17;
+
+
 //
 // Brand Colors
 //

@@ -9,7 +9,7 @@
  * Uses CSS `transition` for animation of `translate'.
  *
  * @this /js/StickyHeader.js
- * @css /sass/components/header.scss
+ * @css /sass/layouts/_site.scss
  * 
  */
 
@@ -17,7 +17,7 @@ function StickyHeader(header, main) {
 
     // Inital variables
     let pinState = true;
-
+    // Small adjustment to header height
     let headerHeight = header.offsetHeight - 4 + 'px';
     // let headerHeight = getComputedStyle(header).height;
     let scrollCurrent = window.pageYOffset || document.documentElement.scrollTop; 
@@ -25,11 +25,10 @@ function StickyHeader(header, main) {
     let timeoutResize;
     let timeoutScroll;
 
-    console.log('Header height:', headerHeight);
+    // console.log('Header height:', headerHeight);
 
     // Set attributes
     header.setAttribute('data-header', '');
-    // header.setAttribute('data-header-sticky', '');
     main.style.paddingTop = headerHeight;
 
     // Listen for resize

@@ -8,42 +8,13 @@
 
 
 //
-// Site Header - Base 
-//
-
-.site__header {
-	display: grid;
-	grid-template-columns: max-content 1fr max-content;	
-	grid-gap: 0.5rem;
-	padding: 0.216rem 0.624rem;
-	align-items: center;	
-	grid-template-areas: 
-		'head-branding head-follow head-mobile';
-
-	.branding {
-		grid-area: head-branding; 
-		justify-self: start;
-	}
-	.follow {
-		grid-area: head-follow; 
-		justify-self: center;
-	}
-	#mobile {
-		grid-area: head-mobile; 
-		justify-self: end;
-	}
-
-} //
-
-
-//
 // @script /js/StickyHeader.js 
 // Loaded, header is sticky
 //
 
 [data-header] {	
 	position: fixed;
-	z-index: 10;
+	z-index: 20;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -62,26 +33,4 @@
 		animation-name: fadeInDown;	
 	}
 }
-
-
-//
-// Styles
-//
-
- .site__header {
-	color: $color__white;
-	background: #F57F17;
- }
-
- .site__header a,
- .site__header button {
- 	text-decoration: none;
-	color: $color__white;
-	&:hover,
-	&:active,
-	&:focus {
-		color: $color__black;
-	} 
-}
-
 

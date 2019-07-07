@@ -1,17 +1,10 @@
-/*!
- * skip-link-focus-fix.js (C) 1989, 1991 Free Software Foundation, Inc.
+/**
+ * File skip-link-focus-fix.js.
  *
- * Borrowed from Automatic _s Theme
- * https://github.com/Automattic/_s/blob/master/js/skip-link-focus-fix.js
- * 
- * GNU General Public License v2.0
- * https://github.com/Automattic/_s/blob/master/LICENSE
- * 
- * Learn more about the issue this script handles
- * https://git.io/vWdr2
- * 
+ * Helps with accessibility for keyboard only users.
+ *
+ * Learn more: https://git.io/vWdr2
  */
-
 ( function() {
 	var isIe = /(trident|msie)/i.test( navigator.userAgent );
 

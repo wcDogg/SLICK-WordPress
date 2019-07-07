@@ -5,7 +5,7 @@
 
 ## `font-size`
 
-This theme uses `$font-size` to set a base size. Changing `$font-size` will proportionatly scale all fonts that use this `@mixin`. This `@mixin` provides a `rem` value with `px` fallback. 
+This theme uses `$font-size` to set a base size. Changing `$font-size` will proportionatly scale all fonts that use this `@mixin`. This `@mixin` provides a `rem` value with `px` fallback: 
 
 	@include font-size(1.125);
 

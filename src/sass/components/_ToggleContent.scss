@@ -6,44 +6,63 @@
 // @requires /js/ToggleContent.js
 // 
  
+
+//
+// Toggle 
+//  
+
+[data-toggle] {
+  padding: 0.25rem 0;
+}
+
+.section [data-toggle]:first-of-type {
+  margin-top: 1rem;
+}
+.section [data-toggle]:last-of-type {
+  margin-bottom: 2rem
+}
+
+
 // 
-// Button - Added via JS
+// <button> - Added via JS
 // Replaces text inisde [data-toggle-title]
 // 
 
-// The <h> tag wrappin the <button>
+// The <h> tag wrapping the <button>
 [data-toggle-title][aria-label] {
     margin: 0;
-    padding: 2px 4px;    
+    padding: 0;  
+    @include font-size(1); 
 }
 
 // <button>
 [data-toggle-button] {
-    display: flex;
+    position: relative;
+    z-index: 10;
     width: 100%; 
-    padding: 0.35em 0.25em;
-    text-align: left;
+    padding: 0.5em 0.5em 0.5em 0.35em;
     font-size: inherit;
+    text-align: left;    
+    text-transform: none;
 
     &[aria-expanded] {}
     &[aria-expanded='false'] {}
     &[aria-expanded='true'] {}
 }
 
-// <span>
-[data-toggle-icon-wrap] {
-	display: inline-block;
-	line-height: 1;
-	text-align: center;
-}
 
 // <svg>
 [data-toggle-icon] {
-    transform-origin: center;
-    transition-property: transform;
-    transition-duration: 300ms;    
+    display: inline-block;
+    font-size: inherit;
     height: 1em;
     width: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 300ms; 
 }
 
 [aria-expanded="true"] [data-toggle-icon] {
@@ -69,10 +88,19 @@
         animation-timing-function: linear;             
         transform-origin: top;   
 
-        margin: 0 4px;       
-        padding: 1rem;   
-        border: 1px solid #B0BEC5;
-        border-top: none;        
+        padding: 1rem 0.5rem;  
+        background: $bg__content;
+        border: $border__content;
+        border-top: none;
+
+        p:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        p:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }      
     }
 
     &[aria-hidden='true'] {
@@ -89,29 +117,65 @@
 
 
 // 
-// Theme-specific styles
+// Button Varients
 //
 
-// Title
-[data-toggle-title][aria-label] {
-    @include font-size(1.266);
+[data-toggle-button] {   
+  color: #ffffff;
+  background: $bg__content;
+  border: $border__content;
+  transition: background-color 250ms;
+
+  &:hover, &:active, &:focus,
+  &[aria-expanded='true'] {
+    background-color: $color__link-h;        
+  }
+} // 
+
+.toggle--transparent [data-toggle-button] {
+    &:active,
+    &[aria-expanded='true'] {
+        background-color: transparent;        
+    }
 }
 
-// Button
-[data-toggle-button] {   
-    color: #ffffff;
-    background-color: #3D5AFE;
-    border: 1px solid #3D5AFE;
-    transition: background-color 250ms;
 
-    &:hover, 
-    &:active,
-    &:focus,
+.toggle--green [data-toggle-button] {
+  border-color: $color__green;
+  &:hover, &:active, &:focus,
+  &[aria-expanded='true'] {
+    background-color: $color__green;        
+  }
+}
+
+.toggle--yellow [data-toggle-button] {
+  border-color: $color__yellow;
+  &:hover, &:active, &:focus,
+  &[aria-expanded='true'] {
+    background-color: $color__yellow;        
+  }
+}
+
+.toggle--orange [data-toggle-button] {
+  border-color: $color__orange;
+  &:hover, &:active, &:focus,
+  &[aria-expanded='true'] {
+    background-color: $color__orange;        
+  }
+}
+
+.toggle--red [data-toggle-button] {
+  border-color: $color__red;
+    &:hover, &:active, &:focus,
     &[aria-expanded='true'] {
-        background-color: #6200EA;
-        border: 1px solid #6200EA;        
+        background-color: $color__red;        
     }
-} // 
+}
+
+
+
+
+
 
 
 // 

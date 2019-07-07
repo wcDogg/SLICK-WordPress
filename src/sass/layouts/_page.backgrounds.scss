@@ -1,0 +1,11 @@
+// 
+// Page Section Backgrounds
+// 
+
+article .section:nth-child(odd) {
+    @include bg-slash-r;
+}
+
+article .section:nth-child(even) {
+    @include bg-slash-l;
+}

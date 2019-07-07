@@ -1,0 +1,66 @@
+// 
+// Basic Section
+// 
+section.section {
+    .section__inner {}
+        .section__title {}
+        .section__subtitle {}
+        .section__content {}
+}
+
+
+// 
+// Table Section
+// 
+section.section.section--table {
+    .section__inner {}
+        .section__title {}
+        .section__subtitle {}
+        .section__content {}
+        .section__table {}
+}
+
+
+// 
+// Section with one or more toggles 
+// 
+section.section.section--toggles {
+    .section__inner {}
+        .section__title {}
+        .section__subtitle {}
+        .section__content {}
+        .toggle {} // ...
+}
+
+
+// 
+// List Section
+// 
+section.section.section--list {
+    .section__inner {}
+        .section__title {}
+        .section__subtitle {}
+        .section__content {}
+        .list {} // grid
+            .svg-inline--fa {}
+            .list__item-text {}
+}
+
+.list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 1.4rem;
+    .svg-inline--fa { margin-top: 0.25em; }
+}
+
+.list__item-text {
+    > p:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    > p:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}

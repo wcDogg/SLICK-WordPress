@@ -4,7 +4,6 @@
 
  
 img {
-	display: block;
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
@@ -13,9 +12,19 @@ img {
 	vertical-align: middle;
 }
 
-svg, .icon {
+svg {
 	height: 100%;
 	width: 100%;
+}
+
+// <svg>
+.icon {
+	display: inline-block;
+    font-size: inherit;
+	height: 1em;
+	width: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
 	fill: currentColor;
 }
 

@@ -11,12 +11,9 @@ i.svg-inline--fa {}
 .attribute__label {}
 .attribute__value {}
 
-.attribute[data-attribute] {}
-.attribute[data-attribute="true"] {}
-.attribute[data-attribute="maybe"] {}
-.attribute[data-attribute="false"] {}
-
-
+.attribute--true {}
+.attribute--false {}
+.attribute--maybe {}
 
 // Wrapper <span> or <a>
 .attribute {
@@ -36,8 +33,19 @@ div.attribute {
 // Font Awesome icon
 .attribute .svg-inline--fa {
     font-size: 1.6em;
-    margin-right: 0.2em;
+    margin-right: 0.25em;
 }
+
+.attribute--highlight,
+.attribute--recommended {
+    .svg-inline--fa {
+        width: 1.125em; // match `fa-fw`
+    }    
+}
+
+
+
+
 
 // <span>
 .attribute__label {
@@ -52,41 +60,20 @@ div.attribute {
 // True, False, Maybe
 // 
 
-.attribute[data-attribute="true"] {
+.attribute--true {
     color: $color__true; 
-      
-    &::before {
-        @extend %fa-before; 
-        @extend %fa-free-fas; 
-        content: '\f00c';
-    }
 }
 
-.attribute[data-attribute="maybe"] {
+.attribute--maybe {
     color: $color__maybe;
-    
-    &::before {
-        @extend %fa-before;
-         @extend %fa-free-fas; 
-         content: '\f128';
-    }
 }
 
-.attribute[data-attribute="false"] {
+.attribute--false {
     color: $color__false; 
-    
-    &::before {
-        @extend %fa-before; 
-        @extend %fa-free-fas; 
-        content: '\f00d';
-    }
 }
 
-a.attribute[data-attribute] {
+a.attribute {
     &:hover, &:active, &:focus {
         color: $color__link-h;
     }
 }
-
-
-

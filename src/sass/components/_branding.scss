@@ -1,69 +1,35 @@
 //
-// @this /sass/components/_branding.scss
+// Branding Classes 
 //
 
-.branding {
 
-	line-height: 1.266;	
-	
-	&__name {
-		@include serif-700;
-		@include font-size(1.125);		
-	}
-
-	&__slogan {
-		@include sans-400i;
-		@include font-size(0.79);
-	}
-
-	&__logo {}
-	&__icon {}	
+h1.branding {
+	a.branding__link {}
+	span.branding__logo {}	
+		.svg
+	span.branding__text {}
 
 }
 
-.branding--full {
+.branding { 
+	line-height: 1;
+	@include condensed-700;
+	@include font-size(1.424);	
+	margin: 0;
+	padding: 0;	
 
-	display: grid;
-	justify-content: start;
-	grid-template-areas:
-	"logo name"
-	"logo slogan";	
-
-	.branding__name {
-		grid-area: name;
-		align-self: end;
+	&__link {
+		display: flex;
+		align-items: center;
 	}
 
-	.branding__slogan {
-		grid-area: slogan;
-		align-self: start;
-	}	
+	&__logo {}
 
-	.branding__logo {
-		grid-area: logo;
-		align-self: center;
-		@include font-size(2.565); // when fa icon
+	&__logo svg {
+		height: 1.62em;
+		width: 1.62em;
 	}
 
-	.branding__icon {padding: 0.25em;;}
+	&__text {}	
 
-} // --full
-
-
-.branding--compact {
-	display: flex;
-	align-items: center;
-
-	.branding__logo {
-		order: 1;
-		@include font-size(1.424); // when fa icon
-		// max-height: 1.242rem; // when img
-		// margin-right: 0.25rem;
-	}
-
-	.branding__name {
-		order: 2;
-	}
-
-} // --compact
-
+} // 

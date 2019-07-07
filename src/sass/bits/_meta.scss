@@ -1,32 +1,50 @@
 // 
-// @this /sass/bits/_meta.scss
-// 
-
-
-// 
 // Meta Classes
 // 
-
-.meta {}
-.meta .svg-inline--fa {}
-
-.meta--more {}
+div.meta {}
+span.meta {}
+.meta {
+    svg.svg-inline--fa {}
+    span.meta__value {}
+}
 
 
 // 
-// Meta Styles
+// Meta Base
 // 
-
 .meta {
     @include condensed-400;
     @include font-size(0.79); 
+    .svg-inline--fa {}
+    .meta__value {}
 }
 
-a.meta,
-.meta a {
-    text-decoration: none;
-}
 
-.meta--more .svg-inline--fa {
-    margin-left: 4px;
-}
+div.meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 0.5em;
+    margin: 0.6em;
+    .svg-inline--fa {
+        margin-top: 0.1875em;
+    }
+    &.meta--warning {
+        margin: 0.6em 0;
+    }
+} //
+
+
+span.meta {
+    .svg-inline--fa {
+        margin-right: 0.25em;
+    }
+    &.meta--free {
+        padding: 0.6em;
+    }
+} // 
+
+
+// 
+// Meta One-Offs
+// 
+

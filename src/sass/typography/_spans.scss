@@ -7,20 +7,21 @@
   @include condensed-700;
   font-size: 2rem;
   color: rgba(#FFFFFF, 0.6);
+  line-height: 1;
 }
 
 b, strong { 
-  @include sans-700; 
-  color: $color__true;
+  @include condensed-700;
+    text-transform: uppercase;
+    // text-decoration: underline;
+    // text-decoration-style: dotted;
+    // text-decoration-color: #E0E0E0;
 } 
-
 
 abbr[title] {
   text-decoration: underline;
   text-decoration: underline dotted;
 }
-
-
 
 hr {
   height: 0; 

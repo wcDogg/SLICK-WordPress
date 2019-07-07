@@ -60,20 +60,20 @@ fieldset label {
 [type="radio"],
 [type="checkbox"] {
     cursor: pointer;  
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-            appearance: none;
-    font-size: 0.8rem;
-    line-height: 1; 
-    display: inline-flex;   
-	&::before {
-        content: '';
-        width: 1em;
-        height: 1em;    
-        background-size: 1em 1em;
-        background-position: 0;
-        background-repeat: no-repeat; 
-	}
+	// -webkit-appearance: none;
+	//    -moz-appearance: none;
+    //         appearance: none;
+    // font-size: 0.8rem;
+    // line-height: 1; 
+    // display: inline-flex;   
+	// &::before {
+    //     content: '';
+    //     width: 1em;
+    //     height: 1em;    
+    //     background-size: 1em 1em;
+    //     background-position: 0;
+    //     background-repeat: no-repeat; 
+	// }
 
 	&:hover,
 	&:active,
@@ -86,25 +86,25 @@ fieldset label {
 
 [type="radio"] {
     
-	&:checked {}
+	// &:checked {}
 
-	&::before {
-        background-image: url(../assets/placeholders/ph.circle.svg);
-    }
-	&:checked::before {
-        background-image: url(../assets/placeholders/ph.dot.svg);
-    }
+	// &::before {
+    //     background-image: url(./assets/placeholders/ph.circle.svg);
+    // }
+	// &:checked::before {
+    //     background-image: url(./assets/placeholders/ph.dot.svg);
+    // }
 }
 
 [type="checkbox"] {
-	&:checked {}
+	// &:checked {}
 
-	&::before {
-        background-image: url(../assets/placeholders/ph.square.svg);
-    }
-	&:checked::before {
-        background-image: url(../assets/placeholders/ph.check.svg);
-    }
+	// &::before {
+    //     background-image: url(./assets/placeholders/ph.square.svg);
+    // }
+	// &:checked::before {
+    //     background-image: url(./assets/placeholders/ph.check.svg);
+    // }
 }
 
 
@@ -124,7 +124,8 @@ fieldset label {
 [type="readonly"] {
 	cursor: not-allowed;
 	font-weight: bold;	
-	color: $mc__gray-700;
+    color: $mc__gray-700;
+    padding: 0.15em;
 }
 
 
@@ -228,87 +229,86 @@ select {
 
 
 // 
-// Text inputs with SVG backgrounds
+// Text inputs with SVG backgrounds 
 // 
+
+[type="text"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+}
 
 [type="email"] {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
-    background-image: url(../assets/placeholders/ph.email.svg);    
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.email.svg);    
 }
 
 [type="password"] {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
-    background-image: url(../assets/placeholders/ph.password.svg);    
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.password.svg);    
 }
 
 [type="search"] {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
-    background-image: url(../assets/placeholders/ph.search.svg);   
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.search.svg);   
 	-webkit-appearance: textfield; 
 	&::-webkit-search-decoration {
 		-webkit-appearance: none;
 	}
 }
 
+#author,
 [type="c-name"] {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
-    background-image: url(../assets/placeholders/ph.username.svg);  
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.user.svg);  
 }
 
 [type="c-phone"] {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
-    background-image: url(../assets/placeholders/ph.phone.svg);  
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.phone.svg);  
 }
 
 [type="tel"] {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
-    background-image: url(../assets/placeholders/ph.phone.svg);  
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.phone.svg);  
 }
 
 [type="url"] {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
-    background-image: url(../assets/placeholders/ph.url.svg);   
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.url.svg);   
 }
 
 
 textarea {
     @extend %input;
-    @extend %input-bg;
     cursor: text;
+    padding: 0.15em;
     width: 100%;
     overflow: auto; 
     resize: vertical; 
-    background-image: url(../assets/placeholders/ph.textarea.svg); 
-    background-position: 0.25em 0.2em ;
+    // @extend %input-bg;   
+    // background-image: url(./assets/placeholders/ph.textarea.svg); 
+    // background-position: 0.25em 0.2em ;
 }
-
-
-// 
-// Demo 
-// 
-
-@include test-mode {
-
-    .grid-inputs {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start; 
-        > div {margin: 0 0.75rem;}
-    }
-
-} // 
 
