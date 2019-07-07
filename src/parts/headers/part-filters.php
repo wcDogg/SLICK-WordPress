@@ -11,6 +11,8 @@ echo '<section class="section section--filters">';
             echo '<div class="facet"><label>Consistency</label>' .facetwp_display( 'facet', 'consistency' ). '</div>';
             echo '<div class="facet"><label>Lasting Power</label>' .facetwp_display( 'facet', 'lasting_power' ). '</div>';
             echo '<div class="facet"><label>Brands</label>' .facetwp_display( 'facet', 'brands' ). '</div>';
+            echo '<div class="facet"><label>Sizes</label>' .facetwp_display( 'facet', 'lubricant_sizes' ). '</div>'; 
+            echo '<div class="facet"><label>Price per Oz</label>' .facetwp_display( 'facet', 'lubricant_price' ). '</div>';            
             echo '<button onclick="FWP.reset()" class="button button--reset" type="reset" aria-label="Clear All Filters" title="Clear All Filters">Clear Filters</button>';
 
         echo '</div><!-- .section__grid -->';

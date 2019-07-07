@@ -193,6 +193,31 @@ ACF
     $9.00-$9.49
     $9.50-$9.99
 
+## Sizes
+
+sizes_lubricant
+
+Single Use
+1oz
+2oz
+3oz
+4oz
+5oz
+6oz
+7oz
+8oz
+9oz
+10oz
+11oz
+12oz
+13oz
+14oz
+15oz
+16oz
+24oz
+32oz
+64oz
+
 ## Packaging
 
     fda_status
