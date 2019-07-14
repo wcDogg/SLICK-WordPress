@@ -50,15 +50,72 @@
 		object-fit: cover;
 	}
 	.buy {
-		display: block;
-		margin-top: 0.6rem;
+		display: inline-block;
+		margin: 0.6rem 0 0.4rem 0;
 	}	
 
 } // 
 
+// 
+// Single Offer card
+// 
 
 .card.offer {}
 
+
+// 
+// Single Favorite card
+// 
+
+.card--favorite {
+	p:nth-of-type(1) {
+		img {}
+	}
+	p:nth-of-type(2) {
+		a {} // post title
+	}
+	p:nth-of-type(3) {
+		a.simplefavorite-button {}
+	}
+}
+
+.card--favorite {
+	display: grid;
+	// grid-column-gap: 0.5rem;
+	grid-template-columns: 120px 1fr max-content;
+	grid-template-areas: 
+		'fav-img fav-title fav-button';
+
+	p:nth-of-type(1) { 
+		grid-area: fav-img; 
+		display: grid; // for object-fit;
+		padding: 0;		
+	}
+	p:nth-of-type(2) { 
+		grid-area: fav-title; 
+		align-self: center;
+		padding: 0.5rem;			
+	}
+	p:nth-of-type(3) { 
+		grid-area: fav-button;
+		align-self: center; 
+		padding: 0.5rem;
+	}	
+	p {
+		line-height: 1;	
+		margin: 0;
+		@include condensed-700;
+		@include font-size(1.6);		
+	}
+	img {
+		object-fit: cover;
+	}
+} //
+
+
+// 
+// Single Brand card with overlay
+// 
 
 .card.brand {
 	background: none;
@@ -81,13 +138,6 @@
 	}
 } // 
 
-
-div.content {
-	a {}
-	a div.content-overlay {}
-	a img.content-image {}
-	a div.content-details.fade-top {}
-}
 
 .card.brand .card__image {
 	position: relative;
@@ -139,9 +189,6 @@ div.content {
 		opacity: 1;
 	}
 }
-
-
-
 
 
 // 
@@ -198,9 +245,6 @@ div.content {
 		margin-right: 1em;
 	}
 }
-
-
-
 
 
 

@@ -4,7 +4,7 @@
     $formulas = get_the_terms( get_the_ID(), 'formulas', array("fields" => "all"));
     $consistency = get_the_terms( get_the_ID(), 'consistency', array("fields" => "all")); 
     $lasting = get_the_terms( get_the_ID(), 'lasting-power', array("fields" => "all"));
-
+    $favorite = get_favorites_button();
     $icon_formula = '<i class="far fa-fw fa-flask"></i>';
     $icon_consistency = '<i class="far fa-fw fa-hand-holding-water"></i>';
     $icon_lasting = '<i class="far fa-fw fa-stopwatch"></i>';
@@ -40,7 +40,9 @@
 
         echo '</div>';
         
+        echo $favorite;
         slick_buy_bar();
+        
 
     echo '</main>';
 

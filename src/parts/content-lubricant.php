@@ -9,7 +9,8 @@
 	<?php get_template_part('parts/lubricant/section', 'consistency'); ?>
 	<?php get_template_part('parts/lubricant/section', 'taste'); ?>
 	<?php get_template_part('parts/lubricant/section', 'packaging'); ?>
-	<?php get_template_part('parts/lubricant/section', 'samples'); ?>
+	<?php get_template_part('parts/lubricant/section', 'samples'); ?>	
+	<?php get_template_part('parts/lubricant/section', 'amazon'); ?>
 	<?php get_template_part('parts/page/page', 'comments' ); ?>
 	
 </article><!-- #post-<?php the_ID(); ?> -->

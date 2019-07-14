@@ -148,14 +148,15 @@ footer.site__footer {
 .site__copyright { 
 	text-align: center;
 	.meta { padding: 0 0.5em;}
+	margin: 1rem 0;
 }
 
-
-.site__footer-menus {
-	display: grid;
-	grid-gap: 1rem;
-	grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
-	justify-content: center;
+.site__disclaimers {
+	max-width: 820px;
+	margin: 2rem auto 1rem auto;
+	@include font-size(0.79);
+	@include condensed-400;
+	color: $mc__gray-400;
 }
 
 .grecaptcha-badge {

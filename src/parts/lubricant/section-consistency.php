@@ -17,7 +17,7 @@ echo '<section class="section section--consistency">';
     echo '<div class="section__inner">';
         echo '<h1 class="section__title">Consistency &amp; Lasting Power</h1>';
  
-        if($consistency || $lasting || $reactivate || $dry_feel || $dry_look) :
+        if( $consistency || $lasting ) :
             echo '<div class="section__content">';
 
                 if($consistency || $lasting) :

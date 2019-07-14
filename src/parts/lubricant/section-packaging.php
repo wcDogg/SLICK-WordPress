@@ -35,7 +35,7 @@ if ($fda_status || $shelf_life || $ph_status || $osmo_status || $text) :
                     if($shelf_opened) :
                         echo'<div class="attribute attribute--shelf">';
                             echo $shelf_icon;
-                            echo '<span class="attribute__label">Shelf Life Opened: </span>';
+                            echo '<span class="attribute__label">Replace open bottles every </span>';
                             echo '<span class="attribute__value">'.$shelf_opened.'</span>';
                         echo '</div>'; 
                     endif;
@@ -65,14 +65,6 @@ if ($fda_status || $shelf_life || $ph_status || $osmo_status || $text) :
                                 echo '<span class="attribute__value">Not applicable</span>';
                             echo '</div>';
                         endif;
-                        // Not applicable for silicone lubricants
-                        if($ph_status == 4) :
-                            echo'<div class="attribute attribute--ph">';
-                                echo $ph_icon;
-                                echo '<span class="attribute__label">pH: </span>';
-                                echo '<span class="attribute__value">Not applicable for silicone lubricnats</span>';
-                            echo '</div>';
-                        endif;
                     endif;
 
                     if($osmo_status):
@@ -100,14 +92,6 @@ if ($fda_status || $shelf_life || $ph_status || $osmo_status || $text) :
                                 echo '<span class="attribute__value">Not applicable</span>';
                             echo '</div>';
                         endif;
-                        // Not applicable for silicone lubricants
-                        if($osmo_status == 4) :
-                            echo'<div class="attribute attribute--ph">';
-                                echo $ph_icon;
-                                echo '<span class="attribute__label">Osmolality: </span>';
-                                echo '<span class="attribute__value">Not applicable for silicone lubricnats</span>';
-                            echo '</div>';
-                        endif;
                     endif;
 
                     if ($fda_status) :
@@ -132,15 +116,21 @@ if ($fda_status || $shelf_life || $ph_status || $osmo_status || $text) :
                             echo'<div class="attribute attribute--fda">';
                                 echo $fda_icon;
                                 echo '<span class="attribute__label">FDA 501(k) Status: </span>';
-                                echo '<span class="attribute__value"><a href="#">Pending Approval</a></span>';
+                                echo '<span class="attribute__value">Pending Approval</span>';
                             echo '</div>';
-                        endif;                       
+                        endif;   
+                         // not applicable
+                        if($fda_status == 4) :
+                            echo'<div class="attribute attribute--fda">';
+                                echo $fda_icon;
+                                echo '<span class="attribute__label">FDA 501(k) Status: </span>';
+                                echo '<span class="attribute__value">Not applicable</span>';
+                            echo '</div>';
+                        endif; 
                         // Show only when applicable (hide for silicone, creams, ...)
-                        if ( $ph_status == 1 || $ph_status == 2 )  : ?>
-                            <div>
-                                <p class="italic">In most cases, the FDA does not require manufacturers to disclose a lubricnat's pH or osmolality. Because we feel it's important to vaginal health, we do request this information. However, it isn't always available or offered and does not impact our reviews.</p>
-                            </div>
-                        <?php endif;
+                        if ( $ph_status == 1 || $ph_status == 2 )  : 
+                            echo '<div><p class="italic">In most cases, the FDA does not require manufacturers to disclose a lubricnat\'s pH or osmolality. Because we feel it\'s important to vaginal health, we do request this information. However, it isn\'t always available or offered and does not impact our reviews.</p></div>';
+                        endif;
                     endif;
 
                 echo '</div><!-- .section__content -->';

@@ -15,6 +15,10 @@
 				<a class="meta" title="Contact" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a>
 				<a class="meta" title="Mission" href="<?php echo esc_url( home_url( '/about' ) ); ?>">Mission</a>
 			</div>
+
+			<div class="site__disclaimers">
+				SLICK.SEXY is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.
+			</div>
 		<?
 				
 	echo '</footer><!-- #footer -->';

@@ -51,11 +51,6 @@ if ($samples_from) :
                 endif;   
                 
             echo '</div><!-- .section__content -->';
-
-            // Static
-            echo '<div class="section__content"><p class="italic">SLICK.SEXY affiliates with some, but not all, of the websites we link to. Affiliations do not affect our reviews and help keep this site free of advertising.</p></div>';
-
-            slick_buy_bar();
             
         echo '</div><!-- .section__inner -->';
     echo '</section><!-- .section--packaging -->';

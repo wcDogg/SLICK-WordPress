@@ -62,10 +62,7 @@ echo '<section class="section section--highlights">';
             echo '</div><!-- .section__grid -->'; 
 
             if ($price_real) :
-                echo '<div class="meta meta--price">'.$icon_price.'<span class="meta__value">Retail '.$price_real.' per oz.</span></div>';                     
-                if ( has_term( 'silicone', 'formulas', $post->ID) ) :
-                    echo '<div class="meta meta--price">'.$icon_price.'<span class="meta__value">To get the best price on silicone lubricants, purchase larger bottles - generally 8oz +</span></div>'; 
-                endif;                
+                echo '<div class="meta meta--price">'.$icon_price.'<span class="meta__value">Retail '.$price_real.' per oz.</span></div>';                
             endif; 
 
             if ($sizes_lubricant) :

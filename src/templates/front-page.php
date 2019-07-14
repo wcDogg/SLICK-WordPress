@@ -14,8 +14,7 @@ echo '<article id="home" class="home">';
                 echo '<div class="page__title-wrap">';
 
                     echo '<h1 class="page__title">What\'s in your lube?</h1>';
-                    echo '<h2 class="page__subtitle">Ingredients Matter</h2>';
-
+                    echo '<h2 class="page__subtitle">Ingredients Matter</h2>';     
                     echo '<nav id="nav-hero" class="nav nav--horizontal" role="navigation" aria-label="Popular Pages">';
                         wp_nav_menu( array(
                             'theme_location' => 'menu-hero',	

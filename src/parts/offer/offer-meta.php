@@ -4,7 +4,7 @@ $offer_site = get_field('offer_site_name');
 $offer_dates = get_field('offer_has_dates');
 $offer_start = get_field('offer_start');
 $offer_end = get_field('offer_end');
-$offer_dates_none = 'No Expiration Date';
+$offer_dates_none = 'No Expiration Date'; 
 
 if (has_term( '', 'brands' )) :
 

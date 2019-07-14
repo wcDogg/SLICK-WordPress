@@ -31,6 +31,22 @@ if( have_rows('flex_content') ):
                 echo '</div><!-- .section__inner -->';
             echo '</section><!-- .section -->';
 
+         elseif( get_row_layout() == 'amazon_section' ):
+
+            $amazon_section_title = get_sub_field('amazon_section_title');
+            $amazon_section_script = get_sub_field('amazon_section_script');  
+
+            echo '<section class="section section--amazon">';                 
+                echo '<div class="section__inner">'; 
+                    if ($amazon_section_title) : 
+                        echo '<h1 class="section__title">'.$amazon_section_title.'</h1>';              
+                    endif;
+                    echo '<div class="section__amazon">';
+                        echo $amazon_section_script;
+                    echo '</div><!-- .section__amazon -->';
+                echo '</div><!-- .section__inner -->';
+            echo '</section><!-- .section -->';           
+
         elseif( get_row_layout() == 'yt_section' ):
 
             $yt_section_class = get_sub_field('yt_section_class');
@@ -51,9 +67,11 @@ if( have_rows('flex_content') ):
                             echo '<h2 class="section__subtitle">'.$yt_section_subtitle.'</h2>';
                         endif;                        
                     endif;
-                    echo '<div class="section__content">';
-                        echo $yt_section_content;
-                    echo '</div><!-- .section__content -->';
+                    if ($yt_section_content) : 
+                        echo '<div class="section__content">';
+                            echo $yt_section_content;
+                        echo '</div><!-- .section__content -->';
+                    endif;
                     echo '<div class="section__iframe">';
                         echo '<iframe src="https://www.youtube.com/embed/'.$yt_section_video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                     echo '</div>';

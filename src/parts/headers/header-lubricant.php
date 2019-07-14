@@ -2,9 +2,10 @@
 
 $page_title = get_the_title();
 $page_subtitle = get_field('page_subtitle'); 
+$favorite = get_favorites_button();
 
 echo '<section class="section section--header">';
-   echo '<div class="section__inner">';
+    echo '<div class="section__inner">';
 
         echo '<div class="page__meta">';
 
@@ -33,9 +34,10 @@ echo '<section class="section section--header">';
 
         echo '<div class="page__image">';
             the_post_thumbnail('medium_large');
+            echo $favorite;
         echo "</div><!-- .page__image -->";	
 
         get_template_part('parts/headers/part', 'share');
-
+    
     echo '</div><!-- .section__inner  -->';
 echo '</section><!-- .section--header -->'; 

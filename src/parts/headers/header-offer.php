@@ -19,7 +19,7 @@ $offer_dates_none = 'No Expiration Date';
 echo '<section class="section section--header">';
     echo '<div class="section__inner">';
 
-        if (has_term( '', 'brands' )) :
+        if (has_term( '', 'brands' )) : 
             echo '<div class="page__meta">';
                 echo '<span class="meta meta--brands">';
                     the_terms( get_the_ID(), 'brands', '', ', ' );

@@ -1,10 +1,5 @@
-
-
-
-
 //
-// Buttons
-// @this /sass/components/_button.scss
+// Button Base
 // 
 
 
@@ -22,6 +17,7 @@ input.button {}
 // 
 %button-base,
 .button, 
+.simplefavorites-clear,
 [type=button],
 [type=reset],
 [type=submit] {
@@ -47,6 +43,7 @@ input.button {}
 // 
 
 %button-transition,
+.simplefavorites-clear,
 .button {
 	position: relative;
 	z-index: 1;
@@ -144,4 +141,30 @@ input.button,
 }
 
 .button--submit {}
+
+
+// 
+// Favorites plugin
+// See /na/_nav.buy for additional styles
+//
+.simplefavorite-button {
+    @include condensed-700;  
+    cursor: pointer;
+    margin: 6px;  // keep focus outline in view
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+    color: #ffffff;    
+    background: rgba(#000, 0.85);
+
+    span { margin-left: 4px; }
+
+    &:hover, &:active, &:focus, &.active {
+        opacity: 1 !important;     
+        text-decoration: none;           
+        color: #ffffff;
+    }
+}
+
+
+
 

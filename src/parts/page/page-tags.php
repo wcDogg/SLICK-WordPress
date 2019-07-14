@@ -9,7 +9,7 @@ $consistency = get_the_terms( get_the_ID(), 'consistency' );
 $lasting = get_the_terms( get_the_ID(), 'lasting-power' );
 $safe = get_the_terms( get_the_ID(), 'safe-for' );
 
-if ( $brands || $formulas || $highlight || $recommended || $ingredients || $consistency || $lasting || $safe ) :
+if ( $brands || $formulas || $highlight || $recommended || $consistency || $lasting || $safe ) :
 
     echo '<div class="list">';
         echo '<i class="fas fa-hashtag"></i>';
@@ -33,11 +33,6 @@ if ( $brands || $formulas || $highlight || $recommended || $ingredients || $cons
             if ( $recommended ) :
                 the_terms( get_the_ID(), 'recommended-for', '', ' &nbsp;' );
                 echo ' &nbsp;'; 
-            endif;
-
-            if ( $ingredients ) :
-                the_terms( get_the_ID(), 'ingredients', '', ' &nbsp;' ); 
-                echo ' &nbsp;';  
             endif;
 
             if ( $consistency ) :

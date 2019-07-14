@@ -18,7 +18,7 @@ function StickyHeader(header, main) {
     // Inital variables
     let pinState = true;
     // Small adjustment to header height
-    let headerHeight = header.offsetHeight - 4 + 'px';
+    let headerHeight = header.offsetHeight - 8 + 'px';
     // let headerHeight = getComputedStyle(header).height;
     let scrollCurrent = window.pageYOffset || document.documentElement.scrollTop; 
     let scrollLast = scrollCurrent;

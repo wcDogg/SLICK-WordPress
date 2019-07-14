@@ -1,7 +1,7 @@
 <nav class="follow" aria-label="Follow us on social media">
     <ul role="menu">
         <li role="none">
-            <a role="menuitem" title="Support us on Amazon" class="link--follow" href="#" >
+            <a role="menuitem" title="Support us on Amazon" class="link--follow" href="https://amzn.to/2YGVIAV" >
                 <i class="fab fa-amazon"></i>
             </a>
         </li>     

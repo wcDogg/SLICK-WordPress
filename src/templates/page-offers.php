@@ -13,7 +13,7 @@ $args = array(
 	'update_post_term_cache' => false, 
 	// Set number of posts to display per page
 	// Feeds max_num_pages calc
-	'posts_per_page' => 3,	
+	'posts_per_page' => 20,	
 	'paged' => $paged,
 );
 

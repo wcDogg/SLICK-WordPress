@@ -6,17 +6,22 @@
 .buy {		
 	display: flex;
 	justify-content: center;
+} //  
 
-	a {
-		display: block;
-		@include font-size(1.8);
-		// margin: 6px;
-		height: 1.25em;
-		width: 1.25em;
-		line-height: 1.25;	
-		margin: 4px;	
-		text-align: center;		
-	}
+.card .simplefavorite-button,
+.follow a,
+.buy a {		
+
+	display: inline-block;
+	@include font-size(1.8);
+	// margin: 6px;
+	height: 1.25em;
+	width: 1.25em;
+	line-height: 1.25;	
+	margin: 4px;	
+	padding: 0;
+	text-align: center;		
+
 	// Font Awesome Pro icon
 	.svg-inline--fa {
 		height: 1em;
@@ -31,6 +36,11 @@
 // Icon Link Colors & Transitions
 // 
 
+.simplefavorite-button .svg-inline--fa {
+	vertical-align: -0.1em;
+}
+
+.card .simplefavorite-button,
 .link--follow,
 .link--amazon,
 .link--manufacturer,
@@ -43,7 +53,7 @@
 	border: 2px solid;
 
     &:hover, &:active, &:focus {
-        color: #000000;
+        color: #000000 !important;
     }
 
 	&::after {
@@ -92,3 +102,33 @@
     border-color: $color__cheap;
 	&::after {background: $color__cheap;}	
 }
+
+
+.card .simplefavorite-button { 
+    // display: inline-block;
+    // height: 1.25em;
+    // width: 1.25em;
+    // line-height: 1.25;    
+    // @include font-size (1.8);
+    // margin: 4px;
+	// text-align: center;
+
+	color: #ffffff;	
+	border-color: #ffffff;
+	&::after {background: #ffffff;}		
+
+    // .svg-inline--fa {
+    //     height: 1em;
+    //     width: 1em;
+    //     padding: 0.2em;
+    // }
+    
+	span { display: none; }
+    
+}
+
+.card .simplefavorite-button:not(.active) {}
+
+.card .simplefavorite-button.active {}
+
+

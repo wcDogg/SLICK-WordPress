@@ -293,3 +293,29 @@ section.section.section--blocks {
     justify-content: center; 
 }
 
+// My Favorites page
+article.favorites {
+    
+    .page__title-wrap {
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .no-favorites  {
+        @extend %big;
+    }
+}
+
+// 
+// Amazon Product Sections
+// 
+
+.section--amazon {
+    min-height: auto;
+}
+
+div#amzn-native-ad-1 .amzn-native-header {
+    margin-bottom: 0 !important;
+}
+
+
+
