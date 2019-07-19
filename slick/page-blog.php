@@ -1,10 +1,10 @@
-<?php 
+<?php
 
  // Protect against arbitrary paged values
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 $args = array( 
-	'post_type' => 'lubricant',
+	'post_type' => 'post',
 	// Optimize - only get the needed fields. Note this is plural 'ids'.
 	'fields' => 'ids',
 	// Optimize - don't cache the query
@@ -13,10 +13,8 @@ $args = array(
 	'update_post_term_cache' => false, 
 	// Set number of posts to display per page
 	// Feeds max_num_pages calc
-	'posts_per_page' => 20,	
+	'posts_per_page' => 10,	
 	'paged' => $paged,
-	// Enable FacetWP 
-	'facetwp' => true, 
 );
 
 // Must be $query for navigation to work
@@ -26,11 +24,10 @@ get_header();
 
 echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="landing">';
 
+	// page
 	get_template_part('parts/headers/header', get_post_type() );
 
 	if ( $custom_query->have_posts() ) : 
-
-		get_template_part('parts/headers/part', 'filters');
 
 		echo '<section class="section section--cards">';	
 			echo '<div class="section__inner">';
@@ -49,8 +46,8 @@ echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="landing">';
 
 						$icon_next = '<i class="fas fa-chevron-right"></i>';
 						$icon_prev = '<i class="fas fa-chevron-left"></i>';	
-											
-						echo '<nav class="pagination" role="navigation" aria-label="Lubricants Navigation">';
+						
+						echo '<nav class="pagination" role="navigation" aria-label="Blog Navigation">';
 							echo paginate_links( array(
 								'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
 								'format'       => '?paged=%#%',    
