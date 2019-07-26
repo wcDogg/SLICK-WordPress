@@ -4,13 +4,14 @@
 
 // 
 // Facet Classes
+// This theme uses the 'fselect' facet type exclusively
 // 
 
 div.section--filters {
     .section__inner {}
         .section__grid {}
-            div.facet-wrap {}
-                label.facet-label {}
+            div.facet {}
+                label {}
                 div.facetwp-facet {
                     &[data-type='dropdown'] {}
                     &[data-name='popular'] {}
@@ -20,24 +21,54 @@ div.section--filters {
                     &[data-name='consistency'] {}
                     &[data-name='lasting_power'] {}
                     &[data-name='brands'] {}
+                    &[data-name='lubricant_status_fda'] {}
+                    &[data-name='lubricant_status_ph'] {}
+                    &[data-name='lubricant_status_osmo'] {}
                 }
-                select.facetwp-dropdown {}
-                button.button.button--reset {}
+                div.facet-wp-facet {
+                    div.fs-wrap {}
+                        div.fs-label {}
+                        div.fs-dropdown {}
+                            div.fs-search {}
+                            div.fs-options {}
+                                div.fs-option {} // [data-value='tax-slug']
+                                    span.fs-checkbox {}
+                                    div.fs-option-label {}
+                                        span.facetwp-counter {}                    
+                }
+            button.button.button--reset {}
 }
 
 
 
 // 
 // Facet Styles
+// This theme uses the 'fselect' facet type exclusively
 // 
+
+.facet > label {
+    margin-bottom: 0.5rem;
+}
 
 .facetwp-facet {
     margin-bottom: 0 !important;
-}
-
-.facetwp-dropdown {
-    width: 100%;    
-    margin-bottom: 0;
+    color: #000000;
     @include font-size(0.79);
 }
 
+.fs-wrap {
+    width: 100% !important;
+}
+
+.fs-dropdown {
+    width: auto !important;
+}
+
+.fs-search {
+    display: none !important;
+}
+
+.fs-options .facetwp-counter {
+    float: right;
+    padding-left: 1rem;
+}

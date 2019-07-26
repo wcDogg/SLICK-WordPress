@@ -215,7 +215,6 @@ add_filter('comment_form_default_fields', 'remove_cooment_form_fields');
 // 
 // Redirect 'subscribe-win" term to 'win' page
 //
-
 function slick_term_to_page( $url, $term, $taxonomy ) {
 	if ( $term->term_id != 42 ) :
 		return $url;
@@ -231,18 +230,19 @@ add_filter( 'term_link', 'slick_term_to_page', 10, 3 );
 // 
 // Archive Sort by post type
 // 
-add_action( 'pre_get_posts', 'slick_archive_sort'); 
+
 function slick_archive_sort($query){
 	if(is_archive()):
 		$query->set( 'orderby', 'post_type' );
-		// Set the order ASC or DESC
 		$query->set( 'order', 'DESC' );
 	endif;    
 };
+add_action( 'pre_get_posts', 'slick_archive_sort'); 
+
 
 
 // 
-// Relevanssi Sort
+// Search results - Relevanssi Sort
 // https://www.relevanssi.com/knowledge-base/separating-posts-by-post-type/
 // 
 
@@ -263,4 +263,11 @@ function slick_relevanssi_orderby( $query ) {
 add_filter( 'relevanssi_modify_wp_query', 'slick_relevanssi_orderby' );
 
 
+//
+// Review Filters - Facet WP
+// https://facetwp.com/documentation/templates/wp-query/
+// 
 
+// add_filter( 'facetwp_is_main_query', function( $bool, $query ) {
+//     return ( true === $query->get( 'facetwp' ) ) ? true : $bool;
+// }, 10, 2 );

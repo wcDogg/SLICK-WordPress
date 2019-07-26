@@ -8,9 +8,9 @@ echo '<article class="archive">';
 
 	if ( have_posts() ) : 
 
-		echo '<section class="section section--cards">';	
+		echo '<section class="section section--cards facetwp-template">';	
 			echo '<div class="section__inner">';
-				echo '<div class="section__grid">';			
+				echo '<div class="section__grid ">';			
 					/* Start the Loop */
 					while ( have_posts() ) :					
 						the_post();	
@@ -18,7 +18,9 @@ echo '<article class="archive">';
 					endwhile;
 				echo '</div><!-- .section__grid -->';
 
-				get_template_part('parts/nav/nav', 'archive');
+				// get_template_part('parts/nav/nav', 'archive');
+
+				echo '<button class="button fwp-load-more">Show More</button>';
 				
 			echo '</div><!-- .section__inner -->';
 		echo '</section><!-- .section -->';	

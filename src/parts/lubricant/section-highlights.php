@@ -6,7 +6,8 @@ $lasting = get_the_terms($post->ID, 'lasting-power', array("fields" => "all"));
 $highlights = get_the_terms($post->ID, 'highlight', array("fields" => "all"));
 $recommended = get_the_terms($post->ID, 'recommended-for', array("fields" => "all"));
 $price_real = get_field('price_real');
-$sizes_lubricant = get_field('sizes_lubricant');
+$lubricant_price = get_field('lubricant_price'); // new
+$lubricant_sizes = get_field('lubricant_sizes'); // new
 $summary = get_field('page_summary');
 
 $icon_formula = '<i class="far fa-fw fa-flask"></i>';
@@ -61,15 +62,15 @@ echo '<section class="section section--highlights">';
                 endif;
             echo '</div><!-- .section__grid -->'; 
 
-            if ($price_real) :
-                echo '<div class="meta meta--price">'.$icon_price.'<span class="meta__value">Retail '.$price_real.' per oz.</span></div>';                
-            endif; 
+            if ($lubricant_price) :
+                echo '<div class="meta meta--price">'.$icon_price.'<span class="meta__value">Retail '.$lubricant_price.' per oz.</span></div>';                
+            endif;   
 
-            if ($sizes_lubricant) :
+            if ($lubricant_sizes) :
                 echo '<div class="meta meta--sizes">';
                     echo $icons_sizes;
                     echo '<span class="meta__value">';
-                        the_field('sizes_lubricant');
+                        echo implode(', ', $lubricant_sizes);
                     echo '</span>';
                 echo '</div>';
             endif;

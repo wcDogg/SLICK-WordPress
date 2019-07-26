@@ -1,20 +1,34 @@
-<?php
+<?php 
+
+$today = date('Ymd');
+// $offer_dates = get_field('offer_has_dates');
+// $offer_start = get_field('offer_start');
+// $offer_end = get_field('offer_end');
 
  // Protect against arbitrary paged values
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 $args = array( 
 	'post_type' => 'offer',
-	// Optimize - only get the needed fields. Note this is plural 'ids'.
 	'fields' => 'ids',
-	// Optimize - don't cache the query
 	'cache_results'  => false,
 	'update_post_meta_cache' => false, 
 	'update_post_term_cache' => false, 
-	// Set number of posts to display per page
-	// Feeds max_num_pages calc
 	'posts_per_page' => 20,	
 	'paged' => $paged,
+    // 'meta_query' => array(
+	// 	array(
+	//         'key'		=> 'offer_start',
+	//         'compare'	=> '<=',
+	//         'value'		=> $today,
+	//     ),
+	//      array(
+	//         'key'		=> 'offer_end',
+	//         'compare'	=> '>=',
+	//         'value'		=> $today,
+	//     )
+    // ),
+
 );
 
 // Must be $query for navigation to work

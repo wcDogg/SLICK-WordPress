@@ -14,7 +14,7 @@ echo '<article id="home" class="home">';
                 echo '<div class="page__title-wrap">';
 
                     echo '<h1 class="page__title">The SLICK Mission</h1>';
-                    echo '<h2 class="page__subtitle">Is to help you find safe&nbsp;&amp;&nbsp;effective sexual&nbsp;lubricants &amp; personal&nbsp;moisturizers</h2>';     
+                    echo '<h2 class="page__subtitle">Is to help you find gentle&nbsp;&amp;&nbsp;effective sexual&nbsp;lubricants &amp; personal&nbsp;moisturizers</h2>';     
                     echo '<nav id="nav-hero" class="nav nav--horizontal" role="navigation" aria-label="Popular Pages">';
                         wp_nav_menu( array(
                             'theme_location' => 'menu-hero',	

@@ -26,7 +26,7 @@ if ( has_term('', 'formulas') ) :
 
     // Warn polyurethane 
     if ( !has_term('polyurethane', 'safe-for') ) :
-        echo '<div class="meta meta--warning">'.$icon_x.'<span class="meta__value">Either we cannot confirm this product\'s compatibility with polyurethane, or the product explicitly states it is not compatible with polyurethane condoms.</span></div>'; 
+        echo '<div class="meta meta--warning">'.$icon_x.'<span class="meta__value">Either we cannot confirm this product\'s compatibility with polyurethane, or the product explicitly states it is not compatible with polyurethane condoms. This is most common in formulas that contain vitamin E. <a href="https://slick.sexy/?p=1173" rel="bookmark">Info</a></span></div>';  
     endif;  
 
     // Silicone cleanup
