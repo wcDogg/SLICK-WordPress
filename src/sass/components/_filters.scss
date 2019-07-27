@@ -64,8 +64,10 @@ div.section--filters {
     width: auto !important;
 }
 
-.fs-search {
-    display: none !important;
+.facetwp-facet:not(.facetwp-facet-lubricant_ingredients) {
+    .fs-search {
+        display: none !important;
+    }  
 }
 
 .fs-options .facetwp-counter {

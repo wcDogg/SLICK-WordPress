@@ -1,7 +1,8 @@
 <?php 
 
 $highlights = get_the_terms($post->ID, 'highlight', array("fields" => "all")); 
-$ingredients = get_the_terms($post->ID, 'ingredients', array("fields" => "all"));
+$key_ingredients = get_the_terms($post->ID, 'key-ingredients', array("fields" => "all"));
+
 $frees = get_field('ingredients_free'); 
 $repeater = get_field('ingredients_list');
 $text = get_field('ingredients_text');
@@ -25,12 +26,14 @@ echo '<section class="section section--ingredients">';
                         endif;
                     endforeach;      
                 endif;
-                if ($ingredients) : 
-                    foreach($ingredients as $term) :
+
+                if ($key_ingredients) : 
+                    foreach($key_ingredients as $term) :
                         $term_link = get_term_link( $term );
                         echo '<a class="attribute attribute--ingredient" rel="bookmark" title="View all lubricants with '.$term->name.' as a key ingredient." href="'.$term_link.'">'. $icon_ingredient .'<span class="attribute__value">'. $term->name .'</span></a>'; 
                     endforeach;
                 endif;  
+
             echo '</div><!-- .section__grid -->'; 
 
             if( $frees ): 

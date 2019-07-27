@@ -4,7 +4,6 @@ $brands = get_the_terms( get_the_ID(), 'brands' );
 $formulas = get_the_terms( get_the_ID(), 'formulas' );
 $highlight = get_the_terms( get_the_ID(), 'highlight' );
 $recommended = get_the_terms( get_the_ID(), 'recommended-for' );
-$ingredients = get_the_terms( get_the_ID(), 'ingredients' );
 $consistency = get_the_terms( get_the_ID(), 'consistency' );
 $lasting = get_the_terms( get_the_ID(), 'lasting-power' );
 $safe = get_the_terms( get_the_ID(), 'safe-for' );

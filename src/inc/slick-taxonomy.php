@@ -42,7 +42,7 @@ if ( ! function_exists( 'taxonomy_highlight' ) ) {
             'show_admin_column'          => true,
             'show_in_nav_menus'          => true,
             'show_tagcloud'              => true,
-            'update_count_callback'      => 'taxonomy_highlight_update_count',
+            // 'update_count_callback'      => 'taxonomy_highlight_update_count',
             'show_in_rest'               => true,
         );
 
@@ -202,7 +202,7 @@ if ( ! function_exists( 'taxonomy_formula' ) ) {
 }
 
 
-// Ingredients
+//  All ingredients
 if ( ! function_exists( 'taxonomy_ingredients' ) ) {
 
     function taxonomy_ingredients() {
@@ -242,11 +242,60 @@ if ( ! function_exists( 'taxonomy_ingredients' ) ) {
             'show_in_rest'               => true,
         );
 
-        register_taxonomy( 'ingredients', array( 'post', 'lubricant' ), $args );
+        register_taxonomy( 'ingredients', array( 'lubricant' ), $args );
 
     }
 
     add_action( 'init', 'taxonomy_ingredients', 0 );
+
+}
+
+
+// key-ingredients
+if ( ! function_exists( 'taxonomy_key_ingredients' ) ) {
+
+    function taxonomy_key_ingredients() {
+
+        $labels = array(
+            'name'                       => _x( 'Key Ingredients', 'Taxonomy General Name', 'text_domain' ),
+            'singular_name'              => _x( 'Key Ingredient', 'Taxonomy Singular Name', 'text_domain' ),
+            'menu_name'                  => __( 'Key Ingredients', 'text_domain' ),
+            'all_items'                  => __( 'All Key Ingredients', 'text_domain' ),
+            'parent_item'                => __( 'Parent Key Ingredient', 'text_domain' ),
+            'parent_item_colon'          => __( 'Parent Key Ingredient:', 'text_domain' ),
+            'new_item_name'              => __( 'New Key Ingredient Name', 'text_domain' ),
+            'add_new_item'               => __( 'Add New Key Ingredient', 'text_domain' ),
+            'edit_item'                  => __( 'Edit Key Ingredient', 'text_domain' ),
+            'update_item'                => __( 'Update Key Ingredient', 'text_domain' ),
+            'view_item'                  => __( 'View Key Ingredient', 'text_domain' ),
+            'separate_items_with_commas' => __( 'Separate Key Ingredients with commas', 'text_domain' ),
+            'add_or_remove_items'        => __( 'Add or Remove Key Ingredients', 'text_domain' ),
+            'choose_from_most_used'      => __( 'Most Used Key Ingredients', 'text_domain' ),
+            'popular_items'              => __( 'Popular Key Ingredients', 'text_domain' ),
+            'search_items'               => __( 'Search Key Ingredients', 'text_domain' ),
+            'not_found'                  => __( 'Key Ingredient Not Found', 'text_domain' ),
+            'no_terms'                   => __( 'No Key Ingredients', 'text_domain' ),
+            'items_list'                 => __( 'Key Ingredients List', 'text_domain' ),
+            'items_list_navigation'      => __( 'Key Ingredients List Navigation', 'text_domain' ),
+        );
+
+        $args = array(
+            'labels'                     => $labels,
+            'hierarchical'               => true,
+            'public'                     => true,
+            'show_ui'                    => true,
+            'show_admin_column'          => true,
+            'show_in_nav_menus'          => true,
+            'show_tagcloud'              => true,
+            // 'update_count_callback'      => 'taxonomy_ingredients_update_count',
+            'show_in_rest'               => true,
+        );
+
+        register_taxonomy( 'key-ingredients', array( 'post', 'lubricant' ), $args );
+
+    }
+
+    add_action( 'init', 'taxonomy_key_ingredients', 0 );
 
 }
 

@@ -400,3 +400,12 @@
 400 : Xylose
 401 : Salvia Sclarea (Clary Sage)
 402 : Ylang Ylang Flower Oil (Cananga Odorata Flower Oil)		
+
+
+Chondrus Crispus (Carrageenan), 
+Psidium Guajava Fruit Extract, 
+*(GojiBerry) Fruit Extract, 
+*Cymbopogon Schoenanthus (Lemon Grass) Leaf/ Stem Extract, Stem Extract, 
+
+Melaleuca Alternifolia (Tea Tree) Organic Leaf Oil, 
+

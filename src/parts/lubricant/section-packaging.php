@@ -2,8 +2,8 @@
 
 $fda_status = get_field('fda_status');
 $fda_url = get_field('fda_url');
-$shelf_life = get_field('shelf_life');
-$shelf_opened = get_field('shelf_life_opened');
+$shelf_life_manufacturer = get_field('shelf_life_manufacturer');
+$shelf_life_replace = get_field('shelf_life_replace');
 $ph_status = get_field('ph_status');
 $ph_value = get_field('ph_value');
 $osmo_status = get_field('osmolality_status');
@@ -16,27 +16,27 @@ $shelf_icon = '<i class="far fa-fw fa-calendar-alt"></i>';
 $ph_icon = '<i class="far fa-fw fa-file-chart-line"></i>';
 $osmo_icon = '<i class="far fa-fw fa-file-chart-line"></i>';
 
-if ($fda_status || $shelf_life || $ph_status || $osmo_status || $text) :
+if ($fda_status || $shelf_life_manufacturer || $ph_status || $osmo_status || $text) :
     echo '<section class="section section--packaging">';
         echo '<div class="section__inner">';
             echo '<h1 class="section__title">Packaging &amp; Labeling</h1>'; 
 
-            if ($fda_status || $shelf_life || $ph_status || $osmo_status) :
+            if ($fda_status || $shelf_life_manufacturer || $ph_status || $osmo_status) :
                 echo '<div class="section__content">';
 
-                    if($shelf_life) :
+                    if($shelf_life_manufacturer) :
                         echo'<div class="attribute attribute--shelf">';
                             echo $shelf_icon;
                             echo '<span class="attribute__label">Shelf life from date of manufacture: </span>';
-                            echo '<span class="attribute__value">'.$shelf_life.'</span>';
+                            echo '<span class="attribute__value">'.$shelf_life_manufacturer.'</span>';
                         echo '</div>';    
                     endif;
 
-                    if($shelf_opened) :
+                    if($shelf_life_replace) :
                         echo'<div class="attribute attribute--shelf">';
                             echo $shelf_icon;
                             echo '<span class="attribute__label">Replace open bottles by the \'best if used by\' date or every </span>';
-                            echo '<span class="attribute__value">'.$shelf_opened.'</span>';
+                            echo '<span class="attribute__value">'.$shelf_life_replace.'</span>';
                         echo '</div>'; 
                     endif;
 

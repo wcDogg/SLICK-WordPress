@@ -13,14 +13,14 @@ if ( has_term('', 'formulas') ) :
     endif;   
 
     // Warn mineral oil external + condoms
-    if( has_term('mineral-oil', 'formulas') || has_term('mineral-oil', 'ingredients') ) :
+    if( has_term('mineral-oil', 'formulas') || has_term('mineral-oil', 'key-ingredients') ) :
         echo '<div class="meta meta--warning">'.$icon_x.'<span class="meta__value">Mineral oil quickly breaks down latex &amp; polyisoprene. NEVER use any oil or body lotion with condoms or toys.</span></div>';  
 
         echo '<div class="meta meta--warning">'.$icon_warn.'<span class="meta__value">NEVER use mineral oil for vaginal or anal sex. Only use mineral oil externally.</span></div>';          
     endif;   
 
      // Warn plant oils + condoms
-    if ( has_term('plant-oil', 'formulas') || has_term('plant-oils', 'ingredients') ) :
+    if ( has_term('plant-oil', 'formulas') || has_term('plant-oils', 'key-ingredients') ) :
         echo '<div class="meta meta--warning">'.$icon_x.'<span class="meta__value">Plant oils quickly break down latex &amp; polyisoprene. NEVER use any oil or body lotion with these condom materials.</span></div>';    
     endif;   
 

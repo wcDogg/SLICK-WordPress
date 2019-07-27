@@ -61,6 +61,7 @@ endif;
 if ( is_tax('highlight', '') || 
      is_tax('recommended-for', '') ||
      is_tax('formulas', '') ||
+     is_tax('key-ingredients', '') ||
      is_tax('ingredients', '') ||
      is_tax('safe-for', '') ||   
      is_tax('consistency', '') || 
