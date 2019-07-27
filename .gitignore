@@ -41,3 +41,4 @@ intermediate
 .idea
 cache
 *node_modules
+slick

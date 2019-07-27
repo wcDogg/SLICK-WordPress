@@ -63,7 +63,8 @@ article.lubricant {}
                 .attribute--ingredient {}
             .section__meta {}
                 .meta--free {}
-        .section__content {} // ingredient repeater
+            p.ingredients {}    
+                span {}
         .section__content {} // ingredient text 
 }
 
@@ -139,4 +140,11 @@ article.lubricant {}
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
     }
+}
+
+p.ingredients {
+    @include font-size(0.79);
+    @include condensed-400;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }

@@ -2,13 +2,17 @@
 
 $highlights = get_the_terms($post->ID, 'highlight', array("fields" => "all")); 
 $key_ingredients = get_the_terms($post->ID, 'key-ingredients', array("fields" => "all"));
-
 $frees = get_field('ingredients_free'); 
-$repeater = get_field('ingredients_list');
 $text = get_field('ingredients_text');
-
 $icon_ingredient = '<i class="far fa-tint"></i>';
 $icon_ingredient_free = '<i class="fas fa-ban"></i>';
+
+
+$repeater = get_field('ingredients_list');
+// repeater
+$ingredients  = get_field('ingredients');
+// subfield
+// $ingredients_single = get_field('ingredients_single');
 
 
 echo '<section class="section section--ingredients">';
@@ -43,26 +47,28 @@ echo '<section class="section section--ingredients">';
                 endforeach;
                 echo '</div><!-- .section__meta -->';
             endif;
+
+            if( $ingredients ) :
+                $count = count($ingredients);
+                echo '<p class="ingredients">';
+                    while ( have_rows('ingredients') ) : the_row();
+
+                        $i = get_row_index(); // starts at 1, not 0 like most indexes       
+                        $sub = get_sub_field('ingredients_single');
+
+                        if( $i != $count) :
+                            echo '<span>'.$sub->name.'</span>,&nbsp;';         
+                        else :            
+                            echo '<span>'.$sub->name.'.</span>';
+                        endif;    
+
+                    endwhile;
+                echo '</p>'; 
+            endif;  
+
         echo '</div><!-- .section__content -->';
 
-        if( $repeater ) :
-            $count = count($repeater);
-            echo '<div class="section__content"><p class="italic">';
-            while ( have_rows('ingredients_list') ) : the_row();
-
-                $i = get_row_index(); // starts at 1, not 0 like most indexes       
-                $sub = get_sub_field('ingredient_single');
-                $label = $sub['label'];
-
-                if( $i != $count) :
-                    echo '<span>'.$label.'</span>,&nbsp;';         
-                else :            
-                    echo '<span>'.$label.'.</span>';
-                endif;    
-
-            endwhile;
-            echo '</p></div><!-- .section__content -->'; 
-        endif;        
+    
 
         if ($text) :
             echo '<div class="section__content">' . $text . '</div><!-- .section__content -->';
