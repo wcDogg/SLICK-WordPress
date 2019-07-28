@@ -10,7 +10,7 @@ form.search-form {
         input.search-field {}
         input.search-submit {}
 
-}
+} // 
 
 .search-form {
     display: flex;
@@ -18,7 +18,13 @@ form.search-form {
     align-items: center;
     align-content: center;
     justify-content: center;
+
     .search-field {
         margin: 0;
     }
-}
+    .search-submit {
+        margin: 0.62rem;
+    }
+
+} //
+

@@ -111,6 +111,7 @@ body.error404 .section--header {
 // 
 // Headers with on-page images
 // 
+
 body.single-post .section--header,
 body.single-lubricant .section--header,
 body.single-offer .section--header {
@@ -236,13 +237,55 @@ body.single-offer .section--header .button--offer {
 
 // Blog Post
 body.single-post .section--header {
-
     .list {
         @include font-size(0.79);
         margin-top: 1em;
     }
-
 }
 
 
+//
+// Brand Landing Page Header
+// 
+
+
+.section--brand .section__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        'b-img'
+        'b-title'
+        'b-company'
+        'b-follow';
+
+    img { 
+        grid-area: b-img; 
+        justify-self: center;
+    }
+    .brand__title-wrap {
+        grid-area: b-title;
+    }
+    .brand__company { 
+        grid-area: b-company; 
+        @include font-size(0.79);
+    }
+    .follow--brand  { 
+        grid-area: b-follow; 
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+} //
+
+
+@media screen and (min-width: 600px) {
+    .section--brand .section__grid {
+        grid-template-columns: max-content 1fr;
+        grid-column-gap: 0.5rem;
+        grid-template-areas: 
+            'b-img b-title'
+            'b-img b-company'
+            'b-follow b-follow'; 
+    }
+}
 

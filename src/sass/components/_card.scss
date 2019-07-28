@@ -6,10 +6,9 @@
 .card.post {}
 .card.page {}
 .card.offer {}
-.card.brand {}
 
 .card {
-	.card__img {}
+	.card__imgage {}
 		img {}
 
 	.card__header {}
@@ -26,18 +25,13 @@
 
 
 // 
-// Single Card Grids
+// Single Lubricant + Post + Page Cards
 // 
 .card.lubricant,
 .card.post,
 .card.page {
 
     display: grid;
-	grid-template-columns: 128px 1fr;	
-	grid-template-areas: 
-		'c-img c-head'
-		'c-img c-main'
-	;
 
 	.card__image  {grid-area: c-img; align-self: stretch;}
 	.card__header {grid-area: c-head;}
@@ -46,15 +40,132 @@
 	.card__image { 
 		display: grid; // for object-fit
 	}
+
 	img {
 		object-fit: cover;
+		height: 100%;
+		width: 100%;		
 	}
+
 	.buy {
 		display: inline-block;
 		margin: 0.6rem 0 0.4rem 0;
 	}	
 
 } // 
+
+// Small screen
+@media screen and (max-width: 600px) {
+	.card.lubricant,
+	.card.post,
+	.card.page {
+		grid-template-columns: 1fr;	
+		grid-template-areas: 
+			'c-img'
+			'c-head'
+			'c-main';
+
+		.card__image {
+			height: 120px;
+		}
+	}
+
+} // 
+
+// Big screen
+@media screen and (min-width: 601px) {
+	.card.lubricant,
+	.card.post,
+	.card.page {
+		grid-template-columns: 128px 1fr;	
+		grid-template-areas: 
+		'c-img c-head'
+		'c-img c-main';
+	}
+}
+
+
+// 
+// Brand block + overlay
+// 
+
+.card.brand {
+	background: none;
+	border: none;
+    display: grid;
+	grid-template-areas: 
+		'c-img'
+		'c-main';
+
+	.card__image  {
+		grid-area: c-img; 
+		display: block;
+	}
+	.card__main   {
+		grid-area: c-main; 
+		padding: 0.5rem 0 0 0;
+	}
+	img {
+		border: $border__content;
+		height: 100%;
+		width: 100%;		
+	}
+
+} // 
+
+.card.brand .card__image {
+	position: relative;
+	overflow: hidden;	
+
+	.card__overlay {
+		position: absolute;	
+		height: 100%;
+		width: 100%;		
+		top: 0;
+		bottom: 0;		
+		left: 0;
+		right: 0;	
+		background: rgba(0,0,0,0.9);
+		opacity: 0;			
+		transition: all 0.4s ease-in-out 0s;
+	}
+	.card__overlay-text {
+		position: absolute;
+		width: 100%;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 0.3s ease-in-out 0s;
+		opacity: 0;		
+		text-align: center;		
+		padding: 0.5rem;
+	}
+
+	h1 { @include font-size(1.26); }
+	h2 { @include font-size(0.9); }
+	h1, h2 {
+		margin: 0;
+		padding: 0;
+	}
+	a:hover,a:active, a:focus {
+		color: #ffffff;
+	}
+}
+
+.card.brand .card__image:hover {
+	.card__overlay {
+		opacity: 1;
+		border: $border__content;
+	}	
+	.card__overlay-text {
+		top: 50%;
+		left: 50%;
+		opacity: 1;
+	}
+}
+
+
+
 
 // 
 // Single Offer card
@@ -109,101 +220,23 @@
 	}
 	img {
 		object-fit: cover;
+		height: 100%;
+		width: 100%;		
 	}
+
 } //
 
 
-// 
-// Single Brand card with overlay
-// 
-
-.card.brand {
-	background: none;
-	border: none;
-    display: grid;
-	grid-template-areas: 
-		'c-img'
-		'c-main';
-
-	.card__image  {
-		grid-area: c-img; 
-		display: block;
-	}
-	.card__main   {
-		grid-area: c-main; 
-		padding: 0.5rem 0 0 0;
-	}
-	img {
-		border: $border__content;
-	}
-} // 
-
-
-.card.brand .card__image {
-	position: relative;
-	overflow: hidden;	
-
-	.card__overlay {
-		position: absolute;	
-		height: 100%;
-		width: 100%;		
-		top: 0;
-		bottom: 0;		
-		left: 0;
-		right: 0;	
-		background: rgba(0,0,0,0.9);
-		opacity: 0;			
-		transition: all 0.4s ease-in-out 0s;
-	}
-	.card__overlay-text {
-		position: absolute;
-		width: 100%;
-		top: 20%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		transition: all 0.3s ease-in-out 0s;
-		opacity: 0;		
-		text-align: center;		
-		padding: 0.5rem;
-	}
-
-	h1 { @include font-size(1.26); }
-	h2 { @include font-size(0.9); }
-	h1, h2 {
-		margin: 0;
-		padding: 0;
-	}
-	a:hover,a:active, a:focus {
-		color: #ffffff;
-	}
-}
-
-.card.brand .card__image:hover {
-	.card__overlay {
-		opacity: 1;
-		border: $border__content;
-	}	
-	.card__overlay-text {
-		top: 50%;
-		left: 50%;
-		opacity: 1;
-	}
-}
-
 
 // 
-// Single Card Chunks
+// Single Card Shared 
 // 
 
 .card {
     padding: 0;
     background: $bg__content;
 	border: $border__content;
-	
-	img {
-		height: 100%;
-		width: 100%;
-	}
+
 	.card__header { 
 		padding: 0.5rem; 
 	}
@@ -219,7 +252,8 @@
 	.card__main {
 		padding: 0 0.5rem 0.5rem 0.5rem; 	
 	}
-}
+
+} // 
 
 
 .card__main {

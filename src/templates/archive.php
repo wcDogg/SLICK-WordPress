@@ -18,9 +18,11 @@ echo '<article class="archive">';
 					endwhile;
 				echo '</div><!-- .section__grid -->';
 
-				// get_template_part('parts/nav/nav', 'archive');
-
-				echo '<button class="button fwp-load-more">Show More</button>';
+				if ( is_archive('post') || is_post_type_archive('brand') || is_post_type_archive('offer') ) :
+					get_template_part('parts/nav/nav', 'archive');
+				else :
+					echo '<button class="button fwp-load-more">Show More</button>';
+				endif;
 				
 			echo '</div><!-- .section__inner -->';
 		echo '</section><!-- .section -->';	

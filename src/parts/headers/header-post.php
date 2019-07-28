@@ -9,11 +9,15 @@ echo '<section class="section section--header">';
 
         echo '<div class="page__meta">';
 
-            if ( has_term( '', 'category' ) ) :
-                echo '<span class="meta meta--categories">';
-                    the_terms( get_the_ID(), 'category', '', ', ' );
-                echo '</span>';	    
-            endif;
+            ?>
+                <a class="meta" href="<?php echo esc_url( home_url( '/blog' ) ); ?>" rel="blog" aria-label="Blog">SLICK Blog</a>
+            <?php
+
+            // if ( has_term( '', 'category' ) ) :
+            //     echo '<span class="meta meta--categories">';
+            //         the_terms( get_the_ID(), 'category', '', ', ' );
+            //     echo '</span>';	    
+            // endif;
 
             slick_posted_on(); 
 

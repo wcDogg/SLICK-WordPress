@@ -141,36 +141,10 @@ article .section:not(.section--header):last-of-type {
     }
 }
 
+
 // 
 // Brand Archive Info
 // 
-.section--brand .section__grid {
-
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-column-gap: 0.5rem;
-    grid-template-areas: 
-        'b-img b-title'
-        'b-img b-company'
-        'b-follow b-follow';
-
-    img { 
-        grid-area: b-img; 
-    }
-    .brand__title-wrap {
-        grid-area: b-title;
-    }
-    .brand__company { 
-        grid-area: b-company; 
-        @include font-size(0.79);
-    }
-    .follow--brand  { 
-        grid-area: b-follow; 
-        flex-wrap: wrap;
-        margin-top: 1rem;
-    }
-
-} // 
 
 
 // 
@@ -229,7 +203,7 @@ section.sextion.sextion--cards {
 .section--cards .section__grid {
 	display: grid;
 	grid-template-columns: 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1.62rem;
     margin: 0.6rem auto 1rem auto;
 } // 
 
@@ -267,12 +241,7 @@ section.section.section--blocks {
 // Block Grids
 // 
 
-// Highlights
-.section--blocks.section--popular .section__grid {}
-
-// Recommended
-.section--blocks.section--recommended .section__grid {}
-
+// Popular + Recommended
 @media screen and (min-width: 720px) {
     .section--blocks.section--recommended .section__grid,
     .section--blocks.section--popular .section__grid {
@@ -293,7 +262,15 @@ section.section.section--blocks {
     justify-content: center; 
 }
 
+@media screen and (max-width: 50px) {
+    .section--blocks.section--brands .section__grid {
+    grid-template-columns: repeat(auto-fill, 300px);
+    }
+} 
+
+// 
 // My Favorites page
+// 
 article.favorites {
     
     .page__title-wrap {
@@ -302,6 +279,7 @@ article.favorites {
     }
     .no-favorites  {
         @extend %big;
+        text-align: center;
     }
 }
 
