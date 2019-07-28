@@ -15,7 +15,7 @@ $ingredients  = get_field('ingredients');
 // $ingredients_single = get_field('ingredients_single');
 
 
-echo '<section class="section section--ingredients">';
+echo '<section class="section section--ingredients" aria-label="Ingredients">';
     echo '<div class="section__inner">';
         echo '<h1 class="section__title">Ingredients</h1>';
 

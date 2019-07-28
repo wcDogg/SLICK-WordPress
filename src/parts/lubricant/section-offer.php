@@ -8,7 +8,7 @@ $args = array(
             'key' => 'related_reviews', 
             // matches exactly "123", not just 123. This prevents a match for "1234"
             'value' => '"' . get_the_ID() . '"', 
-            'compare' => 'LIKE'
+            'compare' => 'LIKE',
         )
     )
 );

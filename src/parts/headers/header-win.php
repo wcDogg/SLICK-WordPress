@@ -5,7 +5,7 @@ $page_title = get_the_title();
 $page_subtitle = get_field('page_subtitle');
 $page_summary = get_field('page_summary'); 
 
-echo '<section class="section section--header">';
+echo '<section class="section section--header" aria-label="Page header">';
 
     echo '<div class="page__bg-image" style=" background-image: url('.esc_url($page_img).'); background-attachment: fixed; background-position: center center; background-size: cover;">';
 

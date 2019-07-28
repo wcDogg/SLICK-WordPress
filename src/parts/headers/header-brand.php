@@ -32,7 +32,7 @@ $brand_linkedin_icon = '<i class="fab fa-linkedin-in"></i>';
 $brand_linkedin_url = get_field('brand_linkedin_url', $tax);
 
 
-echo '<section class="section section--brand section--wide">';
+echo '<section class="section section--brand section--wide" aria-label="Page header">';
     echo '<div class="section__inner">';
         echo '<div class="section__grid">';
 

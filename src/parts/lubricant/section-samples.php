@@ -15,7 +15,7 @@ $brand_link = get_term_link($brand);
 
 if ($samples_from) :
 
-    echo '<section class="section section--samples">';
+    echo '<section class="section section--samples" aria-label="Samples">';
         echo '<div class="section__inner">';
             echo '<h1 class="section__title">Samples</h1>';
             echo '<div class="section__content">';

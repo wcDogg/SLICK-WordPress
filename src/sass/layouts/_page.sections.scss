@@ -137,14 +137,10 @@ article .section:not(.section--header):last-of-type {
         display: grid; 
         grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
         grid-gap: 1rem;
-        justify-content: center;        
+        justify-content: center;   
+        margin-top: 1.6rem;     
     }
 }
-
-
-// 
-// Brand Archive Info
-// 
 
 
 // 

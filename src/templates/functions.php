@@ -123,6 +123,8 @@ function slick_register_scripts() {
 
 	wp_register_script( 'toggle-content', get_template_directory_uri() . '/js/ToggleContent.js', array(), '', true );
 
+	wp_register_script( 'toggle-filters', get_template_directory_uri() . '/js/ToggleFilters.js', array(), '', true );
+
 	wp_register_script( 'aria-prep', get_template_directory_uri() . '/js/AriaModal/AriaModalPrep.js', array(), '', true );
 	
 	wp_register_script( 'aria-utils', get_template_directory_uri() . '/js/AriaModal/AriaUtils.js', array(), '', true );
@@ -139,7 +141,7 @@ function slick_scripts_enqueue() {
 
 	wp_enqueue_script( 'sticky-header' );
 	wp_enqueue_script( 'toggle-content' );
-
+	wp_enqueue_script( 'toggle-filters' );
 	wp_enqueue_script( 'aria-prep' );
 	wp_enqueue_script( 'aria-utils' );
 	wp_enqueue_script( 'aria-modal' );
@@ -159,7 +161,7 @@ add_action( 'wp_enqueue_scripts', 'slick_scripts_enqueue' );
 function slick_scripts_print_footer() { ?>
 	<script>
 	
-	
+			
 	
 	</script>
 <?php } // function

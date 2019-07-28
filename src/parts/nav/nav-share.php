@@ -1,6 +1,6 @@
 <?php
 
-echo '<div class="page__share">';
+echo '<div class="page__share" aria-label="Share this page">';
 
     if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) : 
         ADDTOANY_SHARE_SAVE_KIT();

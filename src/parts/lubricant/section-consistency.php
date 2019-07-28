@@ -13,7 +13,7 @@ $icon_lasting = '<i class="far fa-fw fa-stopwatch"></i>';
 $icon_reactivate = '<i class="fas fa-fw fa-redo"></i>';
 $icon_dries = '<i class="far fa-fw fa-hand-paper"></i>'; 
 
-echo '<section class="section section--consistency">';
+echo '<section class="section section--consistency"  aria-label="Consistency and Lasting Power">';
     echo '<div class="section__inner">';
         echo '<h1 class="section__title">Consistency &amp; Lasting Power</h1>';
  

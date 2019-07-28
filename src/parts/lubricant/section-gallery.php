@@ -4,7 +4,7 @@ $gallery = get_field('related_gallery');
 
 if ($gallery) :
 
-    echo '<section class="section section--gallery">';
+    echo '<section class="section section--gallery" aria-label="Image Gallery">';
         echo '<div class="section__inner">';
 
             foreach ($gallery as $single_gallery) :

@@ -33,7 +33,9 @@ wp_footer();
 echo '<script>StickyHeader.init("header", "main"); </script>';
 // ToggleContent.js
 echo '<script>ToggleContent.init();</script>'; 
-	
+// Review Filters
+echo '<script>ToggleFilters.init(); </script>'; 
+
 
 echo '</body>';
 echo '</html>';

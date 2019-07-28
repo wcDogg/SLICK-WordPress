@@ -17,7 +17,7 @@ $ph_icon = '<i class="far fa-fw fa-file-chart-line"></i>';
 $osmo_icon = '<i class="far fa-fw fa-file-chart-line"></i>';
 
 if ($fda_status || $shelf_life_manufacturer || $ph_status || $osmo_status || $text) :
-    echo '<section class="section section--packaging">';
+    echo '<section class="section section--packaging" aria-label="Packaging and Labeling">';
         echo '<div class="section__inner">';
             echo '<h1 class="section__title">Packaging &amp; Labeling</h1>'; 
 

@@ -4,7 +4,7 @@ $page_title = get_the_title();
 $page_subtitle = get_field('page_subtitle');
 $page_summary = get_field('page_summary'); 
 
-echo '<section class="section section--header">';
+echo '<section class="section section--header" aria-label="Page header">';
    echo '<div class="section__inner">';
 
         echo '<div class="page__meta">';

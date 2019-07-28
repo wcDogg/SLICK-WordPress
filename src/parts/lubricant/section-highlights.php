@@ -16,7 +16,7 @@ $icon_lasting = '<i class="far fa-fw fa-stopwatch"></i>';
 $icon_price = '<i class="fas fa-dollar-sign"></i>'; 
 $icons_sizes = '<i class="fas fa-signal-alt-3"></i>';
 
-echo '<section class="section section--highlights">';
+echo '<section class="section section--highlights" aria-label="Review Highlights">';
     echo '<div class="section__inner">';
         echo '<h1 class="section__title">Highlights</h1>';  
 

@@ -16,7 +16,7 @@ $offer_end = get_field('offer_end');
 $offer_dates_none = 'No Expiration Date';
 
 
-echo '<section class="section section--header">';
+echo '<section class="section section--header" aria-label="Page header">';
     echo '<div class="section__inner">';
 
         if (has_term( '', 'brands' )) : 

@@ -75,6 +75,7 @@
 
 // 
 // Content <div>
+// sass/globals/_animate.scss
 // 
 
 [data-toggle-content] {
@@ -172,62 +173,3 @@
     }
 }
 
-
-
-
-
-
-
-// 
-// Keyframes
-//
-
-@-webkit-keyframes scaleInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(1, 0, 1);
-    transform: scale3d(1, 0, 1);
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes scaleInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(1, 0, 1);
-    transform: scale3d(1, 0, 1);
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes scaleOutUp {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(1, 0.3, 1);
-    transform: scale3d(1, 0.3, 1);
-  }
-  to {
-    opacity: 0;   
-  }
-}
-
-@keyframes scaleOutUp {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(1, 0.3, 1);
-    transform: scale3d(1, 0.3, 1);
-  }
-  to {
-    opacity: 0;
-  }
-}

@@ -1,7 +1,11 @@
 <?php
 
-echo '<section class="section section--filters">';
-    echo '<div class="section__inner">';
+echo '<section id="filters" class="section section--filters" aria-label="Review Filters">';
+
+    echo '<a id="filters-toggle" class="button" href="#"></a>';
+
+    echo '<div id="filters-content" class="section__inner">';
+
         echo '<div class="section__grid">';
 
             echo '<div class="facet"><label>Popular</label>' .facetwp_display( 'facet', 'popular' ). '</div>';
@@ -23,5 +27,7 @@ echo '<section class="section section--filters">';
             echo '<button onclick="FWP.reset()" class="button button--reset" type="reset" aria-label="Clear All Filters" title="Clear All Filters">Clear Filters</button>';
 
         echo '</div><!-- .section__grid -->';
-    echo '</div><!-- .section__inner -->';						
+
+    echo '</div><!-- .section__inner -->';	
+
 echo '</section>';

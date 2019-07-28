@@ -16,7 +16,7 @@ $icon_smell = '<i class="far fa-fw fa-flower-tulip"></i>';
 
 if($taste || $smell || $text ) :
 
-    echo '<section class="section section--taste">';
+    echo '<section class="section section--taste" aria-label="Taste and Smell">';
         echo '<div class="section__inner">';
             echo '<h1 class="section__title">Taste &amp; Smell</h1>';
             echo '<div class="section__content">';

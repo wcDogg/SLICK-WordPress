@@ -2,7 +2,7 @@
 
 $safe_text = get_field('safe_text');
 
-echo '<section class="section section--materials">';
+echo '<section class="section section--materials" aria-label="Condom and Material Safety">';
     echo '<div class="section__inner">';
 
         echo '<h1 class="section__title">Condom &amp; Materials Safety</h1>';
