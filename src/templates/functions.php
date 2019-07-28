@@ -27,7 +27,7 @@ if ( ! function_exists( 'slick_setup' ) ) :
 		add_post_type_support( 'page', 'excerpt' );
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-hero' => esc_html__( 'Hero Menu', 'slick' ),
+			// 'menu-hero' => esc_html__( 'Hero Menu', 'slick' ),
 			'menu-popular' => esc_html__( 'Popular Menu', 'slick' ),
 			'menu-main' => esc_html__( 'Main Menu', 'slick' ),
 			'menu-header-01' => esc_html__( 'Header Menu 1', 'slick' ),

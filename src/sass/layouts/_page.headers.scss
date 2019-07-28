@@ -62,7 +62,7 @@ body.error404 .section--header {
         width: 100%;
         min-height: 300px;
         display: grid;
-        grid-gap: 1rem;
+        grid-gap: 0.5rem;
         grid-template-columns: 1fr auto 1fr;
         grid-template-rows: 1fr auto 1fr;
         grid-template-areas: 
@@ -213,9 +213,15 @@ body.single-offer .section--header {
 
 // Home 
 body.home .section--header {
-    nav { padding-top: 1rem; }
-    #menu-hero { justify-content: center; }
-}
+
+    .page__subtitle {
+        margin-top: 0.5rem;
+        // text-transform: none;
+        line-height: 1.125;
+    }
+
+} //
+
 
 // 404
 body.error404 .section--header {

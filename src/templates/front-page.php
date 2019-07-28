@@ -13,14 +13,8 @@ echo '<article id="home" class="home">';
 
                 echo '<div class="page__title-wrap">';
 
-                    echo '<h1 class="page__title">The SLICK Mission</h1>';
-                    echo '<h2 class="page__subtitle">Is to help you find gentle&nbsp;&amp;&nbsp;effective sexual&nbsp;lubricants &amp; personal&nbsp;moisturizers</h2>';     
-                    echo '<nav id="nav-hero" class="nav nav--horizontal" role="navigation" aria-label="Popular Pages">';
-                        wp_nav_menu( array(
-                            'theme_location' => 'menu-hero',	
-                        ) ); 
-                    echo '</nav>';
-
+                    echo '<h1 class="page__title">SLICK.SEXY</h1>';
+                    echo '<h2 class="page__subtitle">Our <a href="https://slick.sexy/about" rel="bookmark" title="The SLICK.SEXY Mission">mission</a> is to help you find gentle&nbsp;&amp;&nbsp;effective sexual&nbsp;lubricants &amp; personal&nbsp;moisturizers</h2>';     
                 echo '</div><!-- .page__title-wrap -->'; 
 
             echo '</div><!-- .page__bg-image -->';
