@@ -17,8 +17,14 @@
 			</div>
 
 			<div class="site__disclaimers">
+				SLICK.SEXY is protected by reCAPTCHA V3. The Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+			</div>
+
+			<div class="site__disclaimers">
 				SLICK.SEXY is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.
 			</div>
+
+
 		<?
 				
 	echo '</footer><!-- #footer -->';
