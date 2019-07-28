@@ -54,9 +54,10 @@ body.archive .section--header,
 body.search .section--header,
 body.error404 .section--header {
 
-    padding-bottom: 1px; // prevent margin collapse
+    // prevent margin collapse
+    padding-bottom: 1px; 
 
-    // attached here
+    // image attached here via php
     .page__bg-image {
         width: 100%;
         min-height: 300px;
@@ -86,11 +87,22 @@ body.error404 .section--header {
     }
 
     @media screen and (min-width: 721px) {
-        .page__title { @include font-size(2.28); }
+        .page__title    { @include font-size(2.28);  }
         .page__subtitle { @include font-size(1.424); }
     }
 
-    .page__summary {}
+    .page__summary {
+        max-width: $max-width;
+        margin: 0.6rem auto 1.5rem auto; 
+    }
+
+    @media screen and (max-width: $max-width) {
+        .page__summary {
+            max-width: 100%;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+    }
 
 } // 
 
@@ -103,12 +115,12 @@ body.single-post .section--header,
 body.single-lubricant .section--header,
 body.single-offer .section--header {
 
-    padding-bottom: 1px; // prevent margin collapse
-
+    padding: 1.62rem 0.5rem;
     .section__inner {
         max-width: $max-width;
-        margin: 0 auto;       
+        margin: auto;          
     }
+
 
     .page__title-wrap {
         padding: 1rem 0 0.5rem 0;
@@ -129,7 +141,10 @@ body.single-offer .section--header {
         width: 100%;
     }
 
-    .section__buy {}    
+    .page__summary {
+        max-width: $max-width;
+        margin: 0.6rem auto 1rem auto;   
+    }
 
 } // 
 
@@ -169,10 +184,8 @@ body.single-offer .section--header {
 
 .page__summary {
     border: $border__content;
-    background: $bg__content;
-    max-width: $max-width;
-    margin: 1rem auto;
-    padding: 1rem 0.5rem;
+    background: $bg__content; 
+    padding: 1rem 0.5rem;  
 
     p:first-of-type {
         margin-top: 0;
@@ -191,6 +204,7 @@ body.single-offer .section--header {
     max-width: calc(100vw - 2rem);
     margin: 0.6rem auto 0 auto;
 }
+
 
 // 
 // Header One-Off Adjustments
@@ -230,8 +244,5 @@ body.single-post .section--header {
 
 }
 
-// Archives (no share bar)
-body.archive .section--header {
-    .page__summary { margin: 1.62rem auto 0.81rem auto }
-}
+
 
