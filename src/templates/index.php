@@ -1,7 +1,10 @@
-<?php
+<?php get_header(); ?>
 
-get_header();
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	echo '<p class="big">index.php</p>';
+	<?php get_template_part('parts/headers/header'); ?>
+	<?php get_template_part('parts/content'); ?>
 
-get_footer();
+</article><!-- #post-<?php the_ID(); ?> -->
+
+<?php get_footer(); ?>

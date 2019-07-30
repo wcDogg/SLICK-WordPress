@@ -83,7 +83,7 @@ if ( ! function_exists( 'slick_buy_bar' ) ) :
 
 		if ( $url_amazon || $url_cheap || $url_manufacturer ) :				
 
-			echo '<nav class="buy" aria-label="Purchase this lubricant">';
+			echo '<nav class="buy nav--horizontal nav--icons" aria-label="Purchase this lubricant">';
 				echo '<ul role="menu">';
 
 					if ($url_manufacturer) :

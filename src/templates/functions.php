@@ -30,10 +30,12 @@ if ( ! function_exists( 'slick_setup' ) ) :
 			// 'menu-hero' => esc_html__( 'Hero Menu', 'slick' ),
 			'menu-popular' => esc_html__( 'Popular Menu', 'slick' ),
 			'menu-main' => esc_html__( 'Main Menu', 'slick' ),
-			'menu-header-01' => esc_html__( 'Header Menu 1', 'slick' ),
-			'menu-header-02' => esc_html__( 'Header Menu 2', 'slick' ),	
-			'menu-header-03' => esc_html__( 'Header Menu 3', 'slick' ),	
-			'menu-header-04' => esc_html__( 'Header Menu 4', 'slick' ),		
+			'menu-header-01' => esc_html__( 'Mobile Menu 1', 'slick' ),
+			'menu-header-02' => esc_html__( 'Mobile Menu 2', 'slick' ),	
+			'menu-header-03' => esc_html__( 'Mobile Menu 3', 'slick' ),	
+			'menu-header-04' => esc_html__( 'Mobile Menu 4', 'slick' ),	
+			'menu-header-05' => esc_html__( 'Mobile Menu 5', 'slick' ),	
+			'menu-header-06' => esc_html__( 'Mobile Menu 6', 'slick' ),				
 		) );
 
 		// Output valid HTML5 for search and comments

@@ -65,7 +65,7 @@ echo '<section class="section section--brand section--wide" aria-label="Page hea
 
             echo '</div><!-- .brand__company -->';
 
-            echo '<nav class="follow follow--brand" aria-label="Follow this brand on social media">';
+            echo '<nav id="nav-follow-brand" class="follow nav--horizontal nav--icons" aria-label="Follow this brand on social media">';
                 echo '<ul role="menu">';
 
                     if ( $buy_amazon_url ) :

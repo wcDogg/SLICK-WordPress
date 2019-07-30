@@ -254,7 +254,6 @@ body.single-post .section--header {
 // Brand Landing Page Header
 // 
 
-
 .section--brand .section__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -275,7 +274,7 @@ body.single-post .section--header {
         grid-area: b-company; 
         @include font-size(0.79);
     }
-    .follow--brand  { 
+    #nav-follow-brand  { 
         grid-area: b-follow; 
         flex-wrap: wrap;
         margin-top: 1rem;

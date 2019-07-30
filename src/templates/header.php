@@ -47,7 +47,7 @@
 			</a>
 		</h1>
 
-		<nav id="nav-main" class="nav nav--horizontal" role="navigation" aria-label="Popular Pages">
+		<nav id="nav-main" class="nav--text nav--horizontal" role="navigation" aria-label="Popular Pages">
 			<?php wp_nav_menu( array(
 				'theme_location' => 'menu-main',	
 			) ); ?>
