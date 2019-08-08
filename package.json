@@ -35,14 +35,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wcDogg/SMART-Wordpress.git"
+    "url": "git+https://github.com/wcDogg/SLICK-WordPress"
   },
   "author": "Lisa Burton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wcDogg/SMART-Wordpress/issues"
+    "url": "https://github.com/wcDogg/SLICK-WordPress/issues"
   },
-  "homepage": "https://github.com/wcDogg/SMART-Wordpress#readme",
+  "homepage": "https://github.com/wcDogg/SLICK-WordPress",
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
