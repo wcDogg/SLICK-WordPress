@@ -5,7 +5,7 @@
 // 
 
 
-@mixin focus {
-		outline: 4px dashed $color__focus;
+@mixin focus ($color: $color__focus) {
+	outline: 4px dashed $color;
 }
  

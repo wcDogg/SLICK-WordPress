@@ -1,11 +1,11 @@
-<?php
+<?php 
 
 // [zotpress userid="4352520"]
 $zotaro_shortcode = get_field('zotaro_shortcode');
 
 if ( $zotaro_shortcode ) :
 
-    echo '<section class="section sextion--toggle">';         
+    echo '<section class="section section--toggle">';         
         echo '<div class="section__inner">';
 
             echo '<div data-toggle>';                         
@@ -19,3 +19,4 @@ if ( $zotaro_shortcode ) :
     echo '</section><!-- .section__section -->';
 
 endif;
+

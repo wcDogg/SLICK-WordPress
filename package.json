@@ -17,8 +17,6 @@
     "build-task:make-dist": "make-dir slick",
 
     "build-task:copy-templates": "cpy \"**/*.*\" \"../../slick\" --cwd=src/templates",
-    "build-task:copy-assets": "cpy \"**/*.*\" \"../../slick/assets\" --cwd=src/assets --parents",
-    "build-task:copy-acf": "cpy \"**/*.*\" \"../../slick/acf-json\" --cwd=src/acf-json", 
     "build-task:copy-includes": "cpy \"**/*.*\" \"../../slick/inc\" --cwd=src/inc", 
     "build-task:copy-languages": "cpy \"**/*.*\" \"../../slick/languages\" --cwd=src/languages",       
     "build-task:copy-parts": "cpy \"**/*.*\" \"../../slick/parts\" --cwd=src/parts --parents",

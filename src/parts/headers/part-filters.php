@@ -1,10 +1,10 @@
-<?php
+<?php 
 
-echo '<section id="filters" class="section section--filters" aria-label="Review Filters">';
+echo '<div id="filters" class="section__filters" aria-label="Review Filters">';
 
     echo '<a id="filters-toggle" class="button" href="#"></a>';
 
-    echo '<div id="filters-content" class="section__inner">';
+    echo '<div id="filters-content">';
 
         echo '<div class="section__grid">';
 
@@ -28,6 +28,7 @@ echo '<section id="filters" class="section section--filters" aria-label="Review 
 
         echo '</div><!-- .section__grid -->';
 
-    echo '</div><!-- .section__inner -->';	
+    echo '</div><!-- #filters-content -->';	
 
-echo '</section>';
+echo '</div>';
+

@@ -8,6 +8,10 @@
  */
 
 
+// 
+// Archive Titles
+// 
+
 if ( ! function_exists( 'slick_archive_title' ) ) :
 	function slick_archive_title( $title ) {
 		if ( is_category() ) :
@@ -27,10 +31,13 @@ if ( ! function_exists( 'slick_archive_title' ) ) :
 	add_filter( 'get_the_archive_title', 'slick_archive_title' );
 endif;
 
+
+// 
+// Prints HTML with meta information for the current post-date/time.
+// 
+
 if ( ! function_exists( 'slick_posted_on' ) ) :
-	/**
-	 * Prints HTML with meta information for the current post-date/time.
-	 */
+
 	function slick_posted_on() {
 		
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) :
@@ -46,15 +53,17 @@ if ( ! function_exists( 'slick_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		echo '<span class="meta meta--date">' . $time_string . '</span>'; // WPCS: XSS OK.
-
+		echo $time_string;
 	}
 endif;
 
+
+//
+// Prints HTML with meta information for the current author.
+// 
+
 if ( ! function_exists( 'slick_posted_by' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
+
 	function slick_posted_by() {
 		$byline = sprintf(
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
@@ -65,43 +74,48 @@ if ( ! function_exists( 'slick_posted_by' ) ) :
 	}
 endif;
 
+
 if ( ! function_exists( 'slick_buy_bar' ) ) :
 
 	function slick_buy_bar() {
 
-		$url_manufacturer = get_field('buy_manufacturer_url');
-		$text_manufacturer = 'Manufacturer';
-		$icon_manufacturer = '<i class="fas fa-link"></i>';		
+		$buy_url_manufacturer = get_field('buy_manufacturer_url');
+		$buy_text_manufacturer = 'Manufacturer';
+		$buy_icon_manufacturer = '<i class="fas fa-link"></i>';		
 
-		$url_cheap = get_field('buy_cheap_url');
-		$text_cheap = 'CheapLubes';
-		$icon_cheap = '<i class="far fa-tint"></i>';
-		
-		$url_amazon = get_field('buy_amazon_url');
-		$text_amazon = 'Amazon';
-		$icon_amazon = '<i class="fab fa-amazon"></i>';
+		$buy_url_cheap = get_field('buy_cheap_url');
+		$buy_text_cheap = 'CheapLubes';
+		$buy_icon_cheap = '<i class="far fa-tint"></i>';
 
-		if ( $url_amazon || $url_cheap || $url_manufacturer ) :				
+		$buy_url_amazon = get_field('buy_amazon_url');
+		$buy_text_amazon = 'Amazon';
+		$buy_icon_amazon = '<i class="fab fa-amazon"></i>';
 
-			echo '<nav class="buy nav--horizontal nav--icons" aria-label="Purchase this lubricant">';
-				echo '<ul role="menu">';
+		echo '<nav class="buy nav--horizontal nav--icons" aria-label="Purchase this lubricant">';
+			echo '<ul role="menu">';
 
-					if ($url_manufacturer) :
-						echo '<li role="none"><a class="link link--manufacturer" rel="nofollow nonopener" data-google="manufacturer" title="Shop '.esc_attr($text_manufacturer).'" role="menuitem" href="'.esc_url($url_manufacturer).'" >'.$icon_manufacturer.'</a></li>';
-					endif;
+				if( function_exists('get_user_favorites') ) :
+					// <a><i class="far fa-star"></i><span>Add Favorite</span></a>
+					$favorite = get_favorites_button();
+					echo '<li role="none">'.$favorite.'</li>';
+				endif;			
+				
+				if ($buy_url_manufacturer) :
+					echo '<li role="none"><a class="link link--manufacturer" rel="nofollow nonopener" data-google="manufacturer" title="Shop '.esc_attr($buy_text_manufacturer).'" role="menuitem" href="'.esc_url($buy_url_manufacturer).'" >'.$buy_icon_manufacturer.'</a></li>';
+				endif;
 
-					if ($url_cheap) :
-						echo '<li role="none"><a class="link link--cheap" rel="nofollow nonopener" data-google="cheaplubes" title="Shop CheapLubes.com" role="menuitem" href="'.esc_url($url_cheap).'" >'.$icon_cheap.'</a></li>';
-					endif;
+				if ($buy_url_cheap) :
+					echo '<li role="none"><a class="link link--cheap" rel="nofollow nonopener" data-google="cheaplubes" title="Shop CheapLubes.com" role="menuitem" href="'.esc_url($buy_url_cheap).'" >'.$buy_icon_cheap.'</a></li>';
+				endif;
 
-					if ($url_amazon) :
-						echo '<li role="none"><a class="link link--amazon" rel="nofollow nonopener" data-google="amazon" title="Shop Amazon" role="menuitem" href="'.esc_url($url_amazon).'" >'.$icon_amazon.'</a></li>';
-					endif;
-				echo '</ul>';
-			echo '</nav><!-- .buy -->';   	
+				if ($buy_url_amazon) :
+					echo '<li role="none"><a class="link link--amazon" rel="nofollow nonopener" data-google="amazon" title="Shop Amazon" role="menuitem" href="'.esc_url($buy_url_amazon).'" >'.$buy_icon_amazon.'</a></li>';
+				endif;
+				
+			echo '</ul>';
+		echo '</nav><!-- .buy -->';   	
 
-		endif; // End if($url). 	
+
 	}
 
 endif;
-

@@ -11,7 +11,6 @@
 //
 // Sets up theme defaults and registers support for various WordPress features.
 // 
-
 if ( ! function_exists( 'slick_setup' ) ) :
 	function slick_setup() {
 
@@ -27,6 +26,7 @@ if ( ! function_exists( 'slick_setup' ) ) :
 		add_post_type_support( 'page', 'excerpt' );
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
+				
 			// 'menu-hero' => esc_html__( 'Hero Menu', 'slick' ),
 			'menu-popular' => esc_html__( 'Popular Menu', 'slick' ),
 			'menu-main' => esc_html__( 'Main Menu', 'slick' ),
@@ -36,6 +36,7 @@ if ( ! function_exists( 'slick_setup' ) ) :
 			'menu-header-04' => esc_html__( 'Mobile Menu 4', 'slick' ),	
 			'menu-header-05' => esc_html__( 'Mobile Menu 5', 'slick' ),	
 			'menu-header-06' => esc_html__( 'Mobile Menu 6', 'slick' ),				
+
 		) );
 
 		// Output valid HTML5 for search and comments
@@ -71,7 +72,6 @@ add_action( 'after_setup_theme', 'slick_setup' );
 // 
 // Remove Supports by Post Type
 // 
-
 function slick_remove_supports() {
 	// Replaced with ACF Flexible Content 
 	remove_post_type_support( 'post', 'editor' );
@@ -84,12 +84,11 @@ add_action( 'init', 'slick_remove_supports' );
 // Set the content width in pixels, based on the theme's design and stylesheet.
 // @global int $content_width
 // 
-
 // function slick_content_width() {
 // 	// This variable is intended to be overruled from themes.
 // 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 // 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-// 	$GLOBALS['content_width'] = apply_filters( 'slick_content_width', 640 );
+// 	$GLOBALS['content_width'] = apply_filters( 'slick_content_width', 840 );
 // }
 // add_action( 'after_setup_theme', 'slick_content_width', 0 );
 
@@ -97,7 +96,6 @@ add_action( 'init', 'slick_remove_supports' );
 // 
 // Register widget area.
 // 
-
 function slick_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'slick' ),
@@ -113,7 +111,7 @@ add_action( 'widgets_init', 'slick_widgets_init' );
 
 
 // 
-// Slick Scripts + Styles
+// slick Scripts + Styles
 // 
 
 // Register
@@ -136,9 +134,7 @@ function slick_register_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'slick_register_scripts' );
 
-
-
-// Enqueue Scripts
+// Enqueue 
 function slick_scripts_enqueue() {
 
 	wp_enqueue_script( 'sticky-header' );
@@ -158,20 +154,19 @@ function slick_scripts_enqueue() {
 add_action( 'wp_enqueue_scripts', 'slick_scripts_enqueue' );
 
 
+// 
+// Theme enhancements
+// 
+require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/slick-nav-menu.php';
+require get_template_directory() . '/inc/slick-relevanssi.php';
 
-// Init in footer
-function slick_scripts_print_footer() { ?>
-	<script>
-	
-			
-	
-	</script>
-<?php } // function
-add_action( 'wp_footer', 'slick_scripts_print_footer' );
-
-
-
-
+// 
+// Slick Options
+// 
+require get_template_directory() . '/inc/slick-social.php';
+require get_template_directory() . '/inc/slick-ga.php';
 
 // 
 // Slick CPT and Taxonomies 
@@ -181,34 +176,30 @@ require get_template_directory() . '/inc/slick-offer.php';
 require get_template_directory() . '/inc/slick-taxonomy.php';
 
 // 
-// Theme enhancements
-// 
-require get_template_directory() . '/inc/template-tags.php';
-require get_template_directory() . '/inc/template-functions.php';
-require get_template_directory() . '/inc/slick-nav-menu.php';
-// require get_template_directory() . '/inc/slick-query.php';
-
-// 
 // Customizer 
 // 
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/custom-header.php';
 
-
 // 
-// Jetpack compatibility file
+// Shortcodes
 //
-// if ( defined( 'JETPACK__VERSION' ) ) {
-// 	require get_template_directory() . '/inc/jetpack.php';
-// }
 
+function slick_register_shortcodes() {
+   add_shortcode( 'ga_opt_out', 'slick_ga_opt_out_button' ); 
+}
+
+add_action( 'init', 'slick_register_shortcodes');
 
 
 // 
-// Slick Comments
+// slick Comments
 // 
+
+// Custom comments list
 require get_template_directory() . '/inc/slick-comments-list.php';
 
+// Remove "Website" field from form
 function remove_cooment_form_fields($fields) {
     unset($fields['url']);
     return $fields;
@@ -230,11 +221,9 @@ function slick_term_to_page( $url, $term, $taxonomy ) {
 add_filter( 'term_link', 'slick_term_to_page', 10, 3 );
 
 
-
 // 
 // Archive Sort by post type
 // 
-
 function slick_archive_sort($query){
 	if(is_archive()):
 		$query->set( 'orderby', 'post_type' );
@@ -244,34 +233,9 @@ function slick_archive_sort($query){
 add_action( 'pre_get_posts', 'slick_archive_sort'); 
 
 
-
 // 
-// Search results - Relevanssi Sort
-// https://www.relevanssi.com/knowledge-base/separating-posts-by-post-type/
-// 
-
-// Break results into post_type arrays
-function slick_relevanssi_comparison_order($order) {
-	$order = array( 'offer' => 0, 'lubricant' => 1, 'post' => 2, 'page' => 3, );
-	return $order;
-}
-add_filter('relevanssi_comparison_order', 'slick_relevanssi_comparison_order');
-
-// Order by post_type array
-function slick_relevanssi_orderby( $query ) {
-	$query->set( 'orderby', 'post_type' );
-	// Why? Shouldn't this default to $order above?
-	$query->set('order', 'ASC' ); // low -> high
-    return $query;
-}
-add_filter( 'relevanssi_modify_wp_query', 'slick_relevanssi_orderby' );
-
-
+// Jetpack compatibility file
 //
-// Review Filters - Facet WP
-// https://facetwp.com/documentation/templates/wp-query/
-// 
-
-// add_filter( 'facetwp_is_main_query', function( $bool, $query ) {
-//     return ( true === $query->get( 'facetwp' ) ) ? true : $bool;
-// }, 10, 2 );
+// if ( defined( 'JETPACK__VERSION' ) ) {
+// 	require get_template_directory() . '/inc/jetpack.php';
+// }

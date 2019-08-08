@@ -13,27 +13,13 @@
 	&__footer {}
 } // .site
 
-
-//
-// Header IDs and Classes
-// 
-header#header-full {
+header.site__header {
 	div.branding {}
-	nav.follow {}
-	div#nav-full {} // modal
-		nav#nav-main {}
-		form.search-form {}
+	#nav-main {}
+	#nav-favorites {}
+	> .follow {} // target first because ...
+	#mobile {} // ... alos has .follow
 }
-
-header#header-mobile {
-	div.branding {}	
-	div#nav-mobile {} // modal
-		nav#nav-main {}
-		form.search-form {}
-		nav.follow {}
-}
-
-header.site__header {}
 
 
 // 
@@ -42,42 +28,48 @@ header.site__header {}
 
 // Shared
 #header {
+
 	display: grid;	
 	grid-column-gap: 1rem;
 	align-items: center;
 	align-content: center;
 	// Stop header resize so StickyHeader works
 	padding: 0.5rem;
-	.branding  { grid-area: h-branding; justify-self: start; }
-	#nav-main  { grid-area: h-main; @include font-size(1);}
-	> .follow  { grid-area: h-follow; justify-self: center; }		
-	#mobile    { grid-area: h-mobile; justify-self: end; }
-}
+
+	.branding      { grid-area: h-branding; justify-self: start; }
+	#nav-main      { grid-area: h-main; @include font-size(1);}
+	#nav-favorites { grid-area: h-fav; }
+	> .follow      { grid-area: h-follow; justify-self: end; }		
+	#mobile        { grid-area: h-mobile; justify-self: end; }
+
+} //
 
 // Small Screens
 @media screen and (max-width: 719px) {
 	#header {
 		display: grid;
-		grid-template-columns: 1fr max-content;	
+		grid-template-columns: max-content 1fr max-content;	
 		grid-template-areas: 
-			'h-branding h-mobile';
+			'h-branding h-fav h-mobile';
 
 		#nav-main  { display: none; }	
+		#nav-favorites { justify-self: end; }
 		> .follow  { display: none; }	
 	}
 } // @media
 
 
 // Medium Screens
-@media screen and (min-width: 721px) {
+@media screen and (min-width: 720px) {
 	#header {
 		display: grid;
-		grid-template-columns: max-content 1fr max-content;
+		grid-template-columns: max-content 1fr max-content max-content;
 		grid-row-gap: 0.6rem;
 		grid-template-areas: 
-			'h-branding h-follow h-mobile'
-			'h-main h-main h-main';
-			
+			'h-branding h-fav h-follow h-mobile'
+			'h-main h-main h-main h-main';
+
+		#nav-favorites { justify-self: end; }
 		#nav-main  { justify-self: start; }	
 	}
 } // @media
@@ -87,16 +79,16 @@ header.site__header {}
 @media screen and (min-width: 940px) {
 	#header {
 		display: grid;
-		grid-template-columns: max-content 1fr max-content max-content;
+		grid-template-columns: max-content auto auto max-content max-content;
 
 		grid-template-areas: 
-			'h-branding h-main h-follow h-mobile';
+			'h-branding h-main h-fav h-follow h-mobile';
 
-		#nav-main  { justify-self: center; }	
+		#nav-favorites { justify-self: start; }
+		#nav-main  { justify-self: end; }		
 	
 	}
 } // @media
-
 
 
 // 
@@ -104,18 +96,21 @@ header.site__header {}
 // 
 
 .site__header {
-	color: $color__white;
-	background: $color__black;
+	color: $color__text;
+	background: $bg__header;
 	border-bottom: $border__content;
-	a, button {
-		text-decoration: none;
-		color: $color__white;
-		&:hover,
-		&:active,
-		&:focus {
-			color: $color__link-h
-		} 		
+}
+
+.branding__link {
+
+	color: #ffffff;
+	&:hover, &:active, &:focus {
+		color: $color__alt;
 	}
+	&:active, &:focus {
+		outline-color:  $color__alt;
+	}
+
 }
 
 
@@ -134,10 +129,8 @@ footer.site__footer {
 
 .site__footer {
 	padding: 1.6rem 0.5rem;
-	background: #000000;
+	background: $bg__footer;
 	border-top: $border__content;
-
-	.follow { @include font-size(2); }
 	.search-form { padding: 1rem 0; }
 }
 
@@ -153,7 +146,14 @@ footer.site__footer {
 	text-align: center;
 	@include font-size(0.79);
 	@include condensed-400;
-	color: $mc__gray-400;
-}
+	color: $color__text-lt;
+
+	a {
+		color: $color__primary;
+		&:hover, &:active, &:focus {
+			color: $color__alt;
+		}
+	}
+} // 
 
 

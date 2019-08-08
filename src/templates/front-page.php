@@ -1,24 +1,33 @@
 <?php
 
+ // Protect against arbitrary paged values
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+$args = array( 
+	'post_type' => 'post',
+	// Optimize - only get the needed fields. Note this is plural 'ids'.
+	'fields' => 'ids',
+	// Optimize - don't cache the query
+	'cache_results'  => false,
+	'update_post_meta_cache' => false, 
+	'update_post_term_cache' => false, 
+	// Set number of posts to display per page
+	// Feeds max_num_pages calc
+	'posts_per_page' => 10,	
+    'paged' => $paged,
+ 	// Enable FacetWP 
+	'facetwp' => true,    
+);
+
+// Must be $query for navigation to work
+$custom_query = new WP_Query( $args );
+
+
 get_header();
 
-$upload_dir = wp_upload_dir();
-$img_home = $upload_dir['baseurl'] . '/ingredients_water.jpg';
+echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="home landing">';
 
-echo '<article id="home" class="home">';
-
-    echo '<section class="section section--header">';
-
-            echo '<div class="page__bg-image" style="background-image: url('.esc_url($img_home).'); background-attachment: fixed; background-position: center center; background-size: cover;">';
-
-                echo '<div class="page__title-wrap">';
-                    echo '<h1 class="page__title">SLICK.SEXY</h1>';
-                    echo '<h2 class="page__subtitle">Our <a href="https://slick.sexy/about" rel="bookmark" title="The SLICK.SEXY Mission">mission</a> is to help you find gentle&nbsp;&amp;&nbsp;effective sexual&nbsp;lubricants &amp; personal&nbsp;moisturizers</h2>';     
-                echo '</div><!-- .page__title-wrap -->'; 
-
-            echo '</div><!-- .page__bg-image -->';
-
-    echo '</section><!-- .section--header -->';
+    get_template_part('parts/headers/header', get_post_type() ); 
 
     $highlight = get_terms( array(
         'taxonomy' => 'highlight',
@@ -70,7 +79,9 @@ echo '<article id="home" class="home">';
             echo '<h1 class="section__title">Recommended For</h1>';
             get_template_part('parts/blocks/blocks', 'recommended');
         echo '</section> <!-- .section--blocks -->';
-    endif;    
+    endif;   
+	
+
 
 echo '</article><!-- #post-'.esc_html( get_the_ID() ).' -->';
 

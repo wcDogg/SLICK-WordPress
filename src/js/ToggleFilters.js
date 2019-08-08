@@ -5,7 +5,7 @@
  * @requires /sass/componenets/_ToggleFilters.scss
  * @requires /sass/globals/_animate.scss
  *
- */
+ */ 
 
 function ToggleFilters() {
 

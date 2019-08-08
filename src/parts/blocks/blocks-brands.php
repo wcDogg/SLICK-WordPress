@@ -4,7 +4,7 @@ $brands = get_terms( array(
     'taxonomy' => 'brands',
     'hide_empty' => true, 
     'fields' => 'all',
-) );
+) ); 
 
 echo '<div class="section__grid">';
     foreach ($brands as $term) :
@@ -42,29 +42,31 @@ echo '<div class="section__grid">';
             echo '</div>';
 
             echo '<main class="card__main">';
-                echo '<nav class="buy buy--brand" aria-label="Shop and follow this brand">';
-                    echo '<ul role="menu">';
 
-                        if ( $buy_amazon_url ) :
-                            echo '<li role="none">';
-                                echo '<a class="link--amazon" href="'.esc_url($buy_amazon_url).'" title="Shop brand on Amazon" rel="nofollow nonopener" data-google="amazon" role="menuitem">'.$buy_amazon_icon.'</a>';
-                            echo '</li>';
-                        endif;
+            echo '<nav id="nav-follow-brand" class="follow nav--horizontal nav--icons" aria-label="Follow this brand on social media">';
+                echo '<ul role="menu">';
 
-                        if ( $buy_cheap_url ) :
-                            echo '<li role="none">';
-                                echo '<a class="link--cheap" href="'.esc_url($buy_cheap_url).'" title="Shop brand on Cheaplubes.com" rel="nofollow nonopener" data-google="cheaplubes" role="menuitem">'.$buy_cheap_icon.'</a>';
-                            echo '</li>';
-                        endif;
+                    if ( $buy_amazon_url ) :
+                        echo '<li role="none">';
+                            echo '<a class="link--amazon" href="'.esc_url($buy_amazon_url).'" title="Shop brand on Amazon" rel="nofollow nonopener" data-google="amazon" role="menuitem">'.$buy_amazon_icon.'</a>';
+                        echo '</li>';
+                    endif;
 
-                        if ( $buy_manufacturer_url ) :
-                            echo '<li role="none">';
-                                echo '<a class="link--manufacturer" href="'.esc_url($buy_manufacturer_url).'" title="Shop brand\'s official website" rel="nofollow nonopener" data-google="manufacturer" role="menuitem">'.$buy_manufacturer_icon.'</a>';
-                            echo '</li>';
-                        endif;                    
+                    if ( $buy_cheap_url ) :
+                        echo '<li role="none">';
+                            echo '<a class="link--cheap" href="'.esc_url($buy_cheap_url).'" title="Shop brand on Cheaplubes.com" rel="nofollow nonopener" data-google="cheaplubes" role="menuitem">'.$buy_cheap_icon.'</a>';
+                        echo '</li>';
+                    endif;
 
-                    echo '</ul>';
-                echo '</nav>';
+                    if ( $buy_manufacturer_url ) :
+                        echo '<li role="none">';
+                            echo '<a class="link--manufacturer" href="'.esc_url($buy_manufacturer_url).'" title="Shop brand\'s official website" rel="nofollow nonopener" data-google="manufacturer" role="menuitem">'.$buy_manufacturer_icon.'</a>';
+                        echo '</li>';
+                    endif;                    
+
+                echo '</ul>';
+            echo '</nav>';
+
             echo '</main>';
 
         echo '</article><!-- .card -->';

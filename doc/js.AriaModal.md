@@ -58,7 +58,7 @@ The markup + JS above also adds a default close (x) button as the modal's first 
 
 On open, focus moves to the default close button because it's the first natively focusable element in the markup. 
 
-On close, focus returns to the open link or button.  
+On close, focus returns to the opener link or button.  
 
 IF YOU WANT THE DEFAULT FOCUS BEHAVIORS, you only need to add `[data-modal-open]` to the open element - `AriaModalPrep.js` will set ids and add the `onclick` function. 
 

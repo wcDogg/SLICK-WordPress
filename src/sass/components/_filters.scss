@@ -7,44 +7,35 @@
 // This theme uses the 'fselect' facet type exclusively
 // 
 
-div.section--filters {
-    .section__inner {}
-        .section__grid {}
-            div.facet {}
-                label {}
-                div.facetwp-facet {
-                    &[data-type='dropdown'] {}
-                    &[data-name='popular'] {}
-                    &[data-name='formulas'] {}
-                    &[data-name='recommended'] {}
-                    &[data-name='safe_for'] {}
-                    &[data-name='consistency'] {}
-                    &[data-name='lasting_power'] {}
-                    &[data-name='brands'] {}
-                    &[data-name='lubricant_status_fda'] {}
-                    &[data-name='lubricant_status_ph'] {}
-                    &[data-name='lubricant_status_osmo'] {}
-                }
-                div.facet-wp-facet {
-                    div.fs-wrap {}
-                        div.fs-label {}
-                        div.fs-dropdown {}
-                            div.fs-search {}
-                            div.fs-options {}
-                                div.fs-option {} // [data-value='tax-slug']
-                                    span.fs-checkbox {}
-                                    div.fs-option-label {}
-                                        span.facetwp-counter {}                    
-                }
-            button.button.button--reset {}
+.section__filters {
+    div.facet {}
+        label {}
+        div.facetwp-facet {
+            &[data-type='categories'] {}
+            &[data-name='tags'] {}
+        }
+        div.facet-wp-facet {
+            div.fs-wrap {}
+                div.fs-label {}
+                div.fs-dropdown {}
+                    div.fs-search {}
+                    div.fs-options {}
+                        div.fs-option {} // [data-value='tax-slug']
+                            span.fs-checkbox {}
+                            div.fs-option-label {}
+                                span.facetwp-counter {}                    
+        }   
+   a {}  // reset link        
 }
-
-
 
 // 
 // Facet Styles
 // This theme uses the 'fselect' facet type exclusively
 // 
+
+.facet {
+    line-height: 1;
+}
 
 .facet > label {
     margin-bottom: 0.5rem;
@@ -52,8 +43,8 @@ div.section--filters {
 
 .facetwp-facet {
     margin-bottom: 0 !important;
-    color: #000000;
-    @include font-size(0.79);
+    color: $color__input-text;
+    @extend %small;
 }
 
 .fs-wrap {

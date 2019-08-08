@@ -29,16 +29,17 @@ $brand_yt_icon = '<i class="fab fa-youtube"></i>';
 $brand_yt_url = get_field('brand_yt_url', $tax);
 
 $brand_linkedin_icon = '<i class="fab fa-linkedin-in"></i>';
-$brand_linkedin_url = get_field('brand_linkedin_url', $tax);
+$brand_linkedin_url = get_field('brand_linkedin_url', $tax);  
 
+// Note singluer 'section--brand"
+echo '<section class="section section--header section--brand" aria-label="Page header">';
+    echo '<div class="page__title-grid">';   
 
-echo '<section class="section section--brand section--wide" aria-label="Page header">';
-    echo '<div class="section__inner">';
-        echo '<div class="section__grid">';
+        echo '<div class="page__title-wrap">';
 
             echo '<img src="'.$tax_image["sizes"]["thumbnail"].'" />';
 
-            echo '<div class="brand__title-wrap">';
+            echo '<div class="brand__title">';
                 echo '<h1 class="page__title">'.$tax_title.'</h1>';
                 if ($tax_subtitle) :
                     echo '<h2 class="page__subtitle">'.$tax_subtitle.'</h2>';
@@ -113,6 +114,7 @@ echo '<section class="section section--brand section--wide" aria-label="Page hea
                 echo '</ul>';
             echo '</nav>';
 
-        echo '</div><!-- .section__grid-->';
-    echo '</div><!-- .section__inner -->';
-echo '</section><!-- .section--consistency -->'; 
+        echo '</div><!-- .page__title-wrap -->';
+
+    echo '</div><!-- .page__title-grid -->';
+echo '</section><!-- .section--brand -->'; 

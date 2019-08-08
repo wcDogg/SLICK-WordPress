@@ -1,10 +1,11 @@
 // 
 // Card Classes
 // 
+
 .card {}
-.card.lubricant {}
 .card.post {}
 .card.page {}
+.card.lubricant {}
 .card.offer {}
 
 .card {
@@ -23,10 +24,10 @@
 }
 
 
-
 // 
 // Single Lubricant + Post + Page Cards
 // 
+
 .card.lubricant,
 .card.post,
 .card.page {
@@ -48,8 +49,7 @@
 	}
 
 	.buy {
-		display: inline-block;
-		margin: 0.6rem 0 0.4rem 0;
+		margin: 0.5rem 0 0 0;
 	}	
 
 } // 
@@ -86,7 +86,78 @@
 
 
 // 
-// Brand block + overlay
+// Single Offer card
+// 
+
+.card.offer {
+	.card__header {}
+	.card__main {}
+	.button--offer {
+		display: inline-block;
+		margin-top: 0.6rem;
+	}
+
+}
+
+
+
+// 
+// Single Favorite card
+// 
+
+.card--favorite {
+	p:nth-of-type(1) {
+		img {}
+	}
+	p:nth-of-type(2) {
+		a {} // post title
+	}
+	p:nth-of-type(3) {
+		a.simplefavorite-button {}
+	}
+}
+
+.card--favorite {
+	display: grid;
+	// grid-column-gap: 0.5rem;
+	grid-template-columns: 120px 1fr max-content;
+	grid-template-areas: 
+		'fav-img fav-title fav-button';
+
+	p {
+		line-height: 1;	
+		margin: 0;
+	}	
+
+	p:nth-of-type(1) { 
+		grid-area: fav-img; 
+		display: grid; // for object-fit;
+		padding: 0;		
+	}
+	p:nth-of-type(2) { 
+		grid-area: fav-title; 
+		align-self: center;
+		padding: 0.5rem;
+		@include condensed-700;
+		@include font-size(1.6);						
+	}
+	p:nth-of-type(3) { 
+		grid-area: fav-button;
+		align-self: center; 
+		padding: 0.5rem;
+	}	
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;		
+	}
+
+} //
+
+
+
+// 
+// Brand block + overlay 
 // 
 
 .card.brand {
@@ -165,69 +236,6 @@
 }
 
 
-
-
-// 
-// Single Offer card
-// 
-
-.card.offer {}
-
-
-// 
-// Single Favorite card
-// 
-
-.card--favorite {
-	p:nth-of-type(1) {
-		img {}
-	}
-	p:nth-of-type(2) {
-		a {} // post title
-	}
-	p:nth-of-type(3) {
-		a.simplefavorite-button {}
-	}
-}
-
-.card--favorite {
-	display: grid;
-	// grid-column-gap: 0.5rem;
-	grid-template-columns: 120px 1fr max-content;
-	grid-template-areas: 
-		'fav-img fav-title fav-button';
-
-	p:nth-of-type(1) { 
-		grid-area: fav-img; 
-		display: grid; // for object-fit;
-		padding: 0;		
-	}
-	p:nth-of-type(2) { 
-		grid-area: fav-title; 
-		align-self: center;
-		padding: 0.5rem;			
-	}
-	p:nth-of-type(3) { 
-		grid-area: fav-button;
-		align-self: center; 
-		padding: 0.5rem;
-	}	
-	p {
-		line-height: 1;	
-		margin: 0;
-		@include condensed-700;
-		@include font-size(1.6);		
-	}
-	img {
-		object-fit: cover;
-		height: 100%;
-		width: 100%;		
-	}
-
-} //
-
-
-
 // 
 // Single Card Shared 
 // 
@@ -245,6 +253,7 @@
 	}	
 	.page__title {
 		@include font-size(1.6);
+		color: inherit;
 	}
 	.page__subtitle {
 		@include font-size(1.125);
@@ -254,7 +263,6 @@
 	}
 
 } // 
-
 
 .card__main {
 	p {
@@ -269,7 +277,7 @@
 		padding-bottom: 0;
 	}
 
-}
+} //
 
 .card__meta {
 	display: flex;
@@ -278,7 +286,7 @@
 	.meta:not(:last-of-type) {
 		margin-right: 1em;
 	}
-}
+} //
 
 
 

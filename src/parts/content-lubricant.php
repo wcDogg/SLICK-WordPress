@@ -1,6 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php get_template_part('parts/headers/header', get_post_type() ); ?>
+	<!-- #fly-support - new part NOT working  -->
+	<?php get_template_part('parts/page/page', 'test' ); ?>
 	<?php get_template_part('parts/lubricant/section', 'highlights'); ?>
 	<?php get_template_part('parts/lubricant/section', 'offer'); ?>	
 	<?php get_template_part('parts/lubricant/section', 'gallery'); ?>

@@ -15,6 +15,12 @@ $test-mode: true;
 
 $font-size: 22px;
 
+//
+// Max width
+// 
+
+$max-width: 840px;
+
 
 // This theme uses system font stacks.
 // The only place these globals are used directly are in @mixins
@@ -27,27 +33,4 @@ $font-family__serif: 'Georgia', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'S
 $font-family__mono: 'Menolo', 'Consolas', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
 $font-family__condensed: 'Roboto Condensed', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Segoe UI', sans-serif,  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-
-
-//
-// Colors
-// These theme has access to the full Google Material Color palette
-//
-
-
-
-
-//
-// Border
-//
-
-$max-width: 840px;
-$bg__content: rgba(0,0,0, 0.85);
-$border__content: 1px dotted $mc__gray-700;
-
-$border-radius: 4px;
-$border-radius__button: 6;
-$border-radius__icon: 100%;
-$border-radius__input: 4px;
-$border-radius__card: 0;
 

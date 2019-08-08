@@ -17,21 +17,13 @@ svg {
 	width: 100%;
 }
 
-// <svg>
-.icon {
-	display: inline-block;
-    font-size: inherit;
-	height: 1em;
-	width: 1em;
-    overflow: visible;
-    vertical-align: -.125em;
-	fill: currentColor;
+figure {
+	background-color: $color__primary;
+	figcaption {
+		margin: 0;
+		padding: 0.5rem;
+		@include condensed-400;
+		@include font-size(0.79);
+		color: $color__text;
+	}
 }
-
-
-// The wrapper <span>
-.icon-wrap {
-    display: inline-block;
-    vertical-align: middle;
-}
-

@@ -61,16 +61,17 @@ body {
 	@include sans-400;
 	@include font-size;		
 	line-height: 1.602;	
-	color: #ffffff;
-	background: #000000;
+	color: $color__text;
+	background: $bg__body;
 }
 
-body {
-	opacity: 1;
-	transition: 1000ms opacity;
-}
+// body {
+// 	opacity: 1;
+// 	transition: 1000ms opacity;
+// }
 
-body[data-body-fade]{
-		opacity: 0;
-		transition: none;
-}
+// body[data-body-fade]{
+// 		opacity: 0;
+// 		transition: none;
+// }
+

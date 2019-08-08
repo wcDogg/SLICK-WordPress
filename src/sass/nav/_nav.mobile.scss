@@ -11,71 +11,47 @@
 div[data-modal-component] {
     button[data-modal-open] {}
     div[data-modal-overlay] {}
-        div[data-modal] {}
+        div[data-modal][data-modal-full] {}
             button[data-modal-xButton] {}
             div[data-modal-content] {}
 }
 
 
+// 
+// Open Button
+// 
 
-
- // 
- // Modal Layout
- // 
-
-// Component wrapper <div>
-#mobile[data-modal-component] {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-// Open <button>
 #mobile [data-modal-open] {
     display: flex;
-    margin: 0; 
     padding: 0.15em;    
     @include font-size(1.802);
+    color: #FFFFFF;
     background: none;
     border: none;
+
+    .svg-inline--fa {
+        margin-right: 0;
+    }
+
     [data-modal-open-icon-wrap],
     [data-modal-open-icon] {
         height: 1em;
         width: 1em;  
     }
+
+    &::after,
+    &:hover, &:active, &:focus {
+        background: none;
+        border: none;
+        color: $color__alt;
+    }
+
 } 
 
-// Overlay <div>
-#mobile [data-modal-overlay] {
-    padding: 0;
-    background: rgba(0,0,0,0.95)
-}
 
-// Modal <div>  - wraps button & content
-#mobile [data-modal] {
-    position: relative;
-    margin: auto;
-    // padding: 2rem;     
-    border-radius: 0;
-    box-shadow: none;
-    background: transparent;
-
-    -webkit-animation-duration: 500ms;
-    animation-duration: 500ms;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-
-    &:not([data-modal-active]) {
-        -webkit-animation-name: fadeOutRight;
-        animation-name: fadeOutRight;
-    }
-    &[data-modal-active] {
-        -webkit-animation-name: fadeInRight;
-        animation-name: fadeInRight;
-    }
-}
-
+//
 // Menus layout
+//@include
 #mobile [data-modal-grid] {
     display: grid;
     grid-gap: 1rem;
@@ -84,66 +60,23 @@ div[data-modal-component] {
     margin: 1rem auto 0 auto;
 }
 
-// Defualt close X <button>
-#mobile [data-modal-xButton] {
-    display: flex;
-    position: absolute;
-    z-index: 200;
-    top: 0.6rem;
-    right: 0.6rem;
-    margin: 0; 
-    padding: 0.15em;   
-    border-radius: 100%;
-    border: 2px solid;   
-    @include font-size(1.424);   
-    color: #000000;
-    background: #FFFFFF;
-
-    [data-modal-x-wrap],
-    [data-modal-x-icon] {
-        height: 1em;
-        width: 1em;   
-    }    
-
-    &:hover, &:active, &:focus {
-        background: #000000;
-        color: #FFFFFF;        
-    }
-}
-
-
 
 // 
 // Individual Menus
 // 
 
 #mobile [data-modal-content] {
-    nav h2 { margin-bottom: 0.62rem; }
 
-    #nav-header-01 {
-        h2  { border-bottom: 2px solid $color__cyan; }
-        a:hover, a:active, a:focus { color: $color__cyan; }
+    nav h2 { 
+        margin-bottom: 0.62rem;
+        border-bottom: $border__content;
+        padding: 0 0 0.125em 0;
     }
-    #nav-header-02 {
-        h2 { border-bottom: 2px solid $color__yellow; }
-        a:hover, a:active, a:focus { color: $color__yellow; }
-    }
-    #nav-header-03 {
-        h2 { border-bottom: 2px solid $color__pink; }
-        a:hover, a:active, a:focus { color: $color__pink; }
-    }
-    #nav-header-04 {
-        h2 { border-bottom: 2px solid $color__green; }
-        a:hover, a:active, a:focus { color: $color__green; }
-    }
-     #nav-header-05 {
-        h2 { border-bottom: 2px solid $color__orange; }
-        a:hover, a:active, a:focus { color: $color__orange; }
-    }   
 
-     #nav-header-05 {
-        h2 { border-bottom: 2px solid $color__pink; }
-        a:hover, a:active, a:focus { color: $color__pink; }
-    }   
+    #nav-mobile-01 {}
+    #nav-mobile-02 {}
+    #nav-mobile-03 {}
+    #nav-mobile-04 {}
 
 } // 
+

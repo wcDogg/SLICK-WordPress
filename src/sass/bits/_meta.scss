@@ -4,7 +4,7 @@
 div.meta {}
 span.meta {}
 .meta {
-    svg.svg-inline--fa {}
+    i {}
     span.meta__value {}
 }
 
@@ -14,32 +14,30 @@ span.meta {}
 // 
 .meta {
     @include condensed-400;
-    @include font-size(0.79); 
-    .svg-inline--fa {}
+    @extend %small;
+    line-height: 1.5;
+    padding: 0.25rem;
+
+    i { 
+        margin-top: 0.25em; 
+    }
+
     .meta__value {}
-}
+
+} //
 
 
 div.meta {
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-gap: 0.5em;
-    margin: 0.6em;
-    .svg-inline--fa {
-        margin-top: 0.1875em;
-    }
-    &.meta--warning {
-        margin: 0.6em 0;
-    }
+    
 } //
 
 
 span.meta {
-    .svg-inline--fa {
-        margin-right: 0.25em;
-    }
-    &.meta--free {
-        padding: 0.6em;
+    i {
+        margin-right: 0.5em;
     }
 } // 
 

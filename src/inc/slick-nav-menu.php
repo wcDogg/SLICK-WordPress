@@ -5,10 +5,10 @@
 // 
 
 // Article : Three ways to change classes for wp_nav_menu()
-// - Custom Walter Class
+// - Custom Walker Class
 // - Filters
 // - Custom Function 
-// --- https://stackoverflow.com/questions/52829782/adding-active-class-to-current-post-ancestor-menu-item-parent-in-wordpress
+// - https://stackoverflow.com/questions/52829782/adding-active-class-to-current-post-ancestor-menu-item-parent-in-wordpress
 
 // Set default arguments for we_nav_manu()
 // These can be overriden per menu.
@@ -27,7 +27,6 @@ function slick_nav_menu_args( $args ) {
 
 	return $args;
 }
-
 add_filter( 'wp_nav_menu_args', 'slick_nav_menu_args' );
 
 
@@ -96,6 +95,7 @@ add_filter('nav_menu_css_class' , 'slick_nav_menu_item_active' , 10 , 2);
 // Add a custom class to the <a> - there are no defualt classes here.
 // Returns <li class="nav__item"><a class="nav__link">
 // https://developer.wordpress.org/reference/hooks/nav_menu_link_attributes/
+
 function slick_nav_menu_link_class($atts, $item, $args) {
 
 	$atts['class'] = 'nav__link';

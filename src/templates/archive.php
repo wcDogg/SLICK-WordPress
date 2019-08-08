@@ -8,9 +8,9 @@ echo '<article class="archive">';
 
 	if ( have_posts() ) : 
 
-		echo '<section class="section section--cards facetwp-template">';	
+		echo '<section class="section section--cards">';	
 			echo '<div class="section__inner">';
-				echo '<div class="section__grid ">';			
+				echo '<div class="section__grid facetwp-template">';			
 					/* Start the Loop */
 					while ( have_posts() ) :					
 						the_post();	
@@ -18,9 +18,7 @@ echo '<article class="archive">';
 					endwhile;
 				echo '</div><!-- .section__grid -->';
 
-				if ( is_archive('post') || is_post_type_archive('brand') || is_post_type_archive('offer') ) :
-					get_template_part('parts/nav/nav', 'archive');
-				else :
+				if ( $wp_query->max_num_pages >= 2 ) :
 					echo '<button class="button fwp-load-more">Show More</button>';
 				endif;
 				

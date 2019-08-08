@@ -7,3 +7,6 @@ echo '<a class="card__image" aria-hidden="true" tabindex="-1" href="'.esc_url(ge
         ) ),
     ) );
 echo '</a><!-- .card__image -->';	
+
+
+	

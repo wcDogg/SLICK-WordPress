@@ -1,9 +1,11 @@
 <?php
+// @see /inc/slick-globals.php
 
 $page_title = get_the_title();
 $page_subtitle = get_field('page_subtitle');
+$page_permalink = get_the_permalink();
 
-echo '<a class="card__title-wrap" rel="bookmark" title="'.esc_attr(get_the_title()).'" href="'.esc_url(get_the_permalink()).'">';
+echo '<a class="card__title-wrap" rel="bookmark" title="'.esc_attr($page_title).'" href="'.esc_url($page_permalink).'">';
     echo '<h1 class="page__title">'.$page_title.'</h1>';
     if ($page_subtitle) :
         echo '<h2 class="page__subtitle">'. $page_subtitle .'</h2>';  

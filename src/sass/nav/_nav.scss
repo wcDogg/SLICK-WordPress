@@ -35,77 +35,138 @@ nav {
 
 
 //
-// <nav> Type
-// 
-
-.nav--icons ul {
-    @include font-size(2);
-}
-
-.nav--icons a,
-.card .simplefavorite-button {
-
-    height: 1em;
-    width: 1em;
-    line-height: 1;	
-    padding: 0.2em;    
-    margin: 4px;
-    text-align: center;	 
-
-	.svg-inline--fa {
-		height: 100%;
-        width: 100%;
-        vertical-align: 0.5em;
-    }
-
- } // 
-
+// <nav> Text
+//
 
 .nav--text {
 
     ul {
         @include condensed-400;
         @include font-size(0.79);
+        line-height: 1;
     }
-
-    a {}
 
     li.active a,
     a.active {
-        color: #ffffff;
         text-decoration: underline;
         text-decoration-style: dotted;
         text-decoration-skip-ink: auto;
     } 
     
     &.nav--vertical a {
-        padding: 0.25em 0;
+        padding: 0.3em 4px;
     }
 
     &.nav--horizontal a {
-        padding: 0.25em 0.62em;
+        padding: 0.3em 0.62em;
+        text-align: center;
     }      
 
 } // 
 
+.nav--text a {
+    color: $color__alt;
+    &:hover, &:active, &:focus {
+        color: #ffffff;
+    }
+    &:active, &:focus {
+        outline-color: #ffffff;
+    }    
+}
 
+.nav--text.white a {
+	color: #ffffff;
+	&:hover, &:active, &:focus {
+		color: $color__alt;
+	}	
+	&:active, &:focus {
+		outline-color: $color__alt;
+	}		
+}
+
+.nav--text.primary a {
+	color: $color__primary;
+	&:hover, &:active, &:focus {
+		color: $color__alt;
+	}	
+	&:active, &:focus {
+		outline-color: $color__alt;
+	}			
+}
+
+.nav--text.secondary a {
+	color: $color__secondary;
+	&:hover, &:active, &:focus {
+		color: $color__alt;
+	}	
+	&:active, &:focus {
+		outline-color: $color__alt;
+	}			
+}
+
+.nav--text.alt a {
+	color: $color__alt;
+	&:hover, &:active, &:focus {
+		color: #FFFFFF;
+	}	
+	&:active, &:focus {
+		outline-color: #FFFFFF;
+	}			
+}	
+
+
+//
+// <nav> Icons
 // 
+
+.nav--icons {
+    ul {
+        @include font-size(1);
+    }  
+    a {
+        margin: 6px;	        
+    }  
+    i {
+        font-size: 1em;
+        padding: 0.5em;
+        height: 2em; // font-szie + (padding x 2)
+        width: 2em;
+        text-align: center;
+        border: $border__icon;
+        border-radius: $border-radius__icon;
+    }
+
+} // 
+
+// .card--favorite
+ .card--favorite .simplefavorite-button {
+
+    margin: 6px;	        
+
+    i {
+        font-size: 1em;
+        padding: 0.5em;
+        height: 2em; // font-szie + (padding x 2)
+        width: 2em;
+        text-align: center;
+        border: $border__icon;
+        border-radius: $border-radius__icon;
+    }
+ }
+
+
+//  
 // Icon Transitions
 // 
 
-.card .simplefavorite-button,
-.nav--icons a {
+.card .simplefavorite-button i,
+.nav--icons a i {
 	position: relative;
 	z-index: 1;
-	transition: color 200ms linear;	
-	background: transparent; 
-	border-radius: 100%;	
-    border: 2px solid;
-
-    &:hover, &:active, &:focus {
-        color: #000000 !important;
-    }
-    
+    transition: color 200ms linear;	
+    // border: $border__icon;
+    // border-radius: $border-radius__icon;
+    	
 	&::after {
 		content: '';
         position: absolute;
@@ -117,8 +178,7 @@ nav {
         transform: scale(0);
         transform-origin: center;
 		transition: transform 200ms linear;
-		border-radius: 100%;
-		// border: 2px solid;
+		border-radius: $border-radius__icon;
     }
     
     &:hover::after,
@@ -131,57 +191,114 @@ nav {
 } // 
 
 
-// 
-// Icon Colors
-// 
+.nav--icons a i {
+    color: rgba(#ffffff, 0.7);
+    background: $color__primary;	
 
-.link--follow {
-    color: #ffffff;	
-    border-color: #ffffff;
-	&::after {background: #ffffff;}	
+    &:hover, &:active, &:focus {
+        color: #ffffff !important;
+    }
+    &::after {
+        background: $color__alt;
+    }
+}
+.nav--icons a { 
+    &:active, &:focus {
+        outline-color: $color__alt;
+    }
 }
 
-.link--amazon {
-    color: $color__amazon;	
-    border-color: $color__amazon;
+
+.nav--icons.primary a i {
+    background: $color__primary, 0.7;	
+    &::after {background: $color__alt;}
+}
+.nav--icons.primary a { 
+    &:active, &:focus {
+        outline-color: $color__alt;
+    }
+}
+
+.nav--icons.secondary a i {
+    background: $color__secondary;	
+    &::after {background: $color__alt;}    
+}
+.nav--icons.secondary a { 
+    &:active, &:focus {
+        outline-color: $color__alt;
+    }
+}
+
+.nav--icons.alt a i {
+    background: $color__alt;	
+    &::after {background: $color__secondary;}   
+}
+.nav--icons.alt a { 
+    &:active, &:focus {
+        outline-color: $color__secondary;
+    }
+}
+
+
+.nav--icons a.link--amazon i {
 	&::after {background: $color__amazon;}	
 }
+.nav--icons a.link--amazon  { 
+    &:active, &:focus {
+        outline-color: $color__amazon;
+    }
+}
 
-.link--manufacturer {
-    color: $color__manufacturer;	
-    border-color: $color__manufacturer;
+.nav--icons a.link--manufacturer i {
 	&::after {background: $color__manufacturer;}	
 }
+.nav--icons a.link--manufacturer { 
+    &:active, &:focus {
+        outline-color: $color__manufacturer;
+    }
+}
 
-.link--cheap {
-    color: $color__cheap;	
-    border-color: $color__cheap;
+
+.nav--icons a.link--cheap i {
 	&::after {background: $color__cheap;}	
 }
-
-.card .simplefavorite-button { 
-    display: inline-block;
-    @include font-size(2);
-	color: #ffffff;	
-	border-color: #ffffff;
-	&::after {background: #ffffff;}		   
-	span { display: none; }   
+.nav--icons a.link--cheap { 
+    &:active, &:focus {
+        outline-color: $color__cheap;
+    }
 }
+
+a.fav-button i,
+.card--favorite a.simplefavorite-button i,
+.nav--icons a.simplefavorite-button i {
+    &::after {background: $color__favorite;}
+}
+
+a.fav-button.active i,
+.card--favorite a.simplefavorite-button.active i,
+.nav--icons a.simplefavorite-button.active i {
+    color: $color__favorite;
+    &:hover, &:active, &:focus {color: #FFFFFF;}
+    &::after {background: $color__favorite;}
+}
+
+.card--favorite a.simplefavorite-button,
+.nav--icons a.simplefavorite-button  { 
+    &:active, &:focus {
+        outline-color: $color__favorite;
+    }
+}
+    
+
+
 
 
 // 
 // One-off menu alignments
 // 
 
-#nav-follow-brand ul,
-#nav-main ul,
+.single-lubricant .buy ul,
 #nav-popular ul,
-nav.buy ul,
-nav.follow ul {
+.follow ul {
     justify-content: center;
 }
-
-#nav-follow-brand {
-    margin-top: 1rem;
-}
-

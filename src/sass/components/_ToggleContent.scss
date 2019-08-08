@@ -37,10 +37,9 @@
 
 // <button>
 [data-toggle-button] {
-    position: relative;
-    z-index: 10;
     width: 100%; 
     padding: 0.5em 0.5em 0.5em 0.35em;
+    margin: 0;
     font-size: inherit;
     text-align: left;    
     text-transform: none;
@@ -49,7 +48,6 @@
     &[aria-expanded='false'] {}
     &[aria-expanded='true'] {}
 }
-
 
 // <svg>
 [data-toggle-icon] {
@@ -80,6 +78,8 @@
 
 [data-toggle-content] {
 
+    margin-top: 0.5rem;
+
     &[aria-hidden] {
         -webkit-animation-duration: 300ms;
         animation-duration: 300ms;
@@ -89,10 +89,9 @@
         animation-timing-function: linear;             
         transform-origin: top;   
 
-        padding: 1rem 0.5rem;  
+        padding: 0.5rem;  
         background: $bg__content;
         border: $border__content;
-        border-top: none;
 
         p:first-of-type {
             margin-top: 0;
@@ -119,57 +118,90 @@
 
 // 
 // Button Varients
-//
+// @see /bits/buttons for transition examples
+// 
 
 [data-toggle-button] {   
-  color: #ffffff;
-  background: $bg__content;
-  border: $border__content;
-  transition: background-color 250ms;
 
-  &:hover, &:active, &:focus,
-  &[aria-expanded='true'] {
-    background-color: $color__link-h;        
-  }
+    color: rgba(#ffffff, 0.85);
+    background: rgba(#000000, 0.85);
+
+    &:hover, &:active, &:focus,
+    &[aria-expanded='true'] {
+        color: #ffffff;
+    }
+
+    &::after {
+        background: $color__primary-lt;
+    }       
+
+    &:active, &:focus {
+        outline-color: $color__alt;
+    }
+
 } // 
 
-.toggle--transparent [data-toggle-button] {
-    &:active,
-    &[aria-expanded='true'] {
-        background-color: transparent;        
-    }
-}
-
-
 .toggle--green [data-toggle-button] {
-  border-color: $color__green;
-  &:hover, &:active, &:focus,
-  &[aria-expanded='true'] {
-    background-color: $color__green;        
-  }
+
+    border-color: $color__green;
+
+    &[aria-expanded='true'] {
+        background: $color__green;        
+    }
+    &::after {
+        background: $color__green;
+    }       
+    &:active, &:focus {
+        outline-color: $color__green;
+    }
+
 }
 
 .toggle--yellow [data-toggle-button] {
-  border-color: $color__yellow;
-  &:hover, &:active, &:focus,
-  &[aria-expanded='true'] {
-    background-color: $color__yellow;        
-  }
+
+    border-color: $color__yellow;
+
+    &[aria-expanded='true'] {
+        background: $color__yellow;        
+    }
+    &::after {
+        background: $color__yellow;
+    }       
+    &:active, &:focus {
+        outline-color: $color__yellow;
+    }
+
 }
 
 .toggle--orange [data-toggle-button] {
-  border-color: $color__orange;
-  &:hover, &:active, &:focus,
-  &[aria-expanded='true'] {
-    background-color: $color__orange;        
-  }
+
+    border-color: $color__orange;
+
+    &[aria-expanded='true'] {
+        background: $color__orange;        
+    }
+    &::after {
+        background: $color__orange;
+    }       
+    &:active, &:focus {
+        outline-color: $color__orange;
+    }
+
 }
 
 .toggle--red [data-toggle-button] {
-  border-color: $color__red;
-    &:hover, &:active, &:focus,
+
+    border-color: $color__red;
+
     &[aria-expanded='true'] {
-        background-color: $color__red;        
+        background: $color__red;        
     }
+    &::after {
+        background: $color__red;
+    }       
+    &:active, &:focus {
+        outline-color: $color__red;
+    }
+
 }
 

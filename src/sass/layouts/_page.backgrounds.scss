@@ -3,9 +3,30 @@
 // 
 
 article .section:nth-child(odd) {
-    @include bg-slash-r;
+    @include bg-slash-l;
 }
 
 article .section:nth-child(even) {
-    @include bg-slash-l;
+    @include bg-slash-r;
 }
+
+
+// 
+// Alternating Ovals
+//
+
+// article .section:nth-child(4n+1) {
+//     @include bg-01;
+// }
+
+// article .section:nth-child(4n+2) {
+//     @include bg-02;
+// }
+
+// article .section:nth-child(4n+3) {
+//     @include bg-03;
+// }
+
+// article .section:nth-child(4n) {
+//     @include bg-04;
+// }

@@ -1,27 +1,21 @@
-@import "skip-to-main";
-
-@import "StickyHeader";
-@import "ToggleContent";
-@import "ToggleFilters";
 @import "AriaModal";
-@import 'envira-gallery';
-@import "recaptcha";
-
 @import 'branding';
-@import "card";
 @import 'block';
-
+@import "card";
+@import 'envira-gallery';
 @import "filters";
-
-@import "search";
 @import "forms";
 
+@import "recaptcha";
+@import "search";
+@import "skip-to-main";
+@import "StickyHeader";
 
+@import 'ToggleContent';
+
+@import 'ToggleFilters';
+
+@import 'SimpleFavorites.scss';
 
 // @import "ToTop";
 // @import "LinkTocify";
-// @import "banners";
-// @import "gist";
-// @import "gist.syntax";
-// @import "gist.highlight";
-

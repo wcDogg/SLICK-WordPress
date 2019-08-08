@@ -16,27 +16,22 @@ get_header();
 echo '<article class="search">';
 
 	echo '<section class="section section--header">';
-		echo '<div class="page__bg-image" style="background-image: url('.esc_url($img_search).'); background-attachment: fixed; background-position: center center; background-size: cover;">';
 
+		echo '<div class="page__title-grid">';
 			echo '<div class="page__title-wrap">';
-
 				echo '<h1 class="page__title">Search</h1>';
+			echo '</div><!-- .page__title-wrap -->';
+		echo '</div><!-- page__title-grid -->';	
 
-				get_template_part('parts/nav/nav', 'search');
-
-				if ( !have_posts() ) :
-					echo '<p class="big">Oops! No results.</p>';
-				endif;
-
-			echo '</div><!-- page__title-wrap -->';
-
-		echo '</div><!-- .page__bg-image -->';
 	echo '</section><!-- .section--header -->';
 
 	if ( have_posts() ) : 
 
-		echo '<section class="section section--cards">';	
+		echo '<section class="section section--cards">';
 			echo '<div class="section__inner">';
+
+				get_search_form();		
+
 				echo '<div class="section__grid">';			
 					/* Start the Loop */
 					while ( have_posts() ) :					
@@ -53,12 +48,12 @@ echo '<article class="search">';
 	else :
 		
 		echo '<section class="section">';	
-			echo '<div class="section__inner">';					
-				?>
-				<div class="section__iframe">
-					<iframe src="https://www.youtube.com/embed/lr0T1g-KmpI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<?php
+			echo '<div class="section__inner">';
+
+				get_search_form();
+
+				echo '<p class="big" style="text-align: center;">Oops! No results.</p>';
+
 			echo '</div><!-- .section__inner -->';
 		echo '</section><!-- .section -->';	
 

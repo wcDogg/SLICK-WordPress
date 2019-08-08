@@ -1,8 +1,8 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
+<article id="post-<?php the_ID(); ?>" class="card page">
 
 <?php
 
-    $summary = get_field('page_summary');
+    $page_summary = get_field('page_summary'); 
 
     get_template_part('parts/headers/part', 'card-thumb');
 
@@ -10,11 +10,16 @@
         get_template_part('parts/headers/part', 'card-title');
     echo '</header>';
 
-    if ( $summary ) :
-        echo '<main class="card__main">';
-            echo $summary;
-        echo '</main>';
-    endif;
+    echo '<main class="card__main">';
+        if ( $page_summary ) :
+            echo $page_summary;
+            // echo '<div class="meta meta--categories">';
+            //     the_category( '&nbsp;&bull;&nbsp;' );
+            // echo '</div>';	
+        elseif ( $page_excerpt ) :
+            echo '<p>'.$page_excerpt.'</p>';
+        endif;    
+    echo '</main>';
 
 ?>
 

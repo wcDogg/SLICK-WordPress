@@ -1,0 +1,53 @@
+// 
+// Favorites plugin
+// @see /sass/components/_card.scss
+// 
+
+// Shared
+.simplefavorite-button {
+    cursor: pointer;     
+    @include condensed-700;  
+    text-decoration: none; 
+
+    &:hover, &:active, &:focus, &.active {
+        opacity: 1 !important;
+        text-decoration: none;
+    }
+
+}
+
+// Post Button
+.section--header .simplefavorite-button { 
+    @include font-size(0.79);
+    color: #ffffff;    
+    background: rgba(#000, 0.85);   
+     padding: 0.3em 0.5em;     
+
+    span { margin-left: 4px; }
+
+    &:hover, &:active, &:focus {        
+        color: $color__favorite;
+    }
+
+}
+
+.section--header .simplefavorite-button.active {
+    color: $color__favorite; 
+    &:hover, &:active, &:focus {
+        color: #ffffff;
+    }    
+}
+
+// Card Icon Button
+.fav-button,
+.card--favorite .simplefavorite-button,
+.nav--icons .simplefavorite-button { 
+
+    span { display: none; }   
+    
+    // Weird horizontal alignment on this one icon?
+    i {
+        padding: 0.46em 0.5em 0.5em 0.36em;
+    }
+
+}

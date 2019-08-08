@@ -8,8 +8,9 @@
 
 %input {
     @include sans-400;
-    font-size: 1rem;
-    border: 1px solid $mc__gray-300;
+    @include font-size();
+    color: $color__input-text;
+    border: $border__input;
     border-radius: $border-radius__input;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
     background: #ffffff;
@@ -35,10 +36,11 @@ fieldset {
 }
 
 label, legend {
-    @include sans-400;    
-    font-size: 0.8rem;
+    @include condensed-400;    
+    @extend %small;
     line-height: 1;
-    color: $mc__gray-400;
+    color: $color__heading;
+    text-transform: uppercase;
 }
 
 label {
@@ -121,66 +123,65 @@ fieldset label {
 // Read only
 // 
 
-[type="readonly"] {
-	cursor: not-allowed;
-	font-weight: bold;	
-    color: $mc__gray-700;
-    padding: 0.15em;
-}
+// [type="readonly"] {
+// 	cursor: not-allowed;
+// 	font-weight: bold;	
+//     color: $color__text-lt;
+//     padding: 0.15em;
+// }
 
 
 // 
 // File 
 // 
 
-[type="file"] {
-    @extend %input;    
-	cursor: pointer;	
-    display: flex;
+// [type="file"] {
+//     @extend %input;    
+// 	cursor: pointer;	
+//     display: flex;
 
-	&::-webkit-file-upload-button {    
-		-webkit-appearance: button; 
-        cursor: pointer;	
-		color: #fff;
-        border: 0;
-        border-radius: $border-radius__input, 0px, 0px, $border-radius__input;
-		transition: background-color, 250ms;
-	} 
+// 	&::-webkit-file-upload-button {    
+// 		-webkit-appearance: button; 
+//         cursor: pointer;	
+// 		color: #fff;
+//         border: 0;
+//         border-radius: $border-radius__input, 0px, 0px, $border-radius__input;
+// 		transition: background-color, 250ms;
+// 	} 
 
-	&:hover {
-		&::-webkit-file-upload-button {
-            background-color: $color__black;
-        } 
-	} 
-} 
+// 	&:hover {
+// 		&::-webkit-file-upload-button {
+//             background-color: $color__text;
+//         } 
+// 	} 
+// } 
 
 
 // 
 // Color
 // 
 
-[type="color"] {	
-    cursor: pointer;
-    height: 1.5rem;
-    width: 1.5rem;
-    margin-top: 0.5rem;    
-    margin-bottom: 1rem;    
-    background-color: transparent;
-    border: 0;
-}
+// [type="color"] {	
+//     cursor: pointer;
+//     height: 1.5rem;
+//     width: 1.5rem;
+//     margin-top: 0.5rem;    
+//     margin-bottom: 1rem;    
+//     background-color: transparent;
+//     border: 0;
+// }
 
 
 // 
 // Range
 // 
 
-[type="range"] {
-    cursor: pointer;
-    margin-top: 0.5rem;    
-    margin-bottom: 1rem;    
-    padding: 0.25rem;
-
-}	
+// [type="range"] {
+//     cursor: pointer;
+//     margin-top: 0.5rem;    
+//     margin-bottom: 1rem;    
+//     padding: 0.25rem;
+// }	
 
 
 // Input radio + check
@@ -303,7 +304,7 @@ select {
 textarea {
     @extend %input;
     cursor: text;
-    padding: 0.15em;
+    padding: 0.15rem;
     width: 100%;
     overflow: auto; 
     resize: vertical; 

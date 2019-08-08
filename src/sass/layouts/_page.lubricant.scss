@@ -121,6 +121,8 @@ article.lubricant {}
 // Section Grids
 // 
 
+.section__gif img { width: 1005; }
+
 .section--highlights {
     .section__grid {
         display: grid;
@@ -131,20 +133,11 @@ article.lubricant {}
 .section--materials {
     .section__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
-    }
-}
-
-.section--ingredient {
-    .section__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
     }
 }
 
 p.ingredients {
     @include font-size(0.79);
-    @include condensed-400;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    @include serif-400i;
 }

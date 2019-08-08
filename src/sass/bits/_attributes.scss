@@ -31,20 +31,17 @@ div.attribute {
 }
 
 // Font Awesome icon
-.attribute .svg-inline--fa {
+.attribute i {
     font-size: 1.6em;
     margin-right: 0.25em;
 }
 
 .attribute--highlight,
 .attribute--recommended {
-    .svg-inline--fa {
+    i {
         width: 1.125em; // match `fa-fw`
     }    
 }
-
-
-
 
 
 // <span>

@@ -7,7 +7,7 @@ nav.pagination {
     h2.screen-reader-text {}
     ul.page-numbers {}
         li {}
-            .page-numbers
+            .page-numbers {}
             span.page-numbers.current {}
             a.page-numbers.next {}
             a.page-numbers.prev {}
@@ -29,20 +29,25 @@ a.page-numbers {
     width: 1.6rem;
     height: 1.6rem;
     margin: 0.25rem;
-    border-radius: 100%;
+    border-radius: $border-radius__icon;
     text-align: center;
     line-height: 1.6rem;
 }
 
+// Icons
 a.page-numbers {
-    background: rgba(255,255,255, 0.4);
-    color: #000000;
+    border: 1px dotted #264D5C;
+    color: rgba(#ffffff, 0.7);    
+    background: rgba($color__secondary, 0.7);
+
     &:hover, &:active, &:focus {
-        background: rgba(255,255,255, 0.8);
+        color: #ffffff;    
+        background: $color__primary;
     }
 }
 
 span.page-numbers {
-    background: rgba(255,255,255, 0.8);
-    color: #000000;
+    color: #ffffff;    
+    background: $color__primary;
 }
+

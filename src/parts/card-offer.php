@@ -1,8 +1,8 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
+<article id="post-<?php the_ID(); ?>" class="card offer">
 
 <?php
 
-    $summary = get_field('page_summary');
+    $pag_summary = get_field('page_summary');
     $url_offer = get_field('buy_offer_url');
     $text_offer = get_field('buy_offer_text');
     $icon_offer = get_field('buy_offer_icon');    
@@ -13,7 +13,7 @@
     echo '</header>';
 
     echo '<main class="card__main">';
-        echo $summary;   
+        echo $pag_summary;   
    
         echo '<a class="button button--offer" rel="nofollow nonopener" data-google="offer" title="Shop offer" href="'.esc_url($url_offer).'" >'.$icon_offer, $text_offer.'</a>';  
         

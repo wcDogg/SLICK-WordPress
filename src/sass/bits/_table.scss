@@ -14,22 +14,44 @@
 // Table Base
 // 
 
+
+// Break out of content width
+div.section__table {
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);   
+}
+
+
 table {
-    display: block;    
-    width: fit-content;
-    max-width: 100%;   
-    overflow-x: auto;    
-    border-collapse: collapse;     
-    margin: auto;
+    display: block;  
+    border-collapse: collapse; 
+    overflow-x: auto; 
     @include font-size(0.79);
+   
+    max-width: 100%;     
+    width: fit-content; 
+    margin: auto; 
+    
     caption {}
     thead {}
     tr {}    
-    th { text-align: left; }
-    td { white-space: nowrap; }
-    th, td { padding: 0.4em 0.5em;}
-    .meta { font-size: inherit; }
-}
+
+    th { 
+        text-align: left; 
+    }
+    td { 
+        white-space: nowrap; 
+    }
+    th, td { 
+        padding: 0.4em 0.5em;
+    }
+    .meta { 
+        font-size: inherit; 
+    }
+
+} //
+
 
 // 
 // Table Styles
@@ -49,6 +71,9 @@ table {
     tr:not(:last-of-type) {
         border-bottom: $border__content;
     }
+    tr td:not(:last-child) {
+        border-right: $border__content;
+    }  
     thead tr {
         border: 0;
     }

@@ -2,7 +2,6 @@
 
 $page_title = get_the_title();
 $page_subtitle = get_field('page_subtitle'); 
-$favorite = get_favorites_button();
 
 echo '<section class="section section--header" aria-label="Page header">';
     echo '<div class="section__inner">';
@@ -21,8 +20,10 @@ echo '<section class="section section--header" aria-label="Page header">';
                 echo '</span>';	    
             endif;
 
-            slick_posted_on(); 
-
+            echo '<span class="meta meta--date">';
+                slick_posted_on();
+            echo '</span>';	    
+             
         echo '</div><!-- .page__meta -->';
 
         echo '<div class="page__title-wrap">';
@@ -33,8 +34,15 @@ echo '<section class="section section--header" aria-label="Page header">';
         echo '</div>';
 
         echo '<div class="page__image">';
-            the_post_thumbnail('medium_large');
-            echo $favorite;
+
+            the_post_thumbnail('medium_large');          
+
+            if( function_exists('get_user_favorites') ) :
+                // <a><i class="far fa-star"></i><span>Add Favorite</span></a>
+                $favorite = get_favorites_button();
+                echo $favorite;
+            endif;	
+
         echo "</div><!-- .page__image -->";	
 
         get_template_part('parts/headers/part', 'share');

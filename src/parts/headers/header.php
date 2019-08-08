@@ -1,35 +1,28 @@
 <?php
+// @see /inc/slick-globals.php
 
 $page_title = get_the_title();
-$page_subtitle = get_field('page_subtitle');
-$page_summary = get_field('page_summary'); 
+$page_subtitle = get_field('subtitle');
+$page_summary = get_field('summary'); 
+$page_categories = the_category( '&nbsp;&bull;&nbsp;' );
 
 echo '<section class="section section--header" aria-label="Page header">';
    echo '<div class="section__inner">';
 
-        echo '<div class="page__meta">';
+        if ( has_category() ) :
+            echo '<div class="page__meta">';
 
-            if ( has_term( '', 'category' ) ) :
                 echo '<span class="meta meta--categories">';
-                    the_terms( get_the_ID(), 'category', '', ', ' );
-                echo '</span>';	    
-            endif;
-
-            if ( has_term( '', 'formulas' ) ) :
-                echo '<span class="meta meta--formulas">';
-                    the_terms( get_the_ID(), 'formulas', '', ', ' );
-                echo '</span>';	    
-            endif;
-            
-            if ( has_term( '', 'brands' ) ) :
-                echo '<span class="meta meta--brands">';
-                    the_terms( get_the_ID(), 'brands', '', ', ' );
-                echo '</span>';	    
-            endif;
-
-            slick_posted_on(); 
-
-        echo '</div><!-- .page__meta -->';
+                    // the_terms( get_the_ID(), 'category', '', ', ' );
+                    echo $page_categories;
+                echo '</span>';	
+                
+                echo '<span> class="meta meta--date">';
+                    slick_posted_on();
+                echo '</span>';
+                        
+            echo '</div><!-- .page__meta -->';
+        endif;          
 
         echo '<div class="page__title-wrap">';
             echo '<h1 class="page__title">'.$page_title.'</h1>';
@@ -38,9 +31,15 @@ echo '<section class="section section--header" aria-label="Page header">';
             endif; 
         echo '</div><!-- .page__title-wrap -->';
 
-        echo '<div class="page__image">';
-            the_post_thumbnail('medium_large');
-        echo "</div><!-- .page__image -->";	
+        if ( has_post_thumbnail() ) :
+            echo '<div class="page__image">';
+                the_post_thumbnail( 'medium_large', array(
+                    'alt' => the_title_attribute( array(
+                        'echo' => false,
+                    ) ),
+                ) );
+            echo "</div><!-- .page__image -->";	            
+        endif;
 
         get_template_part('parts/headers/part', 'share');
 
@@ -51,7 +50,6 @@ echo '<section class="section section--header" aria-label="Page header">';
                 echo '</div><!-- .page__summary -->';
             echo '</div><!-- .section__inner -->';
         endif; 
-
 
     echo '</div><!-- .section__inner  -->';
 echo '</section><!-- .section--header -->'; 
