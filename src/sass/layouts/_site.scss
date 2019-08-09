@@ -49,8 +49,7 @@ header.site__header {
 	#header {
 		display: grid;
 		grid-template-columns: max-content 1fr max-content;	
-		grid-template-areas: 
-			'h-branding h-fav h-mobile';
+		grid-template-areas: 'h-branding h-fav h-mobile';
 
 		#nav-main  { display: none; }	
 		#nav-favorites { justify-self: end; }
@@ -65,9 +64,7 @@ header.site__header {
 		display: grid;
 		grid-template-columns: max-content 1fr max-content max-content;
 		grid-row-gap: 0.6rem;
-		grid-template-areas: 
-			'h-branding h-fav h-follow h-mobile'
-			'h-main h-main h-main h-main';
+		grid-template-areas: 'h-branding h-fav h-follow h-mobile' 'h-main h-main h-main h-main';
 
 		#nav-favorites { justify-self: end; }
 		#nav-main  { justify-self: start; }	
@@ -80,9 +77,7 @@ header.site__header {
 	#header {
 		display: grid;
 		grid-template-columns: max-content auto auto max-content max-content;
-
-		grid-template-areas: 
-			'h-branding h-main h-fav h-follow h-mobile';
+		grid-template-areas: 'h-branding h-main h-fav h-follow h-mobile';
 
 		#nav-favorites { justify-self: start; }
 		#nav-main  { justify-self: end; }		

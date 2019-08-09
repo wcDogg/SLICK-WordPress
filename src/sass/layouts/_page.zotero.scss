@@ -53,14 +53,12 @@
 
 #zpSearchResultsPaging a {
     display: inline;
-    float: none;
-    margin: 0;    
+    float: none; 
     padding: 0;    
     border: none;
     text-decoration: none;
     &.selected {
-        border: 0;
-        margin: 0;        
+        border: 0;      
     }
 }
 

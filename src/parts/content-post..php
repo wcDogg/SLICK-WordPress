@@ -2,15 +2,17 @@
 
 	<?php 
 		get_template_part('parts/headers/header', get_post_type() ); 
+		
 		get_template_part('parts/page/page', 'flex' ); 
-		// #fly-support - new part NOT working
-		get_template_part('parts/page/page', 'test' );
-		// #fly-support - existing part NOT working
-		// I think this broke going from prod to stage - though I didn't realize at time.
+		
+		// #fly-support - this was the part  NOT  working
+		// [zotpress items="{4352520:CBCZ4NUE}" style="apa"]
 		get_template_part('parts/page/page', 'zotaro' );
+		
 		get_template_part('parts/page/page', 'comments' );
+
 	?>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-<?php the_ID(); ?> --> 
 
 

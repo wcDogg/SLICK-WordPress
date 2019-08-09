@@ -3,9 +3,6 @@
 
 get_template_part('parts/headers/header', get_post_type() ); 
 
-// #fly-support - new part NOT working
-get_template_part('parts/page/page', 'test' ); 
-
 $related_reviews = get_field( 'related_reviews' );
 
 if ( $related_reviews ) :

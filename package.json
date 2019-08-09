@@ -7,31 +7,23 @@
     "doc": "doc"
   },
   "scripts": {
-    "dev-task:destroy-css": "del-cli src/css",
-    "dev-task:make-css": "make-dir src/css",
-    "dev-task:new-css": "node-sass src/sass/ -o src/css",
-    "dev-task:watch-sass": "node-sass src/sass/ -wo src/css",
-    "dev": "npm-run-all -s dev-task:*",
 
-    "build-task:destroy-dist": "del-cli slick",
-    "build-task:make-dist": "make-dir slick",
+      "build-task:destroy-dist": "del-cli slick",
+      "build-task:make-dist": "make-dir slick",
 
-    "build-task:copy-templates": "cpy \"**/*.*\" \"../../slick\" --cwd=src/templates",
-    "build-task:copy-includes": "cpy \"**/*.*\" \"../../slick/inc\" --cwd=src/inc", 
-    "build-task:copy-languages": "cpy \"**/*.*\" \"../../slick/languages\" --cwd=src/languages",       
-    "build-task:copy-parts": "cpy \"**/*.*\" \"../../slick/parts\" --cwd=src/parts --parents",
+      "build-task:copy-templates": "cpy \"**/*.*\" \"../../slick\" --cwd=src/templates",
+      "build-task:copy-includes": "cpy \"**/*.*\" \"../../slick/inc\" --cwd=src/inc",
+      "build-task:copy-languages": "cpy \"**/*.*\" \"../../slick/languages\" --cwd=src/languages",
+      "build-task:copy-parts": "cpy \"**/*.*\" \"../../slick/parts\" --cwd=src/parts --parents",      
 
-    "build-task:style": "node-sass --output-style compressed src/sass/style.scss slick/style.css",
-    "build-task:styleAuto": "postcss slick/style.css -u autoprefixer -r",
+      "build-task:css-rtl": " node-sass src/sass/rtl.scss --output-style compressed --source-map true --source-map-embed -o slick/ ",
+      "build-task:css-style": " node-sass src/sass/style.scss --output-style expanded --source-map true --source-map-embed -o slick/ ",      
+      "build-task:auto-prefix": " postcss slick/*.css -u autoprefixer -r -map",
 
-    "build-task:rtl": "node-sass --output-style compressed src/sass/rtl.scss slick/rtl.css",
-    "build-task:rtlAuto": "postcss slick/rtl.css -u autoprefixer -r",
+      "build-task:babel": "babel src/js -d slick/js",
+     
+      "build": "npm-run-all -s -c build-task:*"
 
-    "build-task:sass": "node-sass --output-style compressed src/sass/*/ -o slick/css/*",
-    "build-task:sassAuto": "postcss slick/css -u autoprefixer -r",
-
-    "build-task:babel": "babel src/js -d slick/js",
-    "build": "npm-run-all -s -c build-task:*"
   },
   "repository": {
     "type": "git",

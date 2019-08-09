@@ -261,7 +261,7 @@ select {
     padding: 0.15em;
     // @extend %input-bg;    
     // background-image: url(./assets/placeholders/ph.search.svg);   
-	-webkit-appearance: textfield; 
+	// -webkit-appearance: textfield; 
 	&::-webkit-search-decoration {
 		-webkit-appearance: none;
 	}

@@ -4,13 +4,14 @@
 		get_template_part('parts/headers/header', get_post_type() ); 
 		
 		get_template_part('parts/page/page', 'flex' ); 
-		// #fly-support
-		get_template_part('parts/page/page', 'test' );
+		
 		// #fly-support - this IS working
-		// This did not break from prod to stage or back again
-		// but it did break in content-post / single.php
+		// [zotpress items="{4352520:CBCZ4NUE}" style="apa"]
 		get_template_part('parts/page/page', 'zotaro' );
+
 		get_template_part('parts/page/page', 'comments' );
+
 	?>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-<?php the_ID(); ?> --> 
+
