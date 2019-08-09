@@ -79,8 +79,8 @@ header.site__header {
 		grid-template-columns: max-content auto auto max-content max-content;
 		grid-template-areas: 'h-branding h-main h-fav h-follow h-mobile';
 
-		#nav-favorites { justify-self: start; }
-		#nav-main  { justify-self: end; }		
+		#nav-favorites { justify-self: flex-start; }
+		#nav-main  { justify-self: flex-end; }		
 	
 	}
 } // @media
