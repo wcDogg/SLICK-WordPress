@@ -138,28 +138,13 @@ nav {
 
 } // 
 
-// .card--favorite
- .card--favorite .simplefavorite-button {
-
-    margin: 6px;	        
-
-    i {
-        font-size: 1em;
-        padding: 0.5em;
-        height: 2em; // font-szie + (padding x 2)
-        width: 2em;
-        text-align: center;
-        border: $border__icon;
-        border-radius: $border-radius__icon;
-    }
- }
-
 
 //  
 // Icon Transitions
 // 
 
-.card .simplefavorite-button i,
+a.fav-button i,
+a.simplefavorite-button i,
 .nav--icons a i {
 	position: relative;
 	z-index: 1;
@@ -196,7 +181,8 @@ nav {
     background: $color__primary;	
 
     &:hover, &:active, &:focus {
-        color: #ffffff !important;
+        // color: #ffffff !important;
+        color: #ffffff;
     }
     &::after {
         background: $color__alt;
@@ -268,30 +254,45 @@ nav {
     }
 }
 
+// <i class="far fa-star"></i>
 a.fav-button i,
-.card--favorite a.simplefavorite-button i,
-.nav--icons a.simplefavorite-button i {
-    &::after {background: $color__favorite;}
+a.simplefavorite-button i {
+    color: rgba(#ffffff, 0.7);
+    background: $color__primary;	
+
+    &:hover, &:active, &:focus {
+        color: #ffffff;
+    }
+    &::after {
+        background: $color__favorite;
+    }
+}
+a.fav-button,
+a.simplefavorite-button {
+    &:active, &:focus {
+        outline-color: $color__favorite;
+    }
 }
 
+// <i class="fas fa-star"></i>
 a.fav-button.active i,
-.card--favorite a.simplefavorite-button.active i,
-.nav--icons a.simplefavorite-button.active i {
+a.simplefavorite-button.active i {
     color: $color__favorite;
-    &:hover, &:active, &:focus {color: #FFFFFF;}
-    &::after {background: $color__favorite;}
-}
 
-.card--favorite a.simplefavorite-button,
-.nav--icons a.simplefavorite-button  { 
+    &:hover, &:active, &:focus {
+        color: #ffffff;
+    }
+    &::after {
+        background: $color__favorite;
+    }
+}
+a.fav-button.active,
+a.simplefavorite-button.active {
     &:active, &:focus {
         outline-color: $color__favorite;
     }
 }
     
-
-
-
 
 // 
 // One-off menu alignments

@@ -1,5 +1,4 @@
 <?php
-// @see /inc/slick-globals.php
 
 $page_title = get_the_title();
 $page_subtitle = get_field('page_subtitle');

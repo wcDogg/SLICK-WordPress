@@ -63,14 +63,14 @@
                 modalOpen.setAttribute('title', 'Open modal');
                 modalOpen.setAttribute('aria-label', 'Open modal');                
             }  
-            console.warn(index, 'Modal recommends a [data-modal-label] attribute be added to any element in [data-modal-component]. It is used to set titles and aria attributes. It espcially helps people who use keyboard navigation or screen readers.', component);
+            // console.warn(index, 'Modal recommends a [data-modal-label] attribute be added to any element in [data-modal-component]. It is used to set titles and aria attributes. It espcially helps people who use keyboard navigation or screen readers.', component);
         };
 
         if (modalDescription) {
             modalDescription.id = component.id + '-description'; 
             modal.setAttribute('aria-describedby', modalDescription.id);
         } else {
-            console.warn(index, 'Modal recommends an element with the [data-modal-descritpion] attribute be added to [data-modal-component]. This should be an element with no other [data-modal] attributes applied. It helps people who use keyboard navigation or screen readers.', component);            
+            // console.warn(index, 'Modal recommends an element with the [data-modal-descritpion] attribute be added to [data-modal-component]. This should be an element with no other [data-modal] attributes applied. It helps people who use keyboard navigation or screen readers.', component);            
         };
 
         if (modalOpen) {

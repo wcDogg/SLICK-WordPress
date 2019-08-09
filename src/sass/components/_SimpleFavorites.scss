@@ -1,13 +1,25 @@
 // 
 // Favorites plugin
-// @see /sass/components/_card.scss
+// @see /sass/nav.scss
 // 
 
-// Shared
+// Base
+.fav-button,
 .simplefavorite-button {
     cursor: pointer;     
-    @include condensed-700;  
+    @include condensed-400;  
     text-decoration: none; 
+    margin: 6px;
+
+    i {
+        font-size: 1em;
+        padding: 0.45em 0.3em;
+        height: 2em; // font-szie + (padding x 2)
+        width: 2em;
+        text-align: center;
+        border: $border__icon;
+        border-radius: $border-radius__icon;
+    }    
 
     &:hover, &:active, &:focus, &.active {
         opacity: 1 !important;
@@ -16,38 +28,3 @@
 
 }
 
-// Post Button
-.section--header .simplefavorite-button { 
-    @include font-size(0.79);
-    color: #ffffff;    
-    background: rgba(#000, 0.85);   
-     padding: 0.3em 0.5em;     
-
-    span { margin-left: 4px; }
-
-    &:hover, &:active, &:focus {        
-        color: $color__favorite;
-    }
-
-}
-
-.section--header .simplefavorite-button.active {
-    color: $color__favorite; 
-    &:hover, &:active, &:focus {
-        color: #ffffff;
-    }    
-}
-
-// Card Icon Button
-.fav-button,
-.card--favorite .simplefavorite-button,
-.nav--icons .simplefavorite-button { 
-
-    span { display: none; }   
-    
-    // Weird horizontal alignment on this one icon?
-    i {
-        padding: 0.46em 0.5em 0.5em 0.36em;
-    }
-
-}
