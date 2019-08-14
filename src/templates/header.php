@@ -54,9 +54,14 @@
 			) ); ?>
 		</nav>
 		
-		<?php get_template_part('parts/nav/nav', 'favorites'); ?>
-		<?php get_template_part('parts/nav/nav', 'follow'); ?>
-		<?php get_template_part('parts/nav/nav', 'mobile'); ?>
+		<?php 
+			get_template_part('parts/nav/nav', 'favorites'); 
+			get_template_part('parts/nav/nav', 'follow');
+											
+			wp_nav_menu( array(
+				'theme_location' => 'menu-mobile',	
+			) ); 
+		?>
 
 	</header><!-- #header -->
 	

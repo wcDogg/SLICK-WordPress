@@ -303,3 +303,13 @@ a.simplefavorite-button.active {
 .follow ul {
     justify-content: center;
 }
+
+
+// 
+// One-off size adjustments
+// 
+#header .nav--icons ul,
+.card .nav--icons ul {
+    @include font-size(0.79);
+}
+

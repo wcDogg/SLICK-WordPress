@@ -1,0 +1,23 @@
+// Max Mega Menu
+// NOT implemented in Knotty Theme
+// INSTEAD see Admin > Mega Menu > Menu Themes > Custom CSS
+// which leverages built-in Sass variables. 
+
+
+@include mobile { 
+    #{$wrap} #{$menu} > li.mega-menu-item { 
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    } 
+
+    #{$wrap} #{$menu} > li.mega-menu-item > a.mega-menu-link:hover,
+    #{$wrap} #{$menu} > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:hover,
+    #{$wrap} #{$menu} > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:focus {
+        border-top: 1px solid rgba(255,255,255,0.4);
+        border-bottom: 1px solid rgba(255,255,255,0.4);
+    }
+
+    #{$wrap} #{$menu} > li.mega-menu-item > a.mega-menu-link:hover {
+        background-color: #000000;
+    }
+
+} //

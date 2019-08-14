@@ -34,46 +34,46 @@ header.site__header {
 	align-items: center;
 	align-content: center;
 	// Stop header resize so StickyHeader works
-	padding: 0.5rem;
+	padding: 0 0.5rem;
 
 	.branding      { grid-area: h-branding; justify-self: start; }
-	#nav-main      { grid-area: h-main; @include font-size(1);}
+	#nav-main      { grid-area: h-main; }
 	#nav-favorites { grid-area: h-fav; }
-	> .follow      { grid-area: h-follow; justify-self: end; }		
-	#mobile        { grid-area: h-mobile; justify-self: end; }
+	.follow        { grid-area: h-follow; justify-self: end; }		
+	#mega-menu-wrap-menu-mobile  { grid-area: h-mobile; justify-self: end; }
 
 } //
 
+
 // Small Screens
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 720px) {
 	#header {
 		display: grid;
-		grid-template-columns: max-content 1fr max-content;	
-		grid-template-areas: 'h-branding h-fav h-mobile';
+		grid-template-columns: max-content auto max-content max-content;	
+		grid-template-areas: 'h-branding h-fav h-follow h-mobile';
 
 		#nav-main  { display: none; }	
-		#nav-favorites { justify-self: end; }
-		> .follow  { display: none; }	
+		#nav-favorites { justify-self: center; }
 	}
 } // @media
 
 
-// Medium Screens
-@media screen and (min-width: 720px) {
-	#header {
-		display: grid;
-		grid-template-columns: max-content 1fr max-content max-content;
-		grid-row-gap: 0.6rem;
-		grid-template-areas: 'h-branding h-fav h-follow h-mobile' 'h-main h-main h-main h-main';
+// // Medium Screens
+// @media screen and (min-width: 720px) {
+// 	#header {
+// 		display: grid;
+// 		grid-template-columns: max-content 1fr max-content max-content;
+// 		grid-row-gap: 0.6rem;
+// 		grid-template-areas: 'h-branding h-fav h-follow h-mobile' 'h-main h-main h-main h-main';
 
-		#nav-favorites { justify-self: end; }
-		#nav-main  { justify-self: start; }	
-	}
-} // @media
+// 		#nav-favorites { justify-self: end; }
+// 		#nav-main  { justify-self: start; }	
+// 	}
+// } // @media
 
 
 // Big Screens
-@media screen and (min-width: 940px) {
+@media screen and (min-width: 721px) {
 	#header {
 		display: grid;
 		grid-template-columns: max-content auto auto max-content max-content;
