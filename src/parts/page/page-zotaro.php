@@ -1,13 +1,10 @@
 <?php 
 
 if ( function_exists('Zotpress_func') ) :
-
-    // [zotpress userid="4352520"]
-    // [zotpress items="{4352520:CBCZ4NUE}" style="apa"]
     
-    $zotero_shortcode = get_field('zotaro_shortcode');// note mispelling in field name
+    $zotaro_shortcode = get_field('zotaro_shortcode');// note mispelling in field name
 
-    if ( $zotero_shortcode ) :
+    if ( $zotaro_shortcode ) :
 
         echo '<section class="section section--toggle">';         
             echo '<div class="section__inner">';

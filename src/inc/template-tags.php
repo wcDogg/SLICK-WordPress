@@ -95,8 +95,13 @@ if ( ! function_exists( 'slick_buy_bar' ) ) :
 			echo '<ul role="menu">';
 
 				if( function_exists('get_user_favorites') ) :
-					// <a><i class="far fa-star"></i><span>Add Favorite</span></a>
+					// <i class="far fa-star"></i><span>
+					// $favorite = get_favorites_button($post_id, $site_id);	
+
 					$favorite = get_favorites_button();
+					// $favorite = get_favorites_button( get_the_id(), '1');
+					// $favorite = get_favorites_button( $post->ID, '1');
+
 					echo '<li role="none">'.$favorite.'</li>';
 				endif;			
 				

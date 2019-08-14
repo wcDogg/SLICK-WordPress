@@ -22,7 +22,7 @@ $custom_query = new WP_Query( $args );
 
 get_header();
 
-echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="landing">';
+echo '<article id="post-'.esc_attr( get_the_ID() ).' class="landing">';
 
 	// page
 	get_template_part('parts/headers/header', get_post_type() );

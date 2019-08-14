@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="card offer">
+<article id="post-<?php the_ID(); ?>"  class="card offer">
 
 <?php
 
