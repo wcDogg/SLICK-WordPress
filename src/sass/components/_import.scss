@@ -1,21 +1,16 @@
-@import "AriaModal";
 @import 'branding';
 @import 'block';
-@import "card";
-@import 'envira-gallery';
-@import "filters";
-@import "forms";
+@import 'card';
+@import 'search';
 
-@import "recaptcha";
-@import "search";
-@import "skip-to-main";
-@import "StickyHeader";
-
-@import 'ToggleContent';
-
-@import 'ToggleFilters';
-
+@import 'EnviraGallery';
+@import 'FacetWP';
+@import 'Google';
+// @import 'MaxMegaMenu'; // see plugin
+@import 'NinjaForms';
 @import 'SimpleFavorites.scss';
+@import 'skip-to-main';
 
-// @import "ToTop";
-// @import "LinkTocify";
+@import 'StickyHeader';
+@import 'ToggleContent';
+@import 'ToggleFilters';
