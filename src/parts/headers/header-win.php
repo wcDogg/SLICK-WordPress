@@ -17,14 +17,13 @@ echo '<section class="section section--header" aria-label="Page header">';
         echo '</div>';            
     echo '</div><!-- .page__title-grid -->';
 
-    get_template_part('parts/headers/part', 'share');
-    
-    if ($page_summary) :
-        echo '<div class="section__inner">';
+    echo '<div class="section__inner">';
+        get_template_part('parts/headers/part', 'share');        
+        if ($page_summary) :
             echo '<div class="page__summary">';
                 echo $page_summary;
             echo '</div><!-- .page__summary -->';
-        echo '</div><!-- .section__inner -->';
-    endif; 
+        endif;             
+    echo '</div><!-- .section__inner -->';
 
 echo '</section><!-- .section--header -->';
