@@ -1,34 +1,19 @@
+<?php
+/**
+ * content-offer.php
+ * Displays single offer content
+ * 
+ * @package slick
+ * @since slick 1.0
+ */
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php 
 
-get_template_part('parts/headers/header', get_post_type() ); 
-
-$related_reviews = get_field( 'related_reviews' );
-
-if ( $related_reviews ) :
-
-    global $post; // Necessary.
-
-	echo '<section class="section section--cards">'; 
-		echo '<div class="section__inner">';
-
-			echo '<h1 class="section__title">Related Product Reviews</h1>';
-			
-			echo '<div class="section__grid">';
-
-				foreach ( $related_reviews as $post ) : // Must be called $post. 
-					setup_postdata( $post ); 
-					get_template_part( 'parts/card', get_post_type() );
-				endforeach;
-
-				wp_reset_postdata();
-
-			echo '</div><!-- .section__grid -->';
-
-		echo '</div><!-- .section__inner -->';
-	echo '</section><!-- .section--cards --> ';
-	
-endif;
+	get_template_part('parts/header/header', get_post_type() ); 
+	get_template_part('parts/offer/part', 'related' );
+	get_template_part('parts/section/section', 'comments' );
 
 ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-<?php the_ID(); ?> --> 

@@ -16,13 +16,17 @@ $icon_lasting = '<i class="far fa-fw fa-stopwatch"></i>';
 $icon_price = '<i class="fas fa-dollar-sign"></i>'; 
 $icons_sizes = '<i class="fas fa-signal-alt-3"></i>';
 
-echo '<section class="section section--highlights" aria-label="Review Highlights">';
+
+echo '<section id="highlights" class="section main">';
     echo '<div class="section__inner">';
-        echo '<h1 class="section__title">Highlights</h1>';  
 
-        echo '<div class="section__content">';
+        echo '<div class="section__title-wrap">';
+            echo '<h1 class="section__title">Highlights</h1>';
+        echo '</div>';
 
-            echo '<div class="section__attributes section__grid">';
+        echo '<div class="section__data">';
+
+            echo '<div class="section__attributes">';
                 // Formula
                 if($formulas) :
                     foreach($formulas as $term) :
@@ -60,7 +64,7 @@ echo '<section class="section section--highlights" aria-label="Review Highlights
                         echo '<a class="attribute attribute--recommended" rel="bookmark" title="View all lubricants recommended for '.$term->name.'" href="'.$term_link.'">'. $term_icon .'<span class="attribute__value">'. $term->name .'</span></a>'; 
                     endforeach; 
                 endif;
-            echo '</div><!-- .section__grid -->'; 
+            echo '</div><!-- .section__attributes -->'; 
 
             if ($lubricant_price) :
                 echo '<div class="meta meta--price">'.$icon_price.'<span class="meta__value">Retail '.$lubricant_price.' per oz.</span></div>';                
@@ -75,13 +79,13 @@ echo '<section class="section section--highlights" aria-label="Review Highlights
                 echo '</div>';
             endif;
 
-        echo '</div><!-- .section__content -->'; 
+        echo '</div><!-- .section__data -->'; 
 
         if ($summary) :
-            echo '<div class="section__content">'.$summary.'</div><!-- .section__content -->';
+            echo '<div class="section__text">'.$summary.'</div><!-- .section__text -->';
         endif;     
 
-        slick_buy_bar();
+        get_template_part('parts/lubricant/part', 'action');
 
     echo '</div><!-- .section__inner -->';
-echo '</section><!-- .section--highlights -->'; 
+echo '</section><!-- #highlights -->'; 

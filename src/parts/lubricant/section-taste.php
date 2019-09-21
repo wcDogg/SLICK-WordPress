@@ -16,10 +16,15 @@ $icon_smell = '<i class="far fa-fw fa-flower-tulip"></i>';
 
 if($taste || $smell || $text ) :
 
-    echo '<section class="section section--taste" aria-label="Taste and Smell">';
+    echo '<section id="taste" class="section main">';
         echo '<div class="section__inner">';
-            echo '<h1 class="section__title">Taste &amp; Smell</h1>';
-            echo '<div class="section__content">';
+          
+            echo '<div class="section__title-wrap">';
+                echo '<h1 class="section__title">Taste &amp; Smell</h1>';
+            echo '</div>';
+  
+            echo '<div class="section__data">';
+
                 if($taste) :
                     echo '<div class="attribute attribute--taste">';
                         echo $icon_taste;
@@ -61,14 +66,15 @@ if($taste || $smell || $text ) :
                         echo '</span>';
                     echo '</div>';        
                 endif; //$smell
-            echo '</div><!-- .section__content -->'; 
+
+            echo '</div><!-- .section__data -->'; 
 
             if($text) :
-                echo '<div class="section__content">'.$text.'</div><!-- .section__content-->';
+                echo '<div class="section__text">'.$text.'</div><!-- .section__text -->';
             endif;         
             
-            slick_buy_bar(); 
+            get_template_part('parts/lubricant/part', 'action');
 
         echo '</div><!-- .section__inner -->';   
-    echo '</section><!-- .section--taste -->';
+    echo '</section><!-- #taste -->';
 endif; 

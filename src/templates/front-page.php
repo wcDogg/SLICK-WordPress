@@ -1,10 +1,25 @@
-<?php
+ <?php
+/**
+ * front-page.php
+ * 
+ * 
+ * @package slick
+ * @since slick 1.0
+ */
+
 
  // Protect against arbitrary paged values
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 $args = array( 
-	'post_type' => 'post',
+	'post_type' => 'lubricant',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'highlight',
+            'field'    => 'slug',
+            'terms'    => 'all-around-best',
+        ),
+    ),
 	// Optimize - only get the needed fields. Note this is plural 'ids'.
 	'fields' => 'ids',
 	// Optimize - don't cache the query
@@ -13,76 +28,90 @@ $args = array(
 	'update_post_term_cache' => false, 
 	// Set number of posts to display per page
 	// Feeds max_num_pages calc
-	'posts_per_page' => 10,	
-    'paged' => $paged,
+	'posts_per_page' => -1,	
+    // 'paged' => $paged,
  	// Enable FacetWP 
-	'facetwp' => true,    
+	// 'facetwp' => true,    
 );
 
 // Must be $query for navigation to work
 $custom_query = new WP_Query( $args );
 
+?>
 
-get_header();
+<?php get_header(); ?>
 
-echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="home landing">';
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    get_template_part('parts/headers/header', get_post_type() ); 
+	<?php get_template_part('parts/header/header', get_post_type() ); ?>
 
-    $highlight = get_terms( array(
-        'taxonomy' => 'highlight',
-        'hide_empty' => false, 
-        'fields' => 'all',
-    ) );
-
-    if($highlight) :
-        echo '<section class="section section--blocks section--popular">';
-
-            echo '<h1 class="section__title section--blocks">Popular</h1>';
-
-            $popular = wp_get_nav_menu_name('menu-popular');
-
-            if ( $popular ) : 
-                echo '<nav id="nav-popular" class="nav--horizontal nav--text" role="navigation" aria-label="'.esc_attr($popular).'">';
-                    wp_nav_menu( array(
-                        'theme_location' => 'menu-popular',	
-                    ) );
-                echo '</nav>';
-            endif;
-
-            get_template_part('parts/blocks/blocks', 'highlight');    
-
-        echo '</section> <!-- .section--blocks -->';
-    endif;
-
-    $formulas = get_terms( array(
-        'taxonomy' => 'formulas',
-        'hide_empty' => false, 
-        'fields' => 'all',
-    ) );
-
-    if($formulas) :
-        echo '<section class="section section--blocks section--formulas">';
-            echo '<h1 class="section__title">Base Formulas</h1>';
-            get_template_part('parts/blocks/blocks', 'formulas');
-        echo '</section><!-- .section--blocks -->';
-    endif;
-
-    $recommended = get_terms( array(
-        'taxonomy' => 'recommended-for',
-        'hide_empty' => false, 
-        'fields' => 'all',
-    ) );
-
-    if($recommended) :
-        echo '<section class="section section--blocks section--recommended">';
-            echo '<h1 class="section__title">Recommended For</h1>';
-            get_template_part('parts/blocks/blocks', 'recommended');
-        echo '</section> <!-- .section--blocks -->';
-    endif;   
+	<section class="section cards cards--highlight">
+		<div class="section__inner">
 	
+			<div class="section__title-wrap">
+				<h1 class="section__title">Popular</h1>
+			</div><!-- .section__title-wrap -->
 
+			<?php get_template_part('parts/nav/nav', 'popular') ?>
 
-echo '</article><!-- #post-'.esc_html( get_the_ID() ).' -->';
+			<div class="section__cards">
+				<?php get_template_part('parts/card/card', 'highlight'); ?>
+			</div><!-- .section__cards-->   
 
-get_footer();
+		</div><!-- .section__inner -->
+	</section>
+
+	<?php if ( $custom_query->have_posts() ) :  ?>
+		<section class="section cards cards--multi">
+			<div class="section__inner">
+		
+				<div class="section__title-wrap">
+					<h1 class="section__title">All Around Best</h1>
+				</div><!-- .section__title-wrap -->
+			
+				<div class="section__cards">
+
+					<?php while ( $custom_query->have_posts() ) : 
+
+						$custom_query->the_post(); 
+						get_template_part( 'parts/card/card', get_post_type() );
+											
+					endwhile; ?>		
+
+				</div><!-- .section__cards-->   
+
+			</div><!-- .section__inner -->
+		</section>
+	<?php endif; ?>
+
+	<section class="section cards cards--recommended">
+		<div class="section__inner">
+	
+			<div class="section__title-wrap">
+				<h1 class="section__title">Recommended For</h1>
+			</div><!-- .section__title-wrap -->
+	
+			<div class="section__cards">
+				<?php get_template_part('parts/card/card', 'recommended'); ?>
+			</div><!-- .section__cards-->   
+			
+		</div><!-- .section__inner -->
+	</section>
+
+	<section class="section cards cards--formula">
+		<div class="section__inner">
+	
+			<div class="section__title-wrap">
+				<h1 class="section__title">Base Formulas</h1>
+			</div><!-- .section__title-wrap -->
+	
+			<div class="section__cards">
+				<?php get_template_part('parts/card/card', 'formula'); ?>
+			</div><!-- .section__cards--> 
+
+		</div><!-- .section__inner -->
+	</section>
+
+</article><!-- #post-<?php the_ID(); ?> -->
+
+<?php get_footer(); ?>

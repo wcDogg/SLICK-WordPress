@@ -15,10 +15,14 @@ $brand_link = get_term_link($brand);
 
 if ($samples_from) :
 
-    echo '<section class="section section--samples" aria-label="Samples">';
+    echo '<section id="samples" class="section main">';
         echo '<div class="section__inner">';
-            echo '<h1 class="section__title">Samples</h1>';
-            echo '<div class="section__content">';
+
+            echo '<div class="section__title-wrap">';
+                echo '<h1 class="section__title">Samples</h1>';
+            echo '</div>';
+
+            echo '<div class="section__text">';
 
                 // None - Initial review
                 if($samples_from == 1) :
@@ -50,9 +54,11 @@ if ($samples_from) :
                     echo $samples_other;
                 endif;   
                 
-            echo '</div><!-- .section__content -->';
+            echo '</div><!-- .section__text -->';
             
+            get_template_part('parts/lubricant/part', 'action');
+
         echo '</div><!-- .section__inner -->';
-    echo '</section><!-- .section--packaging -->';
+    echo '</section><!-- #samples -->';
 
 endif; ?>

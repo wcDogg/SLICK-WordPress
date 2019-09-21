@@ -13,12 +13,15 @@ $icon_lasting = '<i class="far fa-fw fa-stopwatch"></i>';
 $icon_reactivate = '<i class="fas fa-fw fa-redo"></i>';
 $icon_dries = '<i class="far fa-fw fa-hand-paper"></i>'; 
 
-echo '<section class="section section--consistency"  aria-label="Consistency and Lasting Power">';
+echo '<section id="consistency" class="section main">';
     echo '<div class="section__inner">';
-        echo '<h1 class="section__title">Consistency &amp; Lasting Power</h1>';
- 
+
+        echo '<div class="section__title-wrap">';
+            echo '<h1 class="section__title">Consistency &amp; Lasting Power</h1>';
+        echo '</div>';
+        
         if( $consistency || $lasting ) :
-            echo '<div class="section__content">';
+            echo '<div class="section__data">';
 
                 if($consistency || $lasting) :
                     echo '<div class="section__attributes">';
@@ -56,7 +59,7 @@ echo '<section class="section section--consistency"  aria-label="Consistency and
                     echo '</div>';
                 endif;
 
-            echo '</div><!-- .section__content-->';
+            echo '</div><!-- .section__data-->';
         endif;
 
         if ($media) :
@@ -69,7 +72,7 @@ echo '<section class="section section--consistency"  aria-label="Consistency and
                 echo '</video><!-- .section__video-->';
             endif;
             if($ext == 'gif') :
-                echo '<div class="section__gif">';
+                echo '<div class="section__video">';
                     echo '<img src="'.$media.'">';
                 echo '</div><!-- .section__gif -->';     
             endif;
@@ -79,7 +82,7 @@ echo '<section class="section section--consistency"  aria-label="Consistency and
             echo '<div class="section__content">'.$text.'</div><!-- .section__content -->';
         endif;
 
-        slick_buy_bar();
+        get_template_part('parts/lubricant/part', 'action');
 
     echo '</div><!-- .section__inner -->';
-echo '</section><!-- .section--consistency -->';
+echo '</section><!-- .section -->';

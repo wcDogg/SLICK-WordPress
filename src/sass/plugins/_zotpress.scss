@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+// --------------------------------------------------
+// Zotpress
+// --------------------------------------------------
+
+// Research page
+.page-id-568 .sextion--zotaro {
+    min-height: 100vh;
+}
+
+#zp-Browse-Bar {}
+
+#zp-Zotpress-SearchBox-Input {
+    @include font-size;
+    padding: 0.15em 0.35em;
+    margin: 0;
+}
+
+
+.zp-List {}
+
+.zp-Entry {
+    @include font-size(small);
+}
+
+.csl-bib-body {
+    margin-bottom: 0.6rem;
+}
+
+#zpSearchResultsPagingContainer {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 0 !important; 
+}
+
+#zpSearchResultsPagingContainer span.title {
+    float: none !important;
+    margin: 0 !important;    
+    padding: 0 !important;   
+    line-height: 1 !important; 
+}   
+
+#zpSearchResultsPagingCrop {
+    position: relative;
+    overflow: visible !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+#zpSearchResultsPaging {
+    position: inherit !important;
+}
+
+#zpSearchResultsPaging a {
+    display: inline;
+    float: none; 
+    padding: 0;    
+    border: none;
+    text-decoration: none;
+    &.selected {
+        border: 0;      
+    }
+}
+

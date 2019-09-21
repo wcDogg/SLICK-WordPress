@@ -1,65 +1,57 @@
 <?php
 /**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
+ * search.php
+ * Displays search results
+ * 
  * @package slick
+ * @since slick 1.0
  */
-
-$upload_dir = wp_upload_dir();
-$img_search = $upload_dir['url'] . '/page_search.jpg';
+?>
 
 
-get_header();
+<?php get_header(); ?>
 
-echo '<article class="search">';
+<article class="search">
 
-	echo '<section class="section section--header">';
+    <section class="section header header--archive">
+        <div class="overlay__wrap">
+            <div class="header__title-wrap overlay__content">
+                <h1 class="header__title">Search</h1>
+                <h2 class="header__subtitle"><?php printf( __( '%s', 'slick' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </section><!-- .header -->
 
-		echo '<div class="page__title-grid">';
-			echo '<div class="page__title-wrap">';
-				echo '<h1 class="page__title">Search</h1>';
-			echo '</div><!-- .page__title-wrap -->';
-		echo '</div><!-- page__title-grid -->';	
+    <?php if ( have_posts() ) : ?>
 
-	echo '</section><!-- .section--header -->';
+        <section class="section cards cards--multi">
+            <div class="section__inner">
 
-	if ( have_posts() ) : 
+                <div class="section__search">
+                    <?php get_search_form(); ?>
+                </div><!-- .section__search -->
 
-		echo '<section class="section section--cards">';
-			echo '<div class="section__inner">';
+                <div class="section__cards">
 
-				get_search_form();		
-
-				echo '<div class="section__grid">';			
-					/* Start the Loop */
-					while ( have_posts() ) :					
+					<?php while ( have_posts() ) :					
 						the_post();	
 						get_template_part( 'parts/card', get_post_type() );	
-					endwhile;
-				echo '</div><!-- .section__grid -->';
+					endwhile; ?>
 
-				get_template_part('parts/nav/nav', 'archive');
+                </div><!-- .section__cards-->
 
-			echo '</div><!-- .section__inner -->';
-		echo '</section><!-- .section -->';	
-		
-	else :
-		
-		echo '<section class="section">';	
-			echo '<div class="section__inner">';
+                <?php get_template_part('parts/archive/nav', 'archive'); ?>
 
-				get_search_form();
+            </div><!-- .section__inner -->
+        </section><!-- .section -->
 
-				echo '<p class="big" style="text-align: center;">Oops! No results.</p>';
+    <?php else :
 
-			echo '</div><!-- .section__inner -->';
-		echo '</section><!-- .section -->';	
+        get_template_part('parts/section/section', 'none');
 
-	endif;
+    endif; ?>
+ 
+</article><!-- .search -->
 
-echo '</article><!-- #post-'.esc_html( get_the_ID() ).' -->';
-
-get_footer();
-
+<?php get_footer(); ?>

@@ -1,48 +1,37 @@
-// 
-// Meta Classes
-// 
-div.meta {}
-span.meta {}
+@charset "UTF-8";
+// ---------------------------------------
+// Meta
+// styles match .attribute
+// ---------------------------------------
+%meta, 
 .meta {
-    i {}
-    span.meta__value {}
-}
+	// white-space: nowrap; 
+	padding: 4px;
+	@include font-size(small);
 
+	i { 
+		@include font-size; 
+		width: 1.3em;
+		text-align: center;		
+	}  
 
-// 
-// Meta Base
-// 
-.meta {
-    @include condensed-400;
-    @extend %small;
-    line-height: 1.5;
-    padding: 0.25rem;
+	.meta__value {}
+	
+} //
 
-    i { 
-        margin-top: 0.25em; 
-    }
+%a-meta,
+a.meta,
+.meta a {
 
-    .meta__value {}
-
+	@extend %a-color; // +1 optional
+	// @extend %a-color-primary;
+	// @extend %a-color-secondary;
+	// @extend %a-color-alt;
+	// @extend %a-color-bright;
+	// @extend %a-color-subtle;
+	 
 } //
 
 
-div.meta {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-gap: 0.5em;
-    
-} //
 
-
-span.meta {
-    i {
-        margin-right: 0.5em;
-    }
-} // 
-
-
-// 
-// Meta One-Offs
-// 
 

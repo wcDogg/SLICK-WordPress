@@ -15,12 +15,15 @@ $ingredients  = get_field('ingredients');
 // $ingredients_single = get_field('ingredients_single');
 
 
-echo '<section class="section section--ingredients" aria-label="Ingredients">';
+echo '<section id="ingredients" class="section main">';
     echo '<div class="section__inner">';
-        echo '<h1 class="section__title">Ingredients</h1>';
 
-        echo '<div class="section__content">';
-            echo '<div class="section__attributes section__grid">';
+        echo '<div class="section__title-wrap">';
+            echo '<h1 class="section__title">Ingredients</h1>';
+        echo '</div>';
+
+        echo '<div class="section__data">';
+            echo '<div class="section__attributes">';
                 if ($highlights) : 
                     foreach($highlights as $term) :
                         $term_link = get_term_link( $term );
@@ -37,8 +40,7 @@ echo '<section class="section section--ingredients" aria-label="Ingredients">';
                         echo '<a class="attribute attribute--ingredient" rel="bookmark" title="View all lubricants with '.$term->name.' as a key ingredient." href="'.$term_link.'">'. $icon_ingredient .'<span class="attribute__value">'. $term->name .'</span></a>'; 
                     endforeach;
                 endif;  
-
-            echo '</div><!-- .section__grid -->'; 
+            echo '</div><!-- .section__attributes -->'; 
 
             if( $frees ): 
                 echo '<div class="section__meta">';
@@ -66,15 +68,15 @@ echo '<section class="section section--ingredients" aria-label="Ingredients">';
                 echo '</p>'; 
             endif;  
 
-        echo '</div><!-- .section__content -->';
+        echo '</div><!-- .section__attributes -->';
 
     
 
         if ($text) :
-            echo '<div class="section__content">' . $text . '</div><!-- .section__content -->';
+            echo '<div class="section__text">' . $text . '</div><!-- .section__content -->';
         endif;
 
-        slick_buy_bar();
+        get_template_part('parts/lubricant/part', 'action');
 
     echo '</div><!-- .section__inner -->';
 echo '</section><!-- .page__materials -->';

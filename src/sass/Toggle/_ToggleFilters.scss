@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+
+// 
+// @this /sass/componenets/_ToggleFilters.scss
+// @requires /js/ToggleFilters.js
+// @requires /sass/globals/_animate.scss
+// 
+
+// <section>
+#filters {
+    // Hide entire section if JS is not enabled
+    // No fallback needed because filters themselves
+    // are ajax and won't work without JS anyway.
+    display: none;
+
+    // <a>
+    #filters-toggle {
+        display: block;
+        width: 200px;
+        margin: 1rem auto;   
+        
+        i {
+            margin: 0 0 0 0.5em;
+        }
+    }
+
+    // Hide `.section` inner until toggled
+    #filters-content {
+        display: none; 
+    }
+
+} // 
+
+#filters-content {
+
+    &[aria-hidden] {
+        @include animated(300ms); 
+    }
+
+    &[aria-hidden='true'] {
+        @extend %scaleOutUp;  
+    }   
+
+    &[aria-hidden='false'] {
+        @extend %scaleInDown;
+    }
+
+} //

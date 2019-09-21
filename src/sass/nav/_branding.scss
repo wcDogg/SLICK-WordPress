@@ -1,0 +1,46 @@
+@charset "UTF-8";
+// --------------------------------------------
+// Branding 
+// --------------------------------------------
+div.branding {
+
+	a.custom-logo-link {}
+		img.custom-logo {}
+	a.branding__title {}
+
+
+}
+
+.branding {
+	display: flex;
+	align-items: center;
+
+	a {
+		@extend %a-menu; // +1 optional
+		// @extend %a-menu-primary;
+		// @extend %a-menu-secondary;
+		// @extend %a-menu-alt;
+		// @extend %a-menu-subtle;
+		// @extend %a-menu-bright;
+		@extend %a-menu-white;		
+	}
+
+} //
+
+.branding__title {
+	@include font-size(1.125);
+	font-weight: 600;
+	line-height: 1;
+	padding: $gap-small;
+	padding-top: 4px;	
+
+} // 
+
+.custom-logo-link {}
+
+.custom-logo {
+	height: 1.62em !important;
+	width: 1.62em !important;	
+}
+
+

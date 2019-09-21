@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+// -----------------------------------------
+// CPT lubricant sections
+// .section.main
+// -----------------------------------------
+
+#highlights {}
+#offer {}
+#gallery {}
+#materials {}
+#ingredients {}
+#consistency {}
+#taste {}
+#packaging {}
+#samples {}
+#amazon {}
+
+
+div.section.main {
+    div.section__inner {}
+        div.section__title-wrap {}
+            h1.section__title {}
+            h2.section__subtitle {}
+            div.section__description {}
+
+        div.section__data {} 
+            div.section__attributes {}
+            div.section__meta {}
+            div.section__ingredients {}
+
+        div.section__text {} 
+
+        nav.buy {}     
+        
+        div.section__amazon {}
+        div.envira-gallery-wrap {} 
+
+}
+
+// -----------------------------------------
+// .section.main
+// -----------------------------------------
+#highlights {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__data {}
+            .section__attributes {}
+                a.attribute {}
+            .section__meta {}
+                div.meta.meta--price {}
+                div.meta.meta--sizes {}
+        .section__text {}
+}
+
+#offer.section.cards.cards--offer {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__cards {}
+}
+
+#gallery {
+    .section__inner {}
+        .envira-gallery-wrap {}
+}
+
+#materials {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__data {}
+            .section__attributes {}
+                a.attribute
+            div.meta {} // multiple
+        .section__text {}
+}
+
+#ingredients {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__data {}
+            .section__attributes {}
+            .section__meta {}
+            .section__ingredients {}
+        .section__text {}
+        .buy-nav {}
+}
+
+#consistency {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__data {}
+            .section__attributes {}
+            .section__meta {}
+            .section__meta {}
+        .section__mp4 {}
+        .section__text {}
+        .buy-nav {}
+}
+
+#taste {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__data {}
+            div.attribute {}
+            div.attribute {}
+        .section__text {}
+}
+
+#packaging {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__data {}
+            div.attribute {} // multiple
+        .section__text {}
+}
+
+#samples {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__text {}
+}
+
+#amazon {
+    .section__inner {}
+        .section__title-wrap {}
+        .section__amazon {}
+}
+
+
+
+// ----------------------------------------------
+// .section__attributes
+// ----------------------------------------------
+.section__attributes {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    align-items: center;
+    align-content: center;
+
+    .attribute {
+        white-space: nowrap;
+    }
+
+} //
+
+
+#highlights {
+    .section__attributes {
+        grid-template-columns: repeat(auto-fill, 260px);
+    }  
+} //
+
+
+#materials,
+#ingredients,
+#consistency {
+    .section__attributes {
+        grid-template-columns: repeat(auto-fill, 200px);
+    }  
+} //
+
+
+// -----------------------------------------
+//  #highlights 
+// -----------------------------------------
+.meta--price {
+    margin-top: $gap-base;
+}
+
+// -----------------------------------------
+//  #offer 
+// -----------------------------------------
+#offers {
+    @extend %width-base;
+    .section__cards {
+        margin-bottom: $gap-big;
+    }
+} //
+
+// -----------------------------------------
+//  #materials 
+// -----------------------------------------
+
+#materials .section__attributes {
+    margin-bottom: $gap-base;
+}
+
+.meta--warning {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: $gap-small;
+
+    i {
+        justify-self: center;
+        margin-top: 0.125em;
+    }
+
+} //
+
+
+// -----------------------------------------
+//  #ingredients 
+// -----------------------------------------
+#ingredients {
+    .section__meta {
+        margin-top: $gap-base;
+    }
+
+    p.ingredients {
+        @include font-size(small);
+        margin: $gap-base;
+    }    
+
+} // 
+
+// -----------------------------------------
+//  #consistency 
+// -----------------------------------------
+#consistency {
+    .meta--reactivate {
+        margin-top: $gap-base;
+    }
+
+    .meta--reactivate i,
+    .meta--dries i {
+        margin-right: 4px;
+    }
+
+} // 

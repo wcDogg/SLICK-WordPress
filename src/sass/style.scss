@@ -3,13 +3,16 @@
 Theme Name: SLICK WordPress
 Theme URI: https://github.com/wcDogg/SLICK-WordPress
 Author: Lisa Burton
-Author URI: https://github.com/wcDogg
+Author URI: https://github.com/wcDogg?tab=repositories
 Description: A personal theme loosly based on Underscores
 Version: 1.0.0
 License: GNU General Public License v2 or later
-License URI: https://github.com/wcDogg/SLICK-WordPress/blob/master/LICENSE
+License URI: LICENSE
 Text Domain: slick
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+
 */
 
 
@@ -17,8 +20,20 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "mixins/import";
 @import "helpers/import";
 @import "typography/import";
-@import "layouts/import";
-@import "bits/import";
+@import "animate/import";
+@import 'overlay/import';
+@import 'after-bg/import';
+
+
+@import "site/import";
 @import "nav/import";
+@import "sections/import";
+@import "bits/import";
 @import "media/import";
-@import "components/import";
+@import "card/import";
+
+@import 'plugins/import';
+@import "MobileMenu/import";
+@import 'Toggle/import';
+
+@import 'one-off/import';

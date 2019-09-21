@@ -17,12 +17,16 @@ $ph_icon = '<i class="far fa-fw fa-file-chart-line"></i>';
 $osmo_icon = '<i class="far fa-fw fa-file-chart-line"></i>';
 
 if ($fda_status || $shelf_life_manufacturer || $ph_status || $osmo_status || $text) :
-    echo '<section class="section section--packaging" aria-label="Packaging and Labeling">';
+
+    echo '<section id="packaging" class="section main">';
         echo '<div class="section__inner">';
-            echo '<h1 class="section__title">Packaging &amp; Labeling</h1>'; 
+
+            echo '<div class="section__title-wrap">';
+                echo '<h1 class="section__title">Packaging &amp; Labeling</h1>';
+            echo '</div>'; 
 
             if ($fda_status || $shelf_life_manufacturer || $ph_status || $osmo_status) :
-                echo '<div class="section__content">';
+                echo '<div class="section__data">';
 
                     if($shelf_life_manufacturer) :
                         echo'<div class="attribute attribute--shelf">';
@@ -133,15 +137,16 @@ if ($fda_status || $shelf_life_manufacturer || $ph_status || $osmo_status || $te
                         endif;
                     endif;
 
-                echo '</div><!-- .section__content -->';
+                echo '</div><!-- .section__data -->';
             endif;
 
             if($text) :
-                echo '<div class="section__content">'.$text.'</div><!-- .section__content -->';
+                echo '<div class="section__text">'.$text.'</div><!-- .section__text -->';
             endif;                
 
-            slick_buy_bar();
+            get_template_part('parts/lubricant/part', 'action');
 
         echo '</div><!-- .section__inner -->';
-    echo '</section><!-- .section--packaging -->';
+    echo '</section><!-- #packaging -->';
+
 endif;

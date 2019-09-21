@@ -8,11 +8,11 @@ if( function_exists('get_user_favorites') ) :
     $url_fav_page = home_url( '/favorites' ); 
 
 
-    echo '<nav id="nav-favorites" class="nav--horizontal nav--icons" aria-label="View your favorite lubricants">';
+    echo '<nav id="favorites-nav">';
 
-        echo '<ul role="menu">';
+        echo '<ul id="favorites-menu">';
 
-            echo '<li role="none">';
+            echo '<li>';
 
                 if ( $post_ids ) :
 

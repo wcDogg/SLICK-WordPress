@@ -87,6 +87,13 @@ ToggleFilters.init = function () {
 
     console.log('ToggleFilters init');
 
-    return new ToggleFilters();
+    var wrap = document.getElementById('filters');
+
+    if ( wrap == null ) {
+        return;
+    } 
+    else {
+        return new ToggleFilters();
+    }
 
 }; 

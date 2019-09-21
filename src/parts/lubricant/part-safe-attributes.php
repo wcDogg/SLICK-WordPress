@@ -12,7 +12,7 @@ $icon_safe_not = '<i class="fas fa-fw fa-times"></i>';
         
 if ( ! is_wp_error( $terms ) ) :
 
-    echo '<div class="section__attributes section__grid">'; 
+    echo '<div class="section__attributes">'; 
 
         foreach ( $terms as $term ) :
 
@@ -25,6 +25,6 @@ if ( ! is_wp_error( $terms ) ) :
 
         endforeach;
 
-    echo '</div><!-- .section__grid -->';   
+    echo '</div><!-- .section__attributes -->';   
 
 endif;

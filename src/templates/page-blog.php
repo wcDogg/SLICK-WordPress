@@ -22,64 +22,73 @@ $custom_query = new WP_Query( $args );
 
 get_header();
 
-echo '<article id="post-'.esc_attr( get_the_ID() ).' class="landing">';
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+
+<?php
 
 	// page
-	get_template_part('parts/headers/header', get_post_type() );
+	get_template_part('parts/header/header', get_post_type() );
 
 	if ( $custom_query->have_posts() ) : 
 
-		echo '<section class="section section--cards">';	
+		echo '<section class="section cards cards--multi">';	
 			echo '<div class="section__inner">';
-				echo '<div class="section__grid">';	
+				echo '<div class="section__cards">';	
 
 					while ( $custom_query->have_posts() ) : 
 
 						$custom_query->the_post(); 
-						get_template_part( 'parts/card', get_post_type() );
+						get_template_part( 'parts/card/card', get_post_type() );
 											
 					endwhile;
 
-					// Query Navigation 
-					// Is there a way to make this a part or function?
-					if ( $custom_query->max_num_pages >= 2 ) : 						
+				echo '</div><!-- .section__cards -->';		
 
-						$icon_next = '<i class="fas fa-chevron-right"></i>';
-						$icon_prev = '<i class="fas fa-chevron-left"></i>';	
-						
-						echo '<nav class="pagination" role="navigation" aria-label="Blog Navigation">';
-							echo paginate_links( array(
-								'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-								'format'       => '?paged=%#%',    
-								'total'        => $custom_query->max_num_pages,   
-								'current'      => max( 1, get_query_var( 'paged' ) ),
-								'type'         => 'list', // 'plain' 'array' 'list'
-								'show_all'     => false,						
-								'end_size'     => 2,
-								'mid_size'     => 1,
-								'prev_next'    => true,
-								'prev_text'    => sprintf( $icon_prev, __( 'Newer Posts', 'slick' ) ),
-								'next_text'    => sprintf( $icon_next, __( 'Older Posts', 'slick' ) ),
-								'screen_reader_text' => __( 'Achive Navigation', 'slick' ),
-								'add_args'     => false,
-								'add_fragment' => '',   
-							) );
-						echo '</nav>';
+				// Query Navigation 
+				// Is there a way to make this a part or function?
+				if ( $custom_query->max_num_pages >= 2 ) : 						
 
-						else : // do nothing needed for this to work, but not sure why?
+					$icon_next = '<i class="fas fa-chevron-right"></i>';
+					$icon_prev = '<i class="fas fa-chevron-left"></i>';	
+					
+					echo '<nav class="pagination" role="navigation" aria-label="Blog Navigation">';
+						echo paginate_links( array(
+							'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+							'format'       => '?paged=%#%',    
+							'total'        => $custom_query->max_num_pages,   
+							'current'      => max( 1, get_query_var( 'paged' ) ),
+							'type'         => 'list', // 'plain' 'array' 'list'
+							'show_all'     => false,						
+							'end_size'     => 2,
+							'mid_size'     => 1,
+							'prev_next'    => true,
+							'prev_text'    => sprintf( $icon_prev, __( 'Newer Posts', 'slick' ) ),
+							'next_text'    => sprintf( $icon_next, __( 'Older Posts', 'slick' ) ),
+							'screen_reader_text' => __( 'Achive Navigation', 'slick' ),
+							'add_args'     => false,
+							'add_fragment' => '',   
+						) );
+					echo '</nav>';
 
-					endif;
+					else : // do nothing needed for this to work, but not sure why?
 
-				echo '</div><!-- .section__grid -->';
+				endif;
+
 			echo '</div><!-- .section__inner -->';
 		echo '</section><!-- .section -->';	
 		
 	else :
-		get_template_part( 'parts/content', 'none' );
+		get_template_part( 'parts/section/section', 'none' );
 	endif;
 
 	wp_reset_query();
 
-echo '</article><!-- #post-'.esc_html( get_the_ID() ).' -->';
+?>
+
+</article><!-- #post-<?php the_ID(); ?> -->
+ 
+<?php
 
 get_footer();

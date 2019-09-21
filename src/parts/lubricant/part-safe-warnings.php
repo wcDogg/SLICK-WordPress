@@ -8,7 +8,7 @@ $icon_x = '<i class="fas fa-fw fa-times"></i>';
 if ( has_term('', 'formulas') ) :
 
     // Warn silicone-silicone
-     if ( has_term('silicone', 'formulas') ) :
+    if ( has_term('silicone', 'formulas') ) :
         echo '<div class="meta meta--warning">'.$icon_x.'<span class="meta__value">Silicone lubricants ARE SAFE to use with 100% medical-grade silicone toys. Silicone lubricants are NOT SAFE to use with blended materials that include silicone. <a href="https://slick.sexy/?p=1173" rel="bookmark">Info</a></span></div>';  
     endif;   
 

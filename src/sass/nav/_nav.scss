@@ -1,315 +1,87 @@
-// 
-// <nav> Shared
-// 
+@charset "UTF-8";
+// --------------------------------------
+// _nav.scss
+// --------------------------------------
 
-nav {
-    margin: 0;
-    padding: 0;   
-
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 4px;
-        padding: 0;        
-    }
-
-    &.nav--vertical ul {
-        flex-direction: column; 
-    }
-
-    &.nav--horizontal ul {
-        flex-direction: row; 
-    }    
-
-    li {
-        margin: 0;
-        padding: 0;
-    }
-
+// nav#main-nav
+ul#main-menu {
+    @extend %nav-text-horizontal;
     a {
-        display: block;
-    }
+        @extend %a-menu; // +1 optional
+        // @extend %a-menu-primary;
+        // @extend %a-menu-secondary;
+        // @extend %a-menu-alt;
+        // @extend %a-menu-subtle;
+        // @extend %a-menu-bright;
+        @extend %a-menu-white;
+    }	       
 
-} // 
-
-
-//
-// <nav> Text
-//
-
-.nav--text {
-
-    ul {
-        @include condensed-400;
-        @include font-size(0.79);
-        line-height: 1;
-    }
-
-    li.active a,
-    a.active {
-        text-decoration: underline;
-        text-decoration-style: dotted;
-        text-decoration-skip-ink: auto;
-    } 
-    
-    &.nav--vertical a {
-        padding: 0.3em 4px;
-    }
-
-    &.nav--horizontal a {
-        padding: 0.3em 0.62em;
-        text-align: center;
-    }      
-
-} // 
-
-.nav--text a {
-    color: $color__alt;
-    &:hover, &:active, &:focus {
-        color: #ffffff;
-    }
-    &:active, &:focus {
-        outline-color: #ffffff;
-    }    
-}
-
-.nav--text.white a {
-	color: #ffffff;
-	&:hover, &:active, &:focus {
-		color: $color__alt;
-	}	
-	&:active, &:focus {
-		outline-color: $color__alt;
-	}		
-}
-
-.nav--text.primary a {
-	color: $color__primary;
-	&:hover, &:active, &:focus {
-		color: $color__alt;
-	}	
-	&:active, &:focus {
-		outline-color: $color__alt;
-	}			
-}
-
-.nav--text.secondary a {
-	color: $color__secondary;
-	&:hover, &:active, &:focus {
-		color: $color__alt;
-	}	
-	&:active, &:focus {
-		outline-color: $color__alt;
-	}			
-}
-
-.nav--text.alt a {
-	color: $color__alt;
-	&:hover, &:active, &:focus {
-		color: #FFFFFF;
-	}	
-	&:active, &:focus {
-		outline-color: #FFFFFF;
-	}			
-}	
+} //
 
 
-//
-// <nav> Icons
-// 
-
-.nav--icons {
-    ul {
-        @include font-size(1);
-    }  
+// nav#popular-nav
+ul#popular-menu {
+    @extend %nav-text-horizontal;
+    margin-bottom: $gap-base;
     a {
-        margin: 6px;	        
-    }  
-    i {
-        font-size: 1em;
-        padding: 0.5em;
-        height: 2em; // font-szie + (padding x 2)
-        width: 2em;
-        text-align: center;
-        border: $border__icon;
-        border-radius: $border-radius__icon;
-    }
-
-} // 
-
-
-//  
-// Icon Transitions
-// 
-
-a.fav-button i,
-a.simplefavorite-button i,
-.nav--icons a i {
-	position: relative;
-	z-index: 1;
-    transition: color 200ms linear;	
-    // border: $border__icon;
-    // border-radius: $border-radius__icon;
-    	
-	&::after {
-		content: '';
-        position: absolute;
-		z-index: -1;        
-		top: 0;
-		right: 0;
-		width: 100%;
-        height: 100%;
-        transform: scale(0);
-        transform-origin: center;
-		transition: transform 200ms linear;
-		border-radius: $border-radius__icon;
-    }
-    
-    &:hover::after,
-    &:active::after,
-    &:focus::after {
-        transform: scale(1);
-        transform-origin: center;    
-    }
-
-} // 
-
-
-.nav--icons a i {
-    color: rgba(#ffffff, 0.7);
-    background: $color__primary;	
-
-    &:hover, &:active, &:focus {
-        // color: #ffffff !important;
-        color: #ffffff;
-    }
-    &::after {
-        background: $color__alt;
-    }
-}
-.nav--icons a { 
-    &:active, &:focus {
-        outline-color: $color__alt;
-    }
+        @extend %a-menu; // +1 optional
+        // @extend %a-menu-primary;
+        // @extend %a-menu-secondary;
+        // @extend %a-menu-alt;
+        // @extend %a-menu-subtle;
+        // @extend %a-menu-bright;
+        @extend %a-menu-white;
+    }	 
 }
 
 
-.nav--icons.primary a i {
-    background: $color__primary, 0.7;	
-    &::after {background: $color__alt;}
-}
-.nav--icons.primary a { 
-    &:active, &:focus {
-        outline-color: $color__alt;
-    }
-}
-
-.nav--icons.secondary a i {
-    background: $color__secondary;	
-    &::after {background: $color__alt;}    
-}
-.nav--icons.secondary a { 
-    &:active, &:focus {
-        outline-color: $color__alt;
-    }
-}
-
-.nav--icons.alt a i {
-    background: $color__alt;	
-    &::after {background: $color__secondary;}   
-}
-.nav--icons.alt a { 
-    &:active, &:focus {
-        outline-color: $color__secondary;
-    }
-}
+// nav#footer-nav
+ul#footer-menu {
+    @extend %nav-text-horizontal;
+    a {
+        @extend %a-menu; // +1 optional
+        // @extend %a-menu-primary;
+        // @extend %a-menu-secondary;
+        // @extend %a-menu-alt;
+        // @extend %a-menu-subtle;
+        // @extend %a-menu-bright;
+        @extend %a-menu-white;
+    }	 
+} //
 
 
-.nav--icons a.link--amazon i {
-	&::after {background: $color__amazon;}	
-}
-.nav--icons a.link--amazon  { 
-    &:active, &:focus {
-        outline-color: $color__amazon;
-    }
-}
-
-.nav--icons a.link--manufacturer i {
-	&::after {background: $color__manufacturer;}	
-}
-.nav--icons a.link--manufacturer { 
-    &:active, &:focus {
-        outline-color: $color__manufacturer;
-    }
-}
+// nav.follow-nav 
+ul.follow-menu {
+    @extend %nav-icon-horizontal; 
+    @extend %menu-icon;
+    @extend %menu-icon-default;
+    // @extend %menu-icon-primary;
+    // @extend %menu-icon-secondary;
+    // @extend %menu-icon-alt;
+    // @extend %menu-icon-white;
+    // @extend %menu-icon-social;
+} //
 
 
-.nav--icons a.link--cheap i {
-	&::after {background: $color__cheap;}	
-}
-.nav--icons a.link--cheap { 
-    &:active, &:focus {
-        outline-color: $color__cheap;
-    }
-}
-
-// <i class="far fa-star"></i>
-a.fav-button i,
-a.simplefavorite-button i {
-    color: rgba(#ffffff, 0.7);
-    background: $color__primary;	
-
-    &:hover, &:active, &:focus {
-        color: #ffffff;
-    }
-    &::after {
-        background: $color__favorite;
-    }
-}
-a.fav-button,
-a.simplefavorite-button {
-    &:active, &:focus {
-        outline-color: $color__favorite;
-    }
-}
-
-// <i class="fas fa-star"></i>
-a.fav-button.active i,
-a.simplefavorite-button.active i {
-    color: $color__favorite;
-
-    &:hover, &:active, &:focus {
-        color: #ffffff;
-    }
-    &::after {
-        background: $color__favorite;
-    }
-}
-a.fav-button.active,
-a.simplefavorite-button.active {
-    &:active, &:focus {
-        outline-color: $color__favorite;
-    }
-}
-    
-
-// 
-// One-off menu alignments
-// 
-
-.single-lubricant .buy ul,
-#nav-popular ul,
-.follow ul {
-    justify-content: center;
-}
+// nav.favorites-nav
+ul.favorites-menu {
+    @extend %nav-icon-horizontal; 
+    @extend %menu-icon;
+    @extend %menu-icon-default;
+    // @extend %menu-icon-primary;
+    // @extend %menu-icon-secondary;
+    // @extend %menu-icon-alt;
+    // @extend %menu-icon-white;
+    // @extend %menu-icon-social;
+} //
 
 
-// 
-// One-off size adjustments
-// 
-#header .nav--icons ul,
-.card .nav--icons ul {
-    @include font-size(0.79);
-}
+
+
+ul#favorites-menu,
+ul.buy-menu {
+    @extend %nav-icon-horizontal; 
+    @extend %menu-icon;
+    @extend %menu-icon-buy;
+} //
 

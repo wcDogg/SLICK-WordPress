@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+//
+// Vanilla Aria Toggle Content
+// A lighter-weight alternative to many ARIA accordions.
+//
+// @this /sass/componenets/_ToggleContent.scss
+// @requires /js/ToggleContent.js
+// 
+ 
+
+//
+// Toggle 
+//  
+
+[data-toggle] {
+    @extend %width-base;
+    padding: $gap-small 0;
+}
+
+.section [data-toggle]:first-of-type {
+    margin-top: $gap-big;
+}
+.section [data-toggle]:last-of-type {
+    margin-bottom: $gap-extra;
+}
+
+
+// 
+// <button> - Added via JS
+// Replaces text inisde [data-toggle-title]
+// 
+
+// The <h> tag wrapping the <button>
+[data-toggle-title][aria-label] {
+    margin: 0;
+    padding: 0;  
+    @include font-size(1); 
+}
+
+// <button>
+[data-toggle-button] {
+    width: 100%; 
+    padding: $gap-base;
+    padding-left: $gap-small;
+    margin: 0;
+    @include font-size;
+    font-weight: 300;
+    text-align: left;    
+
+    &:hover, &:active, &:focus {
+        padding: $gap-base;
+        padding-left: $gap-small;   
+    }
+
+    &[aria-expanded] {}
+    &[aria-expanded='false'] {}
+    &[aria-expanded='true'] {}
+}
+
+// <svg>
+[data-toggle-icon] {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    width: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 300ms; 
+}
+
+[aria-expanded="true"] [data-toggle-icon] {
+    transform: rotate(90deg);
+}
+
+// <span>
+[data-toggle-button-text] {}
+
+
+// 
+// Content <div>
+// sass/globals/_animate.scss
+// 
+
+[data-toggle-content] {
+
+    margin-top: 0.5rem;
+
+    &[aria-hidden] {
+         @include animated(300ms);  
+
+        padding: $gap-base;  
+        background: $rgba-base;
+        border: $border__content;
+
+        p:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        p:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }      
+    }
+
+    &[aria-hidden='true'] {
+		 @extend %scaleOutUp;   
+    }   
+
+    &[aria-hidden='false'] {
+        @extend %scaleInDown;
+    }
+
+} 
+
+
+// 
+// Button Varients
+// @see /bits/buttons for transition examples
+// 
+
+[data-toggle-button] {   
+
+
+    color: #ffffff;
+    background: $rgba-base;
+    border-color: $c__base-bright;
+
+    &:hover, &:active, &:focus,
+    &[aria-expanded='true'] {
+        color: #ffffff !important;
+    }
+
+    &::after {
+        background: $c__base-bright;
+    }       
+
+    // &:active, &:focus {
+    //     outline-color: $c__alt;
+    // }
+
+} // 
+
+.toggle--green [data-toggle-button] {
+
+    border-color: $c__green;
+
+    &[aria-expanded='true'] {
+        background: $c__green;        
+    }
+    &::after {
+        background: $c__green;
+    }       
+    // &:active, &:focus {
+    //     outline-color: $c__green;
+    // }
+
+}
+
+.toggle--yellow [data-toggle-button] {
+
+    border-color: $c__yellow;
+
+    &[aria-expanded='true'] {
+        background: $c__yellow;        
+    }
+    &::after {
+        background: $c__yellow;
+    }       
+    &:active, &:focus {
+        outline-color: $c__yellow;
+    }
+
+}
+
+.toggle--orange [data-toggle-button] {
+
+    border-color: $c__orange;
+
+    &[aria-expanded='true'] {
+        background: $c__orange;        
+    }
+    &::after {
+        background: $c__orange;
+    }       
+    &:active, &:focus {
+        outline-color: $c__orange;
+    }
+
+}
+
+.toggle--red [data-toggle-button] {
+
+    border-color: $c__red;
+
+    &[aria-expanded='true'] {
+        background: $c__red;        
+    }
+    &::after {
+        background: $c__red;
+    }       
+    &:active, &:focus {
+        outline-color: $c__red;
+    }
+
+}
+

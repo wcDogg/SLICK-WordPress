@@ -24,25 +24,33 @@ $custom_query = new WP_Query( $args );
 
 get_header();
 
-echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="landing">';
+?>
 
-	get_template_part('parts/headers/header', 'win' );
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
+<?php
+
+	get_template_part('parts/header/header', get_post_type() ); 
+
+	
 	if ( $custom_query->have_posts() ) : 
 
-		echo '<section class="section section--cards">';	
+		echo '<section class="section cards cards--multi">';	
 			echo '<div class="section__inner">';
-				echo '<h1 class="section__title">This Month\'s Lubricants</h1>';
-				echo '<div class="section__grid">';	
 
+				echo '<div class="section__title-wrap">';
+					echo '<h1 class="section__title">This Month\'s Lubricants</h1>';
+				echo '</div>';
+
+				echo '<div class="section__cards">';	
 					while ( $custom_query->have_posts() ) : 
 
 						$custom_query->the_post(); 
-						get_template_part( 'parts/card', get_post_type() );
+						get_template_part( 'parts/card/card', get_post_type() );
 											
 					endwhile;
+				echo '</div><!-- .section__cards -->';
 
-				echo '</div><!-- .section__grid -->';
 			echo '</div><!-- .section__inner -->';
 		echo '</section><!-- .section -->';	
 		
@@ -52,6 +60,10 @@ echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="landing">';
 
 	wp_reset_query();
 
-echo '</article><!-- #post-'.esc_html( get_the_ID() ).' -->';
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+
+<?php
 
 get_footer();

@@ -1,16 +1,30 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+/**
+ * content-lubricant.php
+ * Displays single lubricant content
+ * 
+ * @package slick
+ * @since slick 1.0
+ */
+?>
 
-	<?php get_template_part('parts/headers/header', get_post_type() ); ?>
-	<?php get_template_part('parts/lubricant/section', 'highlights'); ?>
-	<?php get_template_part('parts/lubricant/section', 'offer'); ?>	
-	<?php get_template_part('parts/lubricant/section', 'gallery'); ?>
-	<?php get_template_part('parts/lubricant/section', 'materials'); ?>
-	<?php get_template_part('parts/lubricant/section', 'ingredients'); ?>
-	<?php get_template_part('parts/lubricant/section', 'consistency'); ?>
-	<?php get_template_part('parts/lubricant/section', 'taste'); ?>
-	<?php get_template_part('parts/lubricant/section', 'packaging'); ?>
-	<?php get_template_part('parts/lubricant/section', 'samples'); ?>	
-	<?php get_template_part('parts/lubricant/section', 'amazon'); ?>
-	<?php get_template_part('parts/page/page', 'comments' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php 
+
+	get_template_part('parts/header/header', get_post_type() );
+
+	get_template_part('parts/lubricant/section', 'highlights');
+	get_template_part('parts/lubricant/section', 'offer');
+	get_template_part('parts/lubricant/section', 'gallery');
+	get_template_part('parts/lubricant/section', 'materials');
+	get_template_part('parts/lubricant/section', 'ingredients');
+	get_template_part('parts/lubricant/section', 'consistency');
+	get_template_part('parts/lubricant/section', 'taste');
+	get_template_part('parts/lubricant/section', 'packaging');
+	get_template_part('parts/lubricant/section', 'samples');	
+	get_template_part('parts/lubricant/section', 'amazon');
 	
-</article><!-- #post-<?php the_ID(); ?> -->
+	get_template_part('parts/section/section', 'comments' );
+
+?>
+</article><!-- #post-<?php the_ID(); ?> --> 
